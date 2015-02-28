@@ -10,3 +10,10 @@
     - http://wiki.nesdev.com/w/index.php/Programming_with_unofficial_opcodes
 - CPU:
     - http://wiki.nesdev.com/w/index.php/CPU
+- Nice details:
+    - http://homepage.ntlworld.com/cyborgsystems/CS_Main/6502/6502.htm#ADC
+- Xilinx:
+    - SD card overview
+        - http://www.xess.com/blog/accessing-the-xula2-microsd-card/
+    - SD card HDL
+        - https://github.com/xesscorp/XuLA/blob/master/FPGA/XuLA_lib/SDCard.vhd
