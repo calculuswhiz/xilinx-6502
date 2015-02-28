@@ -12,6 +12,10 @@
     - http://wiki.nesdev.com/w/index.php/CPU
 - Nice details:
     - http://homepage.ntlworld.com/cyborgsystems/CS_Main/6502/6502.htm#ADC
+- Clock cycles:
+    - http://nesdev.com/6502_cpu.txt
+- Chip docs:
+    - http://www.mdawson.net/vic20chrome/cpu/mos_6500_mpu_preliminary_may_1976.pdf
 - Xilinx:
     - SD card overview
         - http://www.xess.com/blog/accessing-the-xula2-microsd-card/
