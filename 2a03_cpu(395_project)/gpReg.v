@@ -14,24 +14,26 @@ module gpReg #(parameter width = 8)
     input load,
     input rst_n,  // Asynchronous reset active low
     input [width-1:0] in,
-    output logic [width-1:0] out
+    output [width-1:0] out
 );
 
-logic [width-1:0] data;
+reg [width-1:0] data;
 
 /* Should be 0 anyway, but for simulation purposes...
  */
 initial
 begin
-    out = 0;
+    data = 0;
 end
 
 always @ (posedge clk or negedge rst_n)
 begin 
     if(~rst_n)
-        out=0;
+        data=0;
     else if(clk)
-        out=in;
+        data=in;
 end
+
+assign out = data;
 
 endmodule : gpReg
