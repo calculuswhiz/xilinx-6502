@@ -21,5 +21,7 @@
         - http://www.xess.com/blog/accessing-the-xula2-microsd-card/
     - SD card HDL
         - https://github.com/xesscorp/XuLA/blob/master/FPGA/XuLA_lib/SDCard.vhd
-Reference: Other projects:
+
+
+- Reference: Other projects:
     http://ladybug.xs4all.nl/arlet/fpga/6502/
