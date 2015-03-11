@@ -1,3 +1,17 @@
+/*
+    Only needs to support basic operations:
+    (The control unit will handle when to use each one.)
+        carry-addition:     for address calculations and the ADC instruction.
+        borrow-subtract:    SBC instruction, CMP instruction
+        exclusive or:       EOR instruction
+        or:                 OR instruction
+        and:                AND instruction, also unofficial SAX/LAX-type
+        ++/--:              Increment/decrement. Maybe acutally use this for
+                                the registers too.
+        rotate:             ROR, ROL
+        Shift:              ASL, LSR
+*/
+
 module ALU (
     input [7:0] a,
     input [7:0] b,
