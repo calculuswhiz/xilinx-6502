@@ -69,8 +69,6 @@ different kinds of instructions.
      probably 6 cycles after deactivating the signal. Like NMI, RESET
      preserves all registers except PC.
 
-Microcode that uses ALU - *
-
   Instructions accessing the stack
 
      BRK
