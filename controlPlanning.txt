@@ -1,0 +1,266 @@
+// For the start state
+fetch
+
+// adc:
+adc_imm
+adc_zpg
+adc_zpx
+adc_abs
+adc_abx
+adc_aby
+adc_inx
+adc_iny
+
+// and:
+and_imm
+and_zpg
+and_zpx
+and_abs
+and_abx
+and_aby
+and_inx
+and_iny
+
+// asl:
+asl_acc
+asl_zpg
+asl_zpx
+asl_abs
+asl_abx
+
+// bcc:
+bcc_rel
+
+// bcs:
+bcs_rel
+
+// beq:
+beq_rel
+
+// bit:
+bit_zpg
+bit_abs
+
+// bmi:
+bmi_rel
+
+// bne:
+bne_rel
+
+// bpl:
+bpl_rel
+
+// brk:
+brk_imp
+
+// bvc:
+bvc_rel
+
+// bvs:
+bvs_rel
+
+// clc:
+clc_imp
+
+// cld:
+cld_imp
+
+// cli:
+cli_imp
+
+// clv:
+clv_imp
+
+// cmp:
+cmp_imm
+cmp_zpg
+cmp_zpx
+cmp_abs
+cmp_abx
+cmp_aby
+cmp_inx
+cmp_iny
+
+// cpx:
+cpx_imm
+cpx_zpg
+cpx_abs
+
+// cpy:
+cpy_imm
+cpy_zpg
+cpy_abs
+
+// dec:
+dec_zpg
+dec_zpx
+dec_abs
+dec_abx
+
+// dex:
+dex_imp
+
+// dey:
+dey_imp
+
+// eor:
+eor_imm
+eor_zpg
+eor_zpx
+eor_abs
+eor_abx
+eor_aby
+eor_inx
+eor_iny
+
+// inc:
+inc_zpg
+inc_zpx
+inc_abs
+inc_abx
+
+// inx:
+inx_imp
+
+// iny:
+iny_imp
+
+// jmp:
+jmp_abs
+jmp_ind
+
+// jsr:
+jsr_abs
+
+// lda:
+lda_imm
+lda_zpg
+lda_zpx
+lda_abs
+lda_abx
+lda_aby
+lda_inx
+lda_iny
+
+// ldx:
+ldx_imm
+ldx_zpg
+ldx_zpy
+ldx_abs
+ldx_aby
+
+// ldy:
+ldy_imm
+ldy_zpg
+ldx_zpx
+ldy_abs
+ldy_abx
+
+// lsr:
+lsr_acc
+lsr_zpg
+lsr_zpx
+lsr_abs
+lsr_abx
+
+// nop:
+nop_imp
+
+// ora:
+ora_imm
+ora_zpg
+ora_zpx
+ora_abs
+ora_abx
+ora_aby
+ora_inx
+ora_iny
+
+// pha:
+pha_imp
+
+// php:
+php_imp
+
+// pla:
+pla_imp
+
+// plp:
+plp_imp
+
+// rol:
+rol_acc
+rol_zpg
+rol_zpx
+rol_abs
+rol_abx
+
+// ror:
+ror_acc
+ror_zpg
+ror_zpx
+ror_abs
+ror_abx
+
+// rti:
+rti_imp
+
+// rts:
+rts_imp
+
+// sbc:
+sbc_imm
+sbc_zpg
+sbc_zpx
+sbc_abs
+sbc_abx
+sbc_aby
+sbc_inx
+sbc_iny
+
+// sec:
+sec_imp
+
+// sed:
+sed_imp
+
+// sei:
+sei_imp
+
+// sta:
+sta_zpg
+sta_zpx
+sta_zbs
+sta_abx
+sta_aby
+sta_inx
+sta_iny
+
+// stx:
+stx_zpg
+stx_zpy
+stx_abs
+
+// sty:
+sty_zpg
+sty_zpx
+sty_abs
+
+// tax:
+tax_imp
+
+// tay:
+tay_imp
+
+// tsx:
+tsx_imp
+
+// txa:
+txa_imp
+
+// txs:
+txs_imp
+
+// tya:
+tya_imp
+
