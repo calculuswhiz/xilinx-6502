@@ -1,265 +1,207 @@
 // For the start state
 fetch
+    PCL_inc = 1;
+        
 
-// adc:
-adc_imm
-adc_zpg
-adc_zpx
-adc_abs
-adc_abx
-adc_aby
-adc_inx
-adc_iny
+// Immediate addressing mode:
+immed
+    adc_imm
+    and_imm
+    cmp_imm
+    cpx_imm
+    cpy_imm
+    eor_imm
+    lda_imm
+    ldx_imm
+    ldy_imm
+    ora_imm
+    sbc_imm
+    
+// Accumulator or implied addressing:
+accImp
+    asl_acc
+    clc_imp
+    cld_imp
+    cli_imp
+    clv_imp
+    dex_imp
+    dey_imp
+    inx_imp
+    iny_imp
+    lsr_acc
+    nop_imp
+    rol_acc
+    ror_acc
+    sec_imp
+    sed_imp
+    sei_imp
+    tax_imp
+    tay_imp
+    tsx_imp
+    txa_imp
+    txs_imp
+    tya_imp
 
-// and:
-and_imm
-and_zpg
-and_zpx
-and_abs
-and_abx
-and_aby
-and_inx
-and_iny
+// Zero-page read
+zpg_r
+    adc_zpg
+    and_zpg
+    bit_zpg
+    cmp_zpg
+    cpx_zpg
+    cpy_zpg
+    eor_zpg
+    lda_zpg
+    ldx_zpg
+    ldy_zpg
+    ora_zpg
+    sbc_zpg
+    
+// Zero-page read-mod-write 
+zpg_rmw
+    asl_zpg
+    dec_zpg
+    inc_zpg
+    lsr_zpg
+    rol_zpg
+    ror_zpg
 
-// asl:
-asl_acc
-asl_zpg
-asl_zpx
-asl_abs
-asl_abx
+// Zero-page write
+zpg_w
+    sta_zpg
+    stx_zpg
+    sty_zpg
 
-// bcc:
-bcc_rel
+// Zero-page idx, read
+zpx_r
+    adc_zpx
+    and_zpx
+    cmp_zpx
+    eor_zpx
+    lda_zpx
+    ldx_zpx
+    ora_zpx
+    sbc_zpx
+    
+// Zero-page idx, read-mod-write
+zpx_rmw
+    asl_zpx
+    dec_zpx
+    inc_zpx
+    lsr_zpx
+    rol_zpx
+    ror_zpx
 
-// bcs:
-bcs_rel
+// Zero-page idx, write
+zpx_w
+    sta_zpx
+    sty_zpx
 
-// beq:
-beq_rel
+// Zero-page idy, read
+zpy_r
+    ldx_zpy
 
-// bit:
-bit_zpg
-bit_abs
+// Zero-page idy, write
+zpy_w
+    stx_zpy
 
-// bmi:
-bmi_rel
+// Relative
+rel
+    bcc_rel
+    bcs_rel
+    beq_rel
+    bmi_rel
+    bne_rel
+    bpl_rel
+    bvc_rel
+    bvs_rel
 
-// bne:
-bne_rel
+// Absolute read
+abs_r
+    adc_abs
+    adc_abx
+    adc_aby
+    and_abs
+    and_abx
+    and_aby
+    bit_abs
+    cmp_abs
+    cmp_abx
+    cmp_aby
+    cpx_abs
+    cpy_abs
+    eor_abs
+    eor_abx
+    eor_aby
+    lda_abs
+    lda_abx
+    lda_aby
+    ldx_abs
+    ldx_aby
+    ldy_abs
+    ldy_abx
+    ora_abs
+    ora_abx
+    ora_aby
+    sbc_abs
+    sbc_abx
+    sbc_aby
+    
+// Absolute rmodw
+abs_rmw
+    asl_abs
+    asl_abx
+    dec_abs
+    dec_abx
+    inc_abs
+    inc_abx
+    lsr_abs
+    lsr_abx
+    rol_abs
+    rol_abx
+    ror_abs
+    ror_abx
 
-// bpl:
-bpl_rel
+// Absolute write
+abs_w
+    sta_abs
+    sta_abx
+    sta_aby
+    stx_abs
+    sty_abs
 
-// brk:
-brk_imp
+// x-indexed (index indirect)
+inx
+    adc_inx
+    and_inx
+    cmp_inx
+    eor_inx
+    lda_inx
+    ora_inx
+    sbc_inx
+    sta_inx
+    
+// y-indexed (indirect index)
+iny
+    adc_iny
+    and_iny
+    cmp_iny
+    eor_iny
+    lda_iny
+    ora_iny
+    sbc_iny
+    sta_iny
 
-// bvc:
-bvc_rel
-
-// bvs:
-bvs_rel
-
-// clc:
-clc_imp
-
-// cld:
-cld_imp
-
-// cli:
-cli_imp
-
-// clv:
-clv_imp
-
-// cmp:
-cmp_imm
-cmp_zpg
-cmp_zpx
-cmp_abs
-cmp_abx
-cmp_aby
-cmp_inx
-cmp_iny
-
-// cpx:
-cpx_imm
-cpx_zpg
-cpx_abs
-
-// cpy:
-cpy_imm
-cpy_zpg
-cpy_abs
-
-// dec:
-dec_zpg
-dec_zpx
-dec_abs
-dec_abx
-
-// dex:
-dex_imp
-
-// dey:
-dey_imp
-
-// eor:
-eor_imm
-eor_zpg
-eor_zpx
-eor_abs
-eor_abx
-eor_aby
-eor_inx
-eor_iny
-
-// inc:
-inc_zpg
-inc_zpx
-inc_abs
-inc_abx
-
-// inx:
-inx_imp
-
-// iny:
-iny_imp
-
-// jmp:
+// Jump:
 jmp_abs
 jmp_ind
 
-// jsr:
-jsr_abs
-
-// lda:
-lda_imm
-lda_zpg
-lda_zpx
-lda_abs
-lda_abx
-lda_aby
-lda_inx
-lda_iny
-
-// ldx:
-ldx_imm
-ldx_zpg
-ldx_zpy
-ldx_abs
-ldx_aby
-
-// ldy:
-ldy_imm
-ldy_zpg
-ldx_zpx
-ldy_abs
-ldy_abx
-
-// lsr:
-lsr_acc
-lsr_zpg
-lsr_zpx
-lsr_abs
-lsr_abx
-
-// nop:
-nop_imp
-
-// ora:
-ora_imm
-ora_zpg
-ora_zpx
-ora_abs
-ora_abx
-ora_aby
-ora_inx
-ora_iny
-
-// pha:
+// Stack instructions:
+brk_imp
 pha_imp
-
-// php:
 php_imp
-
-// pla:
 pla_imp
-
-// plp:
 plp_imp
-
-// rol:
-rol_acc
-rol_zpg
-rol_zpx
-rol_abs
-rol_abx
-
-// ror:
-ror_acc
-ror_zpg
-ror_zpx
-ror_abs
-ror_abx
-
-// rti:
 rti_imp
-
-// rts:
 rts_imp
-
-// sbc:
-sbc_imm
-sbc_zpg
-sbc_zpx
-sbc_abs
-sbc_abx
-sbc_aby
-sbc_inx
-sbc_iny
-
-// sec:
-sec_imp
-
-// sed:
-sed_imp
-
-// sei:
-sei_imp
-
-// sta:
-sta_zpg
-sta_zpx
-sta_zbs
-sta_abx
-sta_aby
-sta_inx
-sta_iny
-
-// stx:
-stx_zpg
-stx_zpy
-stx_abs
-
-// sty:
-sty_zpg
-sty_zpx
-sty_abs
-
-// tax:
-tax_imp
-
-// tay:
-tay_imp
-
-// tsx:
-tsx_imp
-
-// txa:
-txa_imp
-
-// txs:
-txs_imp
-
-// tya:
-tya_imp
+jsr_abs

@@ -291,6 +291,7 @@ different kinds of instructions.
   Zero page indexed addressing
 
      Read instructions (LDA, LDX, LDY, EOR, AND, ORA, ADC, SBC, CMP, BIT,
+                        CPX, CPY,
                         LAX, NOP)
 
         #   address  R/W description
