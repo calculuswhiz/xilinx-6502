@@ -1,21 +1,45 @@
 // For the start state
 fetch
-    PCL_inc = 1;
-        
+    PCL_inc = 1
+    IR_ld   = 1
+    ...
+    next depends on opcode
 
 // Immediate addressing mode:
 immed
     adc_imm
+        PCL_inc = 1
+        IR_ld   = 1
     and_imm
+        PCL_inc = 1
+        IR_ld   = 1
     cmp_imm
+        PCL_inc = 1
+        IR_ld   = 1
     cpx_imm
+        PCL_inc = 1
+        IR_ld   = 1
     cpy_imm
+        PCL_inc = 1
+        IR_ld   = 1
     eor_imm
+        PCL_inc = 1
+        IR_ld   = 1
     lda_imm
+        PCL_inc = 1
+        IR_ld   = 1
     ldx_imm
+        PCL_inc = 1
+        IR_ld   = 1
     ldy_imm
+        PCL_inc = 1
+        IR_ld   = 1
     ora_imm
+        PCL_inc = 1
+        IR_ld   = 1
     sbc_imm
+        PCL_inc = 1
+        IR_ld   = 1
     
 // Accumulator or implied addressing:
 accImp
