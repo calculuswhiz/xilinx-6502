@@ -10,6 +10,7 @@ immed
     adc_imm
         PCL_inc = 1
         IR_ld   = 1
+        
     and_imm
         PCL_inc = 1
         IR_ld   = 1
