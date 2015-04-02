@@ -130,7 +130,30 @@ begin : next_state_logic
      * for transitioning between states */
     next_state = state;
     case(state)
-        fetch: /*TBD*/;
+        fetch: 
+        begin
+            case(ir[7:0])
+                ADC:
+                AND:
+                ASL:
+                BIT:
+                BR:
+                BRK:
+                CMP:
+                CPX:
+                CPY:
+                DEC:
+                EOR:
+                INC:
+                JMP:
+                JSR:
+                JSR:
+                LDA:
+                LDX:
+                LDY:
+                LSR:
+            endcase
+        end
 
         default: next_state = fetch;
     endcase

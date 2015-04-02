@@ -10,7 +10,6 @@ immed
     adc_imm
         PCL_inc = 1
         IR_ld   = 1
-        
     and_imm
         PCL_inc = 1
         IR_ld   = 1
@@ -116,3 +115,117 @@ zpx_rmw
     lsr_zpx
     rol_zpx
     ror_zpx
+
+// Zero-page idx, write
+zpx_w
+    sta_zpx
+    sty_zpx
+
+// Zero-page idy, read
+zpy_r
+    ldx_zpy
+
+// Zero-page idy, write
+zpy_w
+    stx_zpy
+
+// Relative
+rel
+    bcc_rel
+    bcs_rel
+    beq_rel
+    bmi_rel
+    bne_rel
+    bpl_rel
+    bvc_rel
+    bvs_rel
+
+// Absolute read
+abs_r
+    adc_abs
+    adc_abx
+    adc_aby
+    and_abs
+    and_abx
+    and_aby
+    bit_abs
+    cmp_abs
+    cmp_abx
+    cmp_aby
+    cpx_abs
+    cpy_abs
+    eor_abs
+    eor_abx
+    eor_aby
+    lda_abs
+    lda_abx
+    lda_aby
+    ldx_abs
+    ldx_aby
+    ldy_abs
+    ldy_abx
+    ora_abs
+    ora_abx
+    ora_aby
+    sbc_abs
+    sbc_abx
+    sbc_aby
+    
+// Absolute rmodw
+abs_rmw
+    asl_abs
+    asl_abx
+    dec_abs
+    dec_abx
+    inc_abs
+    inc_abx
+    lsr_abs
+    lsr_abx
+    rol_abs
+    rol_abx
+    ror_abs
+    ror_abx
+
+// Absolute write
+abs_w
+    sta_abs
+    sta_abx
+    sta_aby
+    stx_abs
+    sty_abs
+
+// x-indexed (index indirect)
+inx
+    adc_inx
+    and_inx
+    cmp_inx
+    eor_inx
+    lda_inx
+    ora_inx
+    sbc_inx
+    sta_inx
+    
+// y-indexed (indirect index)
+iny
+    adc_iny
+    and_iny
+    cmp_iny
+    eor_iny
+    lda_iny
+    ora_iny
+    sbc_iny
+    sta_iny
+
+// Jump:
+jmp_abs
+jmp_ind
+
+// Stack instructions:
+brk_imp
+pha_imp
+php_imp
+pla_imp
+plp_imp
+rti_imp
+rts_imp
+jsr_abs
