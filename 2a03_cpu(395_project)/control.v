@@ -16,7 +16,13 @@ module control
     output X_ld,
     output Y_ld,
     output S_ld,
-    output A_ld,
+    output A_ld,  
+          
+    output A_sel,       // multiplex input 0-data,1-alu
+    output D_sel,       // 0-data, 1-memory
+    output T_sel,
+    output S_sel,
+    output PC_sel,
     
     output PCL_inc,     // Increment PC signal, prevent invalidation
     output PCL_ld,
@@ -41,17 +47,29 @@ module control
     output Y_en,
     output Sm_en,
     output Sd_en,
-    output ALUm_en,
-    output ALUd_en,
-    output A_en,
-    output PCLm_en,
-    output PCLd_en,
+    output ALUm_en,     // Goes to mem side
+    output ALUd_en,     // Goes to data side
+    output ALUA_en,     // Goes to accumulator
+    output AALU_en,     // Goes from A to ALU
+    output Ad_en,       // Goes from A to data side
+    output dA_en,       // Goes from data to A
+    output PCLm_en,     // Exception! Default to 1
+    output PCHm_en,     
+    output PCLd_en,     // Back to 0
+    output PCHd_en,     
     output DLm_en,
+    output DHm_en,
+    output DLd_en,
     output DHd_en,
     output TLm_en,
+    output THm_en,
+    output TLd_en,
     output THd_en,
     output P_en,
     output IR_en,
+    output mem_en,
+    output xferd_en,    // Prevents bus access conflict
+    output xferu_en,
     
     // Other:
     output [3:0] aluop,   // default 5, I think, which is add.
@@ -95,6 +113,13 @@ begin : state_actions
     
     IR_ld   = 0;
     
+    // Mulitplexed:
+    A_sel   = 0;
+    D_sel   = 0;
+    T_sel   = 0;
+    S_sel   = 0;
+    PC_sel  = 0;
+    
     // Gates: default 0
     X_en    = 0;
     Y_en    = 0;
@@ -103,19 +128,29 @@ begin : state_actions
     ALUm_en = 0;
     ALUd_en = 0;
     A_en    = 0;
-    PCLm_en = 0;
+    PCLm_en = 1;    // Default 1!!
+    PCHm_en = 1;    // Default 1.
     PCLd_en = 0;
+    PCHd_en = 0;
     DLm_en  = 0;
+    DHm_en  = 0;
+    DLd_en  = 0;
     DHd_en  = 0;
     TLm_en  = 0;
+    THm_en  = 0;
+    TLd_en  = 0;
     THd_en  = 0;
     P_en    = 0;
     IR_en   = 0;
+    mem_en  = 0;
+    xferd_en= 0;
+    xferu_en= 0;
     
     // Other:
     aluop = alu_inc;
     addr_enable = 2'b11;
     mem_rw = 1;
+    alu_b_sel = 2'b00;    // Source b 
 
     case(state)
         fetch: /*I don't know yet.*/ ;

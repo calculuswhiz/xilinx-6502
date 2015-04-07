@@ -5,100 +5,420 @@ fetch
     ...
     next depends on opcode
 
+// For the instructions, due to the "pipelining,"
+// by the end, the next opcode will be in the IR.
+
 // Immediate addressing mode:
 immed
     adc_imm
         PCL_inc = 1
         IR_ld   = 1
+        AALU_en = 1
+        aluop   = alu_adc
+        IR_en   = 1
+        A_ld    = 1
+        flags(NVZC)
     and_imm
         PCL_inc = 1
         IR_ld   = 1
+        AALU_en = 1
+        aluop   = alu_and
+        IR_en   = 1
+        A_ld    = 1
+        flags(NZ)
     cmp_imm
         PCL_inc = 1
         IR_ld   = 1
+        AALU_en = 1
+        aluop   = alu_sbc
+        IR_en   = 1
+        flags(NZC)
     cpx_imm
         PCL_inc = 1
         IR_ld   = 1
+        X_en    = 1
+        aluop   = alu_sbc
+        IR_en   = 1
+        flags(NZC)
     cpy_imm
         PCL_inc = 1
         IR_ld   = 1
+        Y_en    = 1
+        aluop   = alu_sbc
+        IR_en   = 1
+        flags(NZC)
     eor_imm
         PCL_inc = 1
         IR_ld   = 1
+        AALU_en = 1
+        aluop   = alu_eor
+        IR_en   = 1
+        A_ld    = 1
+        flags(NZ)
     lda_imm
         PCL_inc = 1
         IR_ld   = 1
+        IR_en   = 1
+        dA_en   = 1
+        A_ld    = 1 # Maybe multiplex A's inputs to save bits.
     ldx_imm
         PCL_inc = 1
         IR_ld   = 1
+        IR_en   = 1
+        X_ld    = 1
     ldy_imm
         PCL_inc = 1
         IR_ld   = 1
+        IR_en   = 1
+        X_ld    = 1
     ora_imm
         PCL_inc = 1
         IR_ld   = 1
+        aluop   = alu_eor
+        IR_en   = 1
+        A_ld    = 1
+        flags(NZ)
     sbc_imm
         PCL_inc = 1
         IR_ld   = 1
+        aluop   = alu_sbc
+        IR_en   = 1
+        A_ld    = 1
+        flags(NVZC)
+next state depends on opcode
     
 // Accumulator or implied addressing:
 accImp
     asl_acc
+        PCL_inc = 1
+        IR_ld   = 1
+        AALU_en = 1
+        ALUA_en = 1
+        A_ld    = 1
+        aluop   = alu_asl
     clc_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(C=0)
     cld_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(D=0)
     cli_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(I=0)
     clv_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(V=0)
     dex_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        X_en    = 1
+        aluop   = alu_dec
+        ALUd_en = 1
+        X_ld    = 1
     dey_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        Y_en    = 1
+        aluop   = alu_dec
+        ALUd_en = 1
+        Y_ld    = 1
     inx_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        X_en    = 1
+        aluop   = alu_inc
+        ALUd_en = 1
+        X_ld    = 1
     iny_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        Y_en    = 1
+        aluop   = alu_inc
+        ALUd_en = 1
+        Y_ld    = 1
     lsr_acc
+        PCL_inc = 1
+        IR_ld   = 1
+        AALU_en = 1
+        ALUA_en = 1
+        A_ld    = 1
+        aluop   = alu_lsr
     nop_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        /* Do nothing */
     rol_acc
+        PCL_inc = 1
+        IR_ld   = 1
+        AALU_en = 1
+        ALUA_en = 1
+        A_ld    = 1
+        aluop   = alu_rol
     ror_acc
+        PCL_inc = 1
+        IR_ld   = 1
+        AALU_en = 1
+        ALUA_en = 1
+        A_ld    = 1
+        aluop   = alu_ror
     sec_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(C=1)
     sed_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(D=1)
     sei_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        flags(I=1)
     tax_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        Ad_en   = 1
+        X_ld    = 1
     tay_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        Ad_en   = 1
+        Y_ld    = 1
     tsx_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        S_en    = 1
+        X_en    = 1
     txa_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        X_en    = 1
+        A_ld    = 1     # multiplex input
     txs_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        X_en    = 1
+        S_ld    = 1
     tya_imp
+        PCL_inc = 1
+        IR_ld   = 1
+        Y_en    = 1
+        A_ld    = 1     # multiplex input
+
+// Zero-page (all):
+zpg
+    PCL_inc = 1
+    mem_en  = 1
+    DL_ld   = 1
+    DLm_en  = 1     # address using D instead
+    DHm_en  = 1
+    PCLm_en = 0
+    PCHm_en = 0
+    next state depends on opcode (of those listed under zpg)
 
 // Zero-page read
 zpg_r
     adc_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_adc
+        ALUA_en = 1     # transfer to A
+        A_ld    = 1     # multiplex input (d)
     and_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_and
+        ALUA_en = 1     # transfer to A
+        A_ld    = 1     # multiplex input (d)
     bit_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_and
     cmp_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_sbc
     cpx_zpg
+        mem_en  = 1
+        xferd_en = 1
+        (select X as aluB)
+        AALU_en = 1     # operand2
+        aluop   = alu_sbc
     cpy_zpg
+        mem_en  = 1
+        xferd_en = 1
+        (select Y as aluB)
+        AALU_en = 1     # operand2
+        aluop   = alu_sbc
     eor_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_eor
+        ALUA_en = 1     # transfer to A
+        A_ld    = 1     # multiplex input (d)
     lda_zpg
+        mem_en = 1
+        xferd_en = 1
+        A_ld    = 1     # multiplex input (d)
     ldx_zpg
+        mem_en = 1
+        xferd_en = 1
+        X_ld    = 1
     ldy_zpg
+        mem_en = 1
+        xferd_en = 1
+        Y_ld    = 1
     ora_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_ora
+        ALUA_en = 1     # transfer to A
+        A_ld    = 1     # multiplex input (d)
     sbc_zpg
+        mem_en  = 1
+        xferd_en = 1    # permit memory to ALU as operand1
+        AALU_en = 1     # operand2
+        aluop   = alu_sbc
+        ALUA_en = 1     # transfer to A
+        A_ld    = 1     # multiplex input (d)
     
 // Zero-page read-mod-write 
+// all:
 zpg_rmw
+    mem_en  = 1
+    xferd_en = 1
+    TL_ld   = 1
+    DLm_en  = 1     # keep addressing with D
+    DHm_en  = 1
+    PCLm_en = 0
+    PCHm_en = 0
+    next state depends on opcode
+    
+variants:
     asl_zpg
+        TL_en = 1
+        aluop = alu_asl
+        (select data as input a)
+        ALUd_en = 1
+        T_ld    = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
     dec_zpg
+        TL_en = 1
+        aluop = alu_dec
+        (select data as input a)
+        ALUd_en = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
     inc_zpg
+        TL_en = 1
+        aluop = alu_inc
+        (select data as input a)
+        ALUd_en = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
     lsr_zpg
+        TL_en = 1
+        aluop = alu_lsr
+        (select data as input a)
+        ALUd_en = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
     rol_zpg
+        TL_en = 1
+        aluop = alu_rol
+        (select data as input a)
+        ALUd_en = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
     ror_zpg
+        TL_en = 1
+        aluop = alu_ror
+        (select data as input a)
+        ALUd_en = 1
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
+    next state is zpg_rmw_end
+    
+zpg_rmw_end
+    DLm_en  = 1     # keep addressing with D
+    DHm_en  = 1
+    PCLm_en = 0
+    PCHm_en = 0
+    TLd_en = 1      # write back to memory
+    xferu_en = 1
+    mem_rw = 0      # write mode
 
 // Zero-page write
 zpg_w
     sta_zpg
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        Ad_en   = 1
+        xferu_en = 1
+        mem_rw = 0
     stx_zpg
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        X_en   = 1
+        xferu_en = 1
+        mem_rw = 0
     sty_zpg
+        DLm_en  = 1     # keep addressing with D
+        DHm_en  = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        Y_en   = 1
+        xferu_en = 1
+        mem_rw = 0
 
 // Zero-page idx, read
-zpx_r
+zpxx_r
+    (select dl as op a, x as op b)
+    aluop = alu_add
+    PCLm_en = 0
+    PCHm_en = 0
+    ALUm_en = 1
+    D_sel   = 1
+    DL_ld   = 1
+zpxy_r
+    (select dl as op a, y as op b)
+    aluop = alu_add
+    PCLm_en = 0
+    PCHm_en = 0
+    ALUm_en = 1
+    D_sel   = 1
+    DL_ld   = 1
+next - see variants
+
+variants:
     adc_zpx
+        
     and_zpx
     cmp_zpx
     eor_zpx
