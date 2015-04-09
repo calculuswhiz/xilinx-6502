@@ -309,7 +309,7 @@ variants:
         aluop = alu_asl
         (select data as input a)
         ALUd_en = 1
-        T_ld    = 1
+        TL_ld    = 1
         DLm_en  = 1     # keep addressing with D
         DHm_en  = 1
         PCLm_en = 0
@@ -397,68 +397,345 @@ zpg_w
         xferu_en = 1
         mem_rw = 0
 
-// Zero-page idx, read
-zpxx_r
+// Zero-page idx
+zpxx
     (select dl as op a, x as op b)
-    aluop = alu_add
+    PCL_inc = 1
+    aluop = alu_adc
     PCLm_en = 0
     PCHm_en = 0
     ALUm_en = 1
     D_sel   = 1
     DL_ld   = 1
-zpxy_r
+zpxy
     (select dl as op a, y as op b)
-    aluop = alu_add
+    PCL_inc = 1
+    aluop = alu_adc
     PCLm_en = 0
     PCHm_en = 0
     ALUm_en = 1
     D_sel   = 1
     DL_ld   = 1
-next - see variants
+next - depends on opcode (r, rmw, w)
 
+// Zp-read
 variants:
     adc_zpx
-        
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_adc
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     and_zpx
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_and
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     cmp_zpx
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_sbc
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     eor_zpx
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_eor
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     lda_zpx
-    ldx_zpx
+        mem_en  = 1
+        xferd_en= 1
+        dA_en   = 1
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
+    ldy_zpx
+        mem_en  = 1
+        xferd_en= 1
+        Y_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     ora_zpx
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_ora
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     sbc_zpx
+        (add memdata + A)
+        AALU_en = 1
+        mem_en  = 1
+        xferd_en= 1
+        ALUA_en = 1
+        aluop   = alu_sbc
+        A_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
     
 // Zero-page idx, read-mod-write
 zpx_rmw
-    asl_zpx
-    dec_zpx
-    inc_zpx
-    lsr_zpx
-    rol_zpx
-    ror_zpx
+    mem_en  = 1
+    xferd_en= 1
+    TL_ld   = 1
+    TLd_en  = 1
+    variants:
+        asl_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_asl
+            TL_ld   = 1
+            PCLm_en = 0
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        dec_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_dec
+            TL_ld   = 1
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        inc_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_inc
+            TL_ld   = 1
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        lsr_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_lsr
+            TL_ld   = 1
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        rol_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_rol
+            TL_ld   = 1
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        ror_zpx
+            (select TL as operand1)
+            TL_en   = 1
+            ALUd_en = 1
+            aluop   = alu_ror
+            TL_ld   = 1
+            PCHm_en = 0
+            ALUm_en = 1
+            D_sel   = 1
+            DL_ld   = 1
+        next zpx_rmw_end
+
+zpx_rmw_end
+    TLd_en  = 1
+    PCHm_en = 0
+    ALUm_en = 1
+    D_sel   = 1
+    DL_ld   = 1
+    xferu_en= 1
+    mem_rw  = 0
 
 // Zero-page idx, write
 zpx_w
     sta_zpx
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
+        Ad_en   = 1
+        xferu_en= 1
+        mem_rw  = 0
     sty_zpx
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
+        Y_en    = 1
+        xferu_en= 1
+        mem_rw  = 0
 
 // Zero-page idy, read
 zpy_r
     ldx_zpy
+        mem_en  = 1
+        xferd_en= 1
+        X_ld    = 1
+        PCLm_en = 0
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
 
 // Zero-page idy, write
 zpy_w
     stx_zpy
+        PCHm_en = 0
+        ALUm_en = 1
+        D_sel   = 1
+        DL_ld   = 1
+        X_en    = 1
+        xferu_en= 1
+        mem_rw  = 0
 
 // Relative
-rel
-    bcc_rel
-    bcs_rel
-    beq_rel
-    bmi_rel
-    bne_rel
-    bpl_rel
-    bvc_rel
-    bvs_rel
+rel:
+branch_getop
+    PCL_inc = 1
+    DL_ld   = 1  (multiplex from data)
+    mem_en  = 1
+    xferd_en = 1
+    check branches with variants
+
+variants:
+    bcc_rel (carry clear)
+        mem_en  = 1
+        IR_ld   = 1
+        if (~C)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bcs_rel (carry set)
+        mem_en  = 1
+        IR_ld   = 1
+        if (C)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bne_rel (zero clear)
+        mem_en  = 1
+        IR_ld   = 1
+        if (~Z)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    beq_rel (zero set)
+        mem_en  = 1
+        IR_ld   = 1
+        if (Z)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bpl_rel (negative clear)
+        mem_en  = 1
+        IR_ld   = 1
+        if (~N)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bmi_rel (negative set)
+        mem_en  = 1
+        IR_ld   = 1
+        if (N)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bvc_rel (overflow clear)
+        mem_en  = 1
+        IR_ld   = 1
+        if (~V)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
+    bvs_rel (overflow set)
+        mem_en  = 1
+        IR_ld   = 1
+        if (V)
+            PCL_inc = 1
+        else
+            (PCL operand1, DL operand2)
+            aluop   = alu_adc
+            ALUm_en = 1
+            PC_sel  = 1
+            PCL_ld  = 1
 
 // Absolute read
 abs_r
