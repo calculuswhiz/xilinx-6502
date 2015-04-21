@@ -27,12 +27,14 @@ wire TL_ld, TH_ld;
 wire P_ld, IR_ld;
 
 // Selection:
-wire S_sel, A_sel;
-wire [2:0] ALU_A_sel, ALU_B_sel;
-wire PCL_sel, PCH_sel;
-wire DL_sel, DH_sel;
-wire TL_sel, TH_sel;
-wire P_sel;
+wire Smux_sel, Amux_sel;
+wire SID_sel;
+wire [2:0] ALU_Amux_sel, ALU_Bmux_sel;
+wire PCLmux_sel, PCHmux_sel;
+wire PCLID_sel;
+wire DLmux_sel, DHmux_sel;
+wire TLmux_sel, THmux_sel;
+wire Pmux_sel;
 
 // Other ALU signals:
 wire [3:0] aluop;
@@ -65,5 +67,164 @@ reg [7:0] PCLmux_out, PCHmux_out;
 reg [7:0] DLmux_out, DHmux_out;
 reg [7:0] TLmux_out, THmux_out;
 reg [7:0] Pmux_out;
+
+// Put stuff down from left to right:
+gpReg Xreg(
+    .clk(),
+    .load(X_ld), 
+    .rst_n(1'b1), 
+    .in(data_bus), 
+    .out(X_out)
+);
+
+tristate Xbuf(
+    .in(X_out),
+    .enable(X_en),
+    .out(Xbuf_out)
+);
+assign data_bus = Xbuf_out;
+
+gpReg Yreg(
+    .clk(),
+    .load(Y_ld), 
+    .rst_n(1'b1), 
+    .in(data_bus), 
+    .out(Y_out)
+);
+
+tristate Ybuf(
+    .in(Y_out),
+    .enable(Y_en),
+    .out(Ybuf_out)
+);
+assign data_bus = Ybuf_out;
+
+mux2 Smux(
+    .a(data_bus), 
+    .b(memory_bus_l), 
+    .sel(Smux_sel),
+    .f(Smux_out)
+);
+
+IDReg S(
+    .clk(),    // Clock
+    .load(S_ld),
+    .rst_n(1'b1),
+    .inputSel(SID_sel),   // 0 = normal, 1 = +1, 2 = -1
+    .datain(Smux_out),
+    .dataout(S_out)
+);
+
+tristate Sdbuf(
+    .in(S_out),
+    .enable(Sd_en),
+    .out(Sdbuf_out)
+);
+assign data_bus = Xbuf_out;
+
+tristate Smbuf(
+    .in(S_out),
+    .enable(Sm_en),
+    .out(Smbuf_out)
+);
+assign memory_bus_l = Smbuf_out;
+
+mux8 ALU_Amux(
+    .in0(A_out), 
+    .in1(X_out), 
+    .in2(Y_out), 
+    .in3(S_out), 
+    .in4(data_bus), 
+    .in5(0), 
+    .in6(0), 
+    .in7(0),
+    .sel(ALU_Amux_sel),
+    .f(ALU_Amux_out)
+);
+
+mux8 ALU_Bmux(
+    .in0(A_out), 
+    .in1(X_out), 
+    .in2(Y_out), 
+    .in3(S_out), 
+    .in4(data_bus), 
+    .in5(0), 
+    .in6(0), 
+    .in7(0),
+    .sel(ALU_Bmux_sel),
+    .f(ALU_Bmux_out)
+);
+
+ALU ALU_6502(
+    .a(ALU_Amux_out),
+    .b(ALU_Bmux_out),
+    .carryIn(C_in),
+    .overflowIn(V_in),
+    .operation(aluop),
+    .carry(C_out),
+    .overflow(V_out),
+    .f(ALU_out) 
+);
+
+tristate ALUd_buf(
+    .in(ALU_out),
+    .enable(ALUd_en),
+    .out(ALUd_buf_out)
+);
+assign data_bus = ALUd_buf_out;
+
+tristate ALUm_buf(
+    .in(ALU_out),
+    .enable(ALUm_en),
+    .out(ALUm_buf_out)
+);
+assign memory_bus_l = ALUm_buf_out;
+
+mux2 Amux(
+    .a(data_bus),
+    .b(ALU_out),
+    .sel(Amux_sel),
+    .f(Amux_out)
+);
+
+gpReg Areg(
+    .clk(),
+    .load(A_ld), 
+    .rst_n(1'b1), 
+    .in(Amux_out), 
+    .out(A_out)
+); 
+
+tristate Abuf(
+    .in(A_out),
+    .enable(A_en),
+    .out(Abuf_out)
+);
+assign data_bus = Abuf_out;
+
+mux2 PCLmux(
+    .a(data_bus),
+    .b(memory_bus_l), 
+    .sel(PCLmux_sel),
+    .f(PCLmux_out)
+);
+
+mux2 PCHmux(
+    .a(data_bus),
+    .b(memory_bus_h), 
+    .sel(PCHmux_sel),
+    .f(PCHmux_out)
+);
+
+IDReg PCL_reg(
+    .clk(),
+    .load(PCL_ld),
+    .rst_n(1'b1),
+    .inputSel(PCLID_sel),
+    .datain(PCLmux_out),
+    .dataout(PCL_out)
+);
+
+
 
 endmodule

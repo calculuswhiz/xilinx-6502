@@ -26,9 +26,9 @@ begin
 end
 
 gpReg #(.width = width) wrapReg(
-    .clk(),
-    .load(),
-    .rst_n(),
+    .clk(clk),
+    .load(load),
+    .rst_n(rst_n),
     .in(selOut),
     .out(dataout)
 );

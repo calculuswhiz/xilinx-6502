@@ -14,7 +14,7 @@ module PC #(parameter width=16)
 
 reg [width-1:0] data;
 
-intial
+initial
 begin
 	data = 0;
 end
