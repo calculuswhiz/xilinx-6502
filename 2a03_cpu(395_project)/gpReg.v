@@ -5,7 +5,6 @@
     - S, Stack pointer ~ %spl
     - X and Y, Index registers ~ %sil, %dil
     - A, Accumulator ~ %al
-    - P, Status register ~ flags
 */
 
 module gpReg #(parameter width = 8)

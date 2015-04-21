@@ -1,6 +1,6 @@
 /*
     Increment and decrement register.
-    Used for AXYS,PCL
+    Used for PCL, S
 */
 
 module IDReg #(parameter width = 8) (
@@ -11,6 +11,7 @@ module IDReg #(parameter width = 8) (
     input [width-1:0] datain,
     output dataout
 );
+
 
 wire [width-1:0] selOut;
 
