@@ -1,35 +1,38 @@
-module PC (
-    input clk,    // Clock
-    input rst_n,  // Asynchronous reset active low
-    input [1:0] low_select,
+module PC #(parameter width=16)
+(
+	input clk,
+	input PCinc,
+	input load_pc_h,
+	input load_pc_l,
+	input load_pc_h_mem,	
+	input PCL_in [7:0],
+	input PCH_in [7:0],
 
-    input lLoad,
-    inptu hLoad,
-
-    input [7:0] lData, 
-    input [7:0] hData,
-
-    output [7:0] lOut,
-    output [7:0] hOut
+	output PCL_out [7:0],
+	output PCH_out [7:0]
 );
 
-IDReg PCL(
-    .clk(),    // Clock
-    .load(lLoad),
-    .rst_n(),
-    .inputSel(low_select),   // 0 = normal, 1 = +1, 2 = -1
-    .datain(lData),
-    .dataout(lOut)
-);
+reg [width-1:0] data;
 
-gpReg PCH(
-    .clk(),
-    .load(hLoad),
-    .rst_n(),
-    .in(hData),
-    .out(hOut)
-);
+initial
+begin
+	data = 0;
+end
 
+always @ (posedge clk)
+begin 
+    if (PCinc)
+        data=data+1;
+    if (load_pc_h)
+    	data [15:8] = alu_in;
+    if (load_pc_h_mem) /*Hopefully only one of these is high ever.*/
+    	data [15:8] = mem_in;
+    if (load_pc_l) /*Not sure if you want to use alu_in, but it seems reasonable currently.*/
+    	data [7:0] = alu_in;
 
+end
 
-endmodule
+assign PC_H = data [15:8];
+assign PC_L = data [7:0];
+
+endmodule : gpReg

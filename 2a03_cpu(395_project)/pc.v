@@ -5,11 +5,11 @@ module PC #(parameter width=16)
 	input load_pc_h,
 	input load_pc_l,
 	input load_pc_h_mem,	
-	input alu_in [7:0],
-	input mem_in [7:0],
+	input PCL_in [7:0],
+	input PCH_in [7:0],
 
-	output PC_L [7:0],
-	output PC_H [7:0]
+	output PCL_out [7:0],
+	output PCH_out [7:0]
 );
 
 reg [width-1:0] data;

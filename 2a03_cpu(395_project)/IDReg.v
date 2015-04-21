@@ -9,7 +9,8 @@ module IDReg #(parameter width = 8) (
     input rst_n,
     input [1:0] inputSel,   // 0 = normal, 1 = +1, 2 = -1
     input [width-1:0] datain,
-    output dataout
+    output dataout, 
+    output carryout
 );
 
 
@@ -19,8 +20,8 @@ always @ (inputSel, datain)
 begin 
     case (inputSel)
         0: selOut = datain;
-        1: selOut = dataout+1;
-        2: selOut = dataout-1;
+        1: {carryout,selOut} = dataout+1;
+        2: {carryout,selOut} = dataout-1;
         default : selOut = datain;
     endcase
 end
