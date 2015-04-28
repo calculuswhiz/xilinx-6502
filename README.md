@@ -8,4 +8,6 @@ Some quick things:
 
 2. This is an educational project. The purpose was to learn more about the 6502 and accumlator type microarchitectures in general. To meet the first goal, we haven't tried optimizing components to the maximum and using modern techniques like having a fully pipelined processor; rather, we've stuck to a rather simple design and are planning on running at a rather low clock frequency, for reasons such as reason 1.
 
-3. This is a WIP.
+3. Check links.md for a list of sources we used for research and reference.
+
+4. This is a WIP.
