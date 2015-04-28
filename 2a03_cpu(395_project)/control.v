@@ -45,13 +45,12 @@ module control
 );
 
 //States:
-parameter SIZE = 3;
-parameter fetch = 1;
+parameter SIZE = 12;
 parameter alu_adc = 4'h00, alu_sbc = 4'h01, alu_eor = 4'h02, alu_ora = 4'h03, alu_and = 4'h04, alu_inc = 4'h05, alu_dec = 4'h06, alu_ror = 4'h07, alu_rol = 4'h08, alu_asl = 4'h09, alu_lsr = 4'h0a, alu_nop = 4'hff;
 `include "opCodeHex.v" // Holds all the opcode values.
 
-reg [SIZE:0] state;
-reg [SIZE:0] next_state;
+reg [SIZE-1:0] state;
+reg [SIZE-1:0] next_state;
 
 
 always_comb
@@ -124,7 +123,11 @@ begin : state_actions
     mem_rw  = 1;   // Default to read 
 
     case(state)
-        fetch: /*I don't know yet.*/ ;
+        fetch: 
+        begin
+            IR_ld = 1;
+        end
+        
         default: /* Do nothing */;
     endcase
     /* Actions for each state */
@@ -138,8 +141,10 @@ begin : next_state_logic
     case(state)
         fetch: 
         begin // See opCodeHex.v for all encodings.
-            case(ir[7:0])
-                
+            // Use commas to separate same next-states.
+            case({4'h0, ir[7:0]})
+                ADC_IMM: ;
+                default: /* Shippai :(. */;
             endcase
         end
 

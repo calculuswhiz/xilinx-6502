@@ -404,8 +404,8 @@ tristate Pbuf(
 );
 
 mux2 IRmux(
-    .a(ctl_irvect),
-    .b(xfer_bus),
+    .a(xfer_bus),
+    .b(ctl_irvect),
     .sel(IRmux_sel),
     .f(IRmux_out)
 );
