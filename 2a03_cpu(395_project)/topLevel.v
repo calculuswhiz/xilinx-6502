@@ -3,7 +3,7 @@ module topLevel (
     
     // Memory:
     inout [7:0] mem_data,
-    output mem_read,
+    output mem_rw,
     output [7:0] mem_addr_l,
     output [7:0] mem_addr_h
 );
@@ -22,19 +22,22 @@ wire Zl_en, Zh_en;
 // Load:
 wire X_ld, Y_ld, S_ld, A_ld;
 wire PCL_ld, PCH_ld;
+wire PCL_inc, PCH_inc;
 wire DL_ld, DH_ld;
+wire DH_inc;
 wire TL_ld, TH_ld;
+wire TH_inc;
 wire P_ld, IR_ld;
 
 // Selection:
 wire Smux_sel, Amux_sel;
-wire SID_sel;
+// wire SID_sel;
 wire [2:0] ALU_Amux_sel, ALU_Bmux_sel;
 wire PCLmux_sel, PCHmux_sel;
-wire PCLID_sel;
 wire DLmux_sel, DHmux_sel;
 wire TLmux_sel, THmux_sel;
 wire Pmux_sel;
+wire IRmux_sel;
 
 // Other ALU signals:
 wire [3:0] aluop;
@@ -56,8 +59,10 @@ reg [7:0] DL_out, DH_out;
 reg [7:0] DLmbuf_out, DLdbuf_out, DHmbuf_out, DHdbuf_out;
 reg [7:0] TL_out, TH_out;
 reg [7:0] TLmbuf_out, TLdbuf_out, THmbuf_out, THdbuf_out;
+reg [7:0] ctl_pvect;
 reg [7:0] P_out;
 reg [7:0] Pbuf_out;
+reg [7:0] ctl_irvect;
 reg [7:0] IR_out;
 reg [7:0] IRbuf_out;
 reg [7:0] xferubuf_out, xferdbuf_out;
@@ -68,6 +73,7 @@ reg [7:0] PCLmux_out, PCHmux_out;
 reg [7:0] DLmux_out, DHmux_out;
 reg [7:0] TLmux_out, THmux_out;
 reg [7:0] Pmux_out;
+reg [7:0] IRmux_out;
 
 // dev_zero
 reg [7:0] zeroin, zeroout;
@@ -77,9 +83,9 @@ reg [7:0] ZLbuf_out, ZHbuf_out;
 // Put stuff down from left to right:
 gpReg Xreg(
     .clk(),
-    .load(X_ld), 
-    .rst_n(1'b1), 
-    .in(data_bus), 
+    .load(X_ld),
+    .rst_n(1'b1),
+    .in(data_bus),
     .out(X_out)
 );
 
@@ -92,9 +98,9 @@ assign data_bus = Xbuf_out;
 
 gpReg Yreg(
     .clk(),
-    .load(Y_ld), 
-    .rst_n(1'b1), 
-    .in(data_bus), 
+    .load(Y_ld),
+    .rst_n(1'b1),
+    .in(data_bus),
     .out(Y_out)
 );
 
@@ -106,8 +112,8 @@ tristate Ybuf(
 assign data_bus = Ybuf_out;
 
 mux2 Smux(
-    .a(data_bus), 
-    .b(memory_bus_l), 
+    .a(data_bus),
+    .b(memory_bus_l),
     .sel(Smux_sel),
     .f(Smux_out)
 );
@@ -135,26 +141,26 @@ tristate Smbuf(
 assign memory_bus_l = Smbuf_out;
 
 mux8 ALU_Amux(
-    .in0(A_out), 
-    .in1(X_out), 
-    .in2(Y_out), 
-    .in3(S_out), 
-    .in4(data_bus), 
-    .in5(PCL_out), 
-    .in6(memory_bus_l), 
+    .in0(A_out),
+    .in1(X_out),
+    .in2(Y_out),
+    .in3(S_out),
+    .in4(data_bus),
+    .in5(PCL_out),
+    .in6(memory_bus_l),
     .in7(memory_bus_h),
     .sel(ALU_Amux_sel),
     .f(ALU_Amux_out)
 );
 
 mux8 ALU_Bmux(
-    .in0(A_out), 
-    .in1(X_out), 
-    .in2(Y_out), 
-    .in3(S_out), 
-    .in4(data_bus), 
-    .in5(PCL_out), 
-    .in6(memory_bus_l), 
+    .in0(A_out),
+    .in1(X_out),
+    .in2(Y_out),
+    .in3(S_out),
+    .in4(data_bus),
+    .in5(PCL_out),
+    .in6(memory_bus_l),
     .in7(memory_bus_h),
     .sel(ALU_Bmux_sel),
     .f(ALU_Bmux_out)
@@ -194,9 +200,9 @@ mux2 Amux(
 
 gpReg Areg(
     .clk(),
-    .load(A_ld), 
-    .rst_n(1'b1), 
-    .in(Amux_out), 
+    .load(A_ld),
+    .rst_n(1'b1),
+    .in(Amux_out),
     .out(A_out)
 ); 
 
@@ -214,28 +220,253 @@ dev_zero zero_device(
 
 mux2 PCLmux(
     .a(data_bus),
-    .b(memory_bus_l), 
+    .b(memory_bus_l),
     .sel(PCLmux_sel),
     .f(PCLmux_out)
 );
 
 mux2 PCHmux(
     .a(data_bus),
-    .b(memory_bus_h), 
+    .b(memory_bus_h),
     .sel(PCHmux_sel),
     .f(PCHmux_out)
 );
 
-IDReg PCL_reg(
-    .clk(),
-    .load(PCL_ld),
-    .rst_n(1'b1),
-    .inputSel(PCLID_sel),
-    .datain(PCLmux_out),
-    .dataout(PCL_out),
-    .carryout(PCL_carry)
+PC PC_reg(
+    .clk(clk),
+    .load_pc_h(PCL_ld),
+    .load_pc_l(PCH_ld),
+    .L_inc(PCL_inc),
+    .H_inc(PCH_inc),
+    .PCL_in(PCLmux_out),
+    .PCH_in(PCHmux_out),
+    .PCL_out(PCL_out),
+    .PCH_out(PCH_out)
 );
 
+tristate PCLdbuf(
+    .in(PCL_out),
+    .enable(PCLd_en),
+    .out(PCLdbuf_out)
+);
+assign data_bus= PCLdbuf_out;
 
+tristate PCLmbuf(
+    .in(PCL_out),
+    .enable(PCLm_en),
+    .out(PCLmbuf_out)
+);
+assign memory_bus_l= PCLmbuf_out;
+
+tristate PCHdbuf(
+    .in(PCH_out),
+    .enable(PCHd_en),
+    .out(PCHdbuf_out)
+);
+assign data_bus= PCHdbuf_out;
+
+tristate PCHmbuf(
+    .in(PCH_out),
+    .enable(PCHm_en),
+    .out(PCHmbuf_out)
+);
+assign memory_bus_h= PCHmbuf_out;
+
+// D section:
+mux2 DLmux(
+    .a(data_bus),
+    .b(memory_bus_l),
+    .sel(DLmux_sel),
+    .f(DLmux_out)
+);
+
+mux2 DHmux(
+    .a(data_bus),
+    .b(memory_bus_h),
+    .sel(DHmux_sel),
+    .f(DHmux_out)
+);
+
+PC D_reg(
+    .clk(clk),
+    .load_pc_h(DL_ld),
+    .load_pc_l(DH_ld),
+    .L_inc(1'b0),
+    .H_inc(DH_inc),
+    .PCL_in(DLmux_out),
+    .PCH_in(DHmux_out),
+    .PCL_out(DL_out),
+    .PCH_out(DH_out)
+);
+
+tristate DLdbuf(
+    .in(DL_out),
+    .enable(DLd_en),
+    .out(DLdbuf_out)
+);
+assign data_bus= DLdbuf_out;
+
+tristate DLmbuf(
+    .in(DL_out),
+    .enable(DLm_en),
+    .out(DLmbuf_out)
+);
+assign memory_bus_l= DLmbuf_out;
+
+tristate DHdbuf(
+    .in(DH_out),
+    .enable(DHd_en),
+    .out(DHdbuf_out)
+);
+assign data_bus= DHdbuf_out;
+
+tristate DHmbuf(
+    .in(DH_out),
+    .enable(DHm_en),
+    .out(DHmbuf_out)
+);
+assign memory_bus_h= DHmbuf_out;
+
+// T section:
+mux2 TLmux(
+    .a(data_bus),
+    .b(memory_bus_l),
+    .sel(TLmux_sel),
+    .f(TLmux_out)
+);
+
+mux2 THmux(
+    .a(data_bus),
+    .b(memory_bus_h),
+    .sel(THmux_sel),
+    .f(THmux_out)
+);
+
+PC T_reg(
+    .clk(clk),
+    .load_pc_h(TL_ld),
+    .load_pc_l(TH_ld),
+    .L_inc(1'b0),
+    .H_inc(TH_inc),
+    .PCL_in(TLmux_out),
+    .PCH_in(THmux_out),
+    .PCL_out(TL_out),
+    .PCH_out(TH_out)
+);
+
+tristate TLdbuf(
+    .in(TL_out),
+    .enable(TLd_en),
+    .out(TLdbuf_out)
+);
+assign data_bus= TLdbuf_out;
+
+tristate TLmbuf(
+    .in(TL_out),
+    .enable(TLm_en),
+    .out(TLmbuf_out)
+);
+assign memory_bus_l= TLmbuf_out;
+
+tristate THdbuf(
+    .in(TH_out),
+    .enable(THd_en),
+    .out(THdbuf_out)
+);
+assign data_bus= THdbuf_out;
+
+tristate THmbuf(
+    .in(TH_out),
+    .enable(THm_en),
+    .out(THmbuf_out)
+);
+assign memory_bus_h= THmbuf_out;
+
+mux2 Pmux(
+    .a(ctl_pvect),
+    .b(data_bus),
+    .sel(Pmux_sel),
+    .f(Pmux_out)
+);
+
+gpReg P_reg(
+    .clk(clk),
+    .load(P_ld),
+    .rst_n(1'b1),
+    .in(Pmux_out),
+    .out(P_out)
+);
+
+tristate Pbuf(
+    .in(P_out),
+    .enable(Pd_en),
+    .out(Pbuf_out)
+);
+
+mux2 IRmux(
+    .a(ctl_irvect),
+    .b(xfer_bus),
+    .sel(IRmux_sel),
+    .f(IRmux_out)
+);
+
+gpReg IR_reg(
+    .clk(clk),
+    .load(IR_ld),
+    .rst_n(1'b1),
+    .in(IRmux_out),
+    .out(IR_out)
+);
+
+tristate IRbuf(
+    .in(IR_out),
+    .enable(IR_en),
+    .out(IRbuf_out)
+);
+assign xfer_bus = IRbuf_out;
+
+tristate xferubuf(
+    .in(data_bus),
+    .enable(xferu_en),
+    .out(xferubuf_out)
+);
+assign xfer_bus = xferdbuf_out;
+
+tristate xferdbuf(
+    .in(xfer_bus),
+    .enable(xferd_en),
+    .out(xferdbuf_out)
+);
+assign data_bus = xferdbuf_out;
+
+control CTL(
+    .clk(clk),
+    .P_in(P_out),
+    .IR_in(IR_out),
+    .X_en(X_en), .Y_en(Y_en), .Sd_en(Sd_en), .Sm_en(Sm_en), .A_en(A_en),
+    .PCLd_en(PCLd_en), .PCLm_en(PCLm_en), .PCHd_en(PCHd_en), .PCHm_en(PCHm_en),
+    .DLd_en(DLd_en), .DLm_en(DLm_en), .DHd_en(DHd_en), .DHm_en(DHm_en),
+    .TLd_en(TLd_en), .TLm_en(TLm_en), .THd_en(THd_en), .THm_en(THm_en),
+    .Pd_en(Pd_en), .IR_en(IR_en),
+    .ALUd_en(ALUd_en), .ALUm_en(ALUm_en),
+    .xferu_en(xferu_en), .xferd_en(xferd_en),
+    .Zl_en(Zl_en), .Zh_en(Zh_en),
+    .X_ld(X_ld), .Y_ld(Y_ld), .S_ld(S_ld), .A_ld(A_ld),
+    .PCL_ld(PCL_ld), .PCH_ld(PCH_ld),
+    .PCL_inc(PCL_inc), .PCH_inc(PCH_inc),
+    .DL_ld(DL_ld), .DH_ld(DH_ld), .DH_inc(DH_inc),
+    .TL_ld(TL_ld), .TH_ld(TH_ld), .TH_inc(TH_inc),
+    .P_ld(P_ld), .IR_ld(IR_ld),
+    .Smux_sel(Smux_sel), .Amux_sel(Amux_sel),
+    .ALU_Amux_sel(ALU_Amux_sel), .ALU_Bmux_sel(ALU_Bmux_sel),
+    .PCLmux_sel(PCLmux_sel), .PCHmux_sel(PCHmux_sel),
+    .DLmux_sel(DLmux_sel), .DHmux_sel(DHmux_sel),
+    .TLmux_sel(TLmux_sel), .THmux_sel(THmux_sel),
+    .Pmux_sel(Pmux_sel),
+    .IRmux_sel(IRmux_sel),
+    .aluop(aluop),
+    .V_ctl(V_in), .C_ctl(C_in),
+    .mem_rw (mem_rw),
+);
 
 endmodule

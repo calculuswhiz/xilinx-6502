@@ -1,15 +1,18 @@
 module PC #(parameter width=16)
 (
 	input clk,
-	input PCinc,
+    
 	input load_pc_h,
 	input load_pc_l,
-	input load_pc_h_mem,	
-	input PCL_in [7:0],
-	input PCH_in [7:0],
-
-	output PCL_out [7:0],
-	output PCH_out [7:0]
+    
+    input L_inc,
+    input H_inc,
+    
+	input [7:0]    PCL_in,
+	input [7:0]    PCH_in,
+    
+	output [7:0]   PCL_out,
+	output [7:0]   PCH_out
 );
 
 reg [width-1:0] data;
@@ -21,18 +24,21 @@ end
 
 always @ (posedge clk)
 begin 
-    if (PCinc)
+    if (L_inc)
         data=data+1;
-    if (load_pc_h)
-    	data [15:8] = alu_in;
-    if (load_pc_h_mem) /*Hopefully only one of these is high ever.*/
-    	data [15:8] = mem_in;
-    if (load_pc_l) /*Not sure if you want to use alu_in, but it seems reasonable currently.*/
-    	data [7:0] = alu_in;
-
+    else if (H_inc)
+    begin
+        data[15:8]=data[15:8]+1;
+        data[7:0] =data[7:0];
+    end
+    else if (load_pc_h|load_pc_l)
+    begin
+    	data [15:8] = load_pc_h?PCH_in:data[15:8];
+    	data [7:0] = load_pc_l?PCL_in:data[7:0];
+    end
 end
 
-assign PC_H = data [15:8];
-assign PC_L = data [7:0];
+assign PCL_out = data [7:0];
+assign PCH_out = data [15:8];
 
 endmodule : gpReg

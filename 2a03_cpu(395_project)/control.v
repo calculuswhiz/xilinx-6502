@@ -3,77 +3,44 @@ module control
     /* Input and output port declarations */
     input clk,
     
-    // Input signals here:
-    // Flags:
-    input P_n,
-    input P_v,
-    input P_i,
-    input P_z,
-    input P_c,
-    input [7:0] IR,
+    input [7:0] P_in,
+    input [7:0] IR_in,
     
-    // Load signals here:
-    output X_ld,
-    output Y_ld,
-    output S_ld,
-    output A_ld,  
-          
-    output A_sel,       // multiplex input 0-data,1-alu
-    output D_sel,       // 0-data, 1-memory
-    output T_sel,
-    output S_sel,
-    output PC_sel,
+    // Control signals:
+    // Enable:
+    output X_en, Y_en, Sd_en, Sm_en, A_en,
+    output PCLd_en, PCLm_en, PCHd_en, PCHm_en,
+    output DLd_en, DLm_en, DHd_en, DHm_en,
+    output TLd_en, TLm_en, THd_en, THm_en,
+    output Pd_en, IR_en,
+    output ALUd_en, ALUm_en,
+    output xferu_en, xferd_en,
+    output Zl_en, Zh_en,
+
+    // Load:
+    output X_ld, Y_ld, S_ld, A_ld,
+    output PCL_ld, PCH_ld,
+    output PCL_inc, PCH_inc,
+    output DL_ld, DH_ld,
+    output DH_inc,
+    output TL_ld, TH_ld,
+    output TH_inc,
+    output P_ld, IR_ld,
+
+    // Selection:
+    output Smux_sel, Amux_sel,
+    // output SID_sel,
+    output [2:0] ALU_Amux_sel, ALU_Bmux_sel,
+    output PCLmux_sel, PCHmux_sel,
+    output DLmux_sel, DHmux_sel,
+    output TLmux_sel, THmux_sel,
+    output Pmux_sel,
+    output IRmux_sel,
+
+    // Other ALU signals:
+    output [3:0] aluop,
+    output V_ctl, C_ctl,  // Selectively decide whether to send these flags to the ALU
     
-    output PCL_inc,     // Increment PC signal, prevent invalidation
-    output PCL_ld,
-    output PCH_ld,
-    
-    output DL_ld,
-    output DH_ld,
-    
-    output TL_ld,
-    output TH_ld,
-    
-    output PN_ld,
-    output PV_ld,
-    output PI_ld,
-    output PZ_ld,
-    output PC_ld,
-    
-    output IR_ld,
-    
-    // Gates: default 0
-    output X_en,
-    output Y_en,
-    output Sm_en,
-    output Sd_en,
-    output ALUm_en,     // Goes to mem side
-    output ALUd_en,     // Goes to data side
-    output ALUA_en,     // Goes to accumulator
-    output AALU_en,     // Goes from A to ALU
-    output Ad_en,       // Goes from A to data side
-    output dA_en,       // Goes from data to A
-    output PCLm_en,     // Exception! Default to 1
-    output PCHm_en,     
-    output PCLd_en,     // Back to 0
-    output PCHd_en,     
-    output DLm_en,
-    output DHm_en,
-    output DLd_en,
-    output DHd_en,
-    output TLm_en,
-    output THm_en,
-    output TLd_en,
-    output THd_en,
-    output P_en,
-    output IR_en,
-    output mem_en,
-    output xferd_en,    // Prevents bus access conflict
-    output xferu_en,
-    
-    // Other:
-    output [3:0] aluop,   // default 5, I think, which is add.
-    output [1:0] addr_enable,   // Enable by default
     output mem_rw   // Default to read
 );
 
@@ -89,68 +56,71 @@ reg [SIZE:0] next_state;
 always_comb
 begin : state_actions
     /* Default output assignments */
-    // Load signals here:
+    // Enable:
+    X_en        = 0;
+    Y_en        = 0;
+    Sd_en       = 0;
+    Sm_en       = 0;
+    A_en        = 0;
+    PCLd_en     = 0;
+    PCLm_en     = 0;
+    PCHd_en     = 0;
+    PCHm_en     = 0;
+    DLd_en      = 0;
+    DLm_en      = 0;
+    DHd_en      = 0;
+    DHm_en      = 0;
+    TLd_en      = 0;
+    TLm_en      = 0;
+    THd_en      = 0;
+    THm_en      = 0;
+    Pd_en       = 0;
+    IR_en       = 0;
+    ALUd_en     = 0;
+    ALUm_en     = 0;
+    xferu_en    = 0;
+    xferd_en    = 0;
+    Zl_en       = 0;
+    Zh_en       = 0;
+    
+    // Load:
     X_ld    = 0;
     Y_ld    = 0;
     S_ld    = 0;
     A_ld    = 0;
-    
-    PCL_inc = 0;
     PCL_ld  = 0;
     PCH_ld  = 0;
-    
+    PCL_inc = 0;    // Yes, these are load signals too.
+    PCH_inc = 0;
     DL_ld   = 0;
     DH_ld   = 0;
-    
+    DH_inc  = 0;
     TL_ld   = 0;
     TH_ld   = 0;
-    
-    PN_ld   = 0;
-    PV_ld   = 0;
-    PI_ld   = 0;
-    PZ_ld   = 0;
-    PC_ld   = 0;
-    
+    TH_inc  = 0;
+    P_ld    = 0;
     IR_ld   = 0;
     
-    // Mulitplexed:
-    A_sel   = 0;
-    D_sel   = 0;
-    T_sel   = 0;
-    S_sel   = 0;
-    PC_sel  = 0;
-    
-    // Gates: default 0
-    X_en    = 0;
-    Y_en    = 0;
-    Sm_en   = 0;
-    Sd_en   = 0;
-    ALUm_en = 0;
-    ALUd_en = 0;
-    A_en    = 0;
-    PCLm_en = 1;    // Default 1!!
-    PCHm_en = 1;    // Default 1.
-    PCLd_en = 0;
-    PCHd_en = 0;
-    DLm_en  = 0;
-    DHm_en  = 0;
-    DLd_en  = 0;
-    DHd_en  = 0;
-    TLm_en  = 0;
-    THm_en  = 0;
-    TLd_en  = 0;
-    THd_en  = 0;
-    P_en    = 0;
-    IR_en   = 0;
-    mem_en  = 0;
-    xferd_en= 0;
-    xferu_en= 0;
-    
-    // Other:
-    aluop = alu_inc;
-    addr_enable = 2'b11;
-    mem_rw = 1;
-    alu_b_sel = 2'b00;    // Source b 
+    // Selection:
+    Smux_sel        = 0;
+    Amux_sel        = 0;
+    ALU_Amux_sel    = 2'b00;
+    ALU_Bmux_sel    = 2'b00;
+    PCLmux_sel      = 0;
+    PCHmux_sel      = 0;
+    DLmux_sel       = 0;
+    DHmux_sel       = 0;
+    TLmux_sel       = 0;
+    THmux_sel       = 0;
+    Pmux_sel        = 0;
+    IRmux_sel       = 0;
+        
+    // Other ALU signals:
+    aluop   = alu_nop;
+    V_ctl   = 0;
+    C_ctl   = 0;
+         
+    mem_rw  = 1;   // Default to read 
 
     case(state)
         fetch: /*I don't know yet.*/ ;
