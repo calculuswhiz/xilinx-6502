@@ -48,6 +48,7 @@ module control
 parameter SIZE = 3;
 parameter fetch = 1;
 parameter alu_adc = 4'h00, alu_sbc = 4'h01, alu_eor = 4'h02, alu_ora = 4'h03, alu_and = 4'h04, alu_inc = 4'h05, alu_dec = 4'h06, alu_ror = 4'h07, alu_rol = 4'h08, alu_asl = 4'h09, alu_lsr = 4'h0a, alu_nop = 4'hff;
+`include "opCodeHex.v" // Holds all the opcode values.
 
 reg [SIZE:0] state;
 reg [SIZE:0] next_state;
@@ -136,27 +137,9 @@ begin : next_state_logic
     next_state = state;
     case(state)
         fetch: 
-        begin
+        begin // See opCodeHex.v for all encodings.
             case(ir[7:0])
-                ADC:
-                AND:
-                ASL:
-                BIT:
-                BR:
-                BRK:
-                CMP:
-                CPX:
-                CPY:
-                DEC:
-                EOR:
-                INC:
-                JMP:
-                JSR:
-                JSR:
-                LDA:
-                LDX:
-                LDY:
-                LSR:
+                
             endcase
         end
 
