@@ -1,4 +1,4 @@
-!!Note that these are obsolete now. This was mostly just to derive the final datapath design. For instructions, please consult "xilinx-6502/6510_Instruction_Timing.txt"!!
+!!Note that these are obsolete now. This was mostly just to derive the final datapath design. For further details on instructions, please consult "xilinx-6502/6510_Instruction_Timing.txt"!!
 
 // For the start state
 fetch

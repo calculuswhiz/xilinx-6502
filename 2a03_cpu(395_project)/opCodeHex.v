@@ -155,4 +155,4 @@ TYA_IMP = 12'h098;
 // For sanity's sake, try to put them close to the original instruction as possible.
 // If more than 4 needed, feel free to use some of the unneeded ones form other instructions.
 parameter fetch = 12'h100;
-parameter jmp_abs_1 = 12'h14C;
+parameter JMP_ABS_1 = 12'h14C;

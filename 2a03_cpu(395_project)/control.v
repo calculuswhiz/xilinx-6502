@@ -66,9 +66,9 @@ begin : state_actions
     Sm_en       = 0;
     A_en        = 0;
     PCLd_en     = 0;
-    PCLm_en     = 0;
+    PCLm_en     = 1;    // Keep this as default addressor.
     PCHd_en     = 0;
-    PCHm_en     = 0;
+    PCHm_en     = 1;
     DLd_en      = 0;
     DLm_en      = 0;
     DHd_en      = 0;
@@ -151,7 +151,18 @@ begin : state_actions
         end
         JMP_ABS:
         begin 
-            
+            PCL_inc = 1;        // PC += 1
+            xferd_en = 1;       // DL = M
+            DL_ld = 1;
+        end
+        JMP_ABS_1:
+        begin 
+            xferd = 1;          // PCH = M
+            PCH_ld = 1;
+            PCLm_en = 0;        // PCL = DL
+            DLm_en = 1;
+            PCLmux_sel = 1;
+            PCL_ld = 1;
         end
         default: /* Do nothing */;
     endcase
@@ -168,9 +179,11 @@ begin : next_state_logic
             // Use commas to separate same next-states.
             case({4'h0, ir[7:0]})
                 ADC_IMM: next_state = ADC_IMM;
+                JMP_ABS: next_state = JMP_ABS;
                 default: /* Shippai :(. */;
             endcase
         end
+        JMP_ABS: next_state = JMP_ABS_1;
         default: next_state = fetch;
     endcase
 end
