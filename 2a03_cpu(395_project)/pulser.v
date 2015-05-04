@@ -19,7 +19,7 @@ begin
 	if(data == 1) //Low
 		begin
 			data = 0;
-			to_seven_seg = low|12'b000000100000
+			to_seven_seg = low |12'b000000100000
 		end
 	else //High
 		begin

@@ -5,7 +5,9 @@ module topLevel (
     inout [7:0] mem_data,
     output mem_rw,
     output [7:0] mem_addr_l,
-    output [7:0] mem_addr_h
+    output [7:0] mem_addr_h,
+    
+    output [11:0] sevenOut
 );
 
 // Internal signals:
@@ -82,7 +84,7 @@ reg [7:0] ZLbuf_out, ZHbuf_out;
 
 // Put stuff down from left to right:
 gpReg Xreg(
-    .clk(),
+    .clk(clk),
     .load(X_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -97,7 +99,7 @@ tristate Xbuf(
 assign data_bus = Xbuf_out;
 
 gpReg Yreg(
-    .clk(),
+    .clk(clk),
     .load(Y_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -119,7 +121,7 @@ mux2 Smux(
 );
 
 gpReg S(
-    .clk(),    // Clock
+    .clk(clk),    // Clock
     .load(S_ld),
     .rst_n(1'b1),
     .in(Smux_out),
@@ -201,7 +203,7 @@ mux2 Amux(
 );
 
 gpReg Areg(
-    .clk(),
+    .clk(clk),
     .load(A_ld),
     .rst_n(1'b1),
     .in(Amux_out),
@@ -471,6 +473,27 @@ control CTL(
     .aluop(aluop),
     .V_ctl(V_in), .C_ctl(C_in),
     .mem_rw (mem_rw),
+);
+
+wire [11:0] lo_ctl_out;
+wire [11:0] hi_ctl_out;
+
+sevenseg LO_CTL(
+    .in(A_out[7:4]),
+    .out(lo_ctl_out)
+);
+
+sevenseg HI_CTL(
+    .in(A_out[3:0]),
+    .out(hi_ctl_out)
+);
+
+// Seven-segment control stuff:
+pulser PULSER(
+    .clk(clk),
+    .low(lo_ctl_out),
+    .high(hi_ctl_out),
+    .to_seven_seg(sevenOut)
 );
 
 endmodule
