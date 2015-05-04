@@ -6,10 +6,10 @@ ALU.v
   -This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self-incrementors here and there.
 
 PC.v
-  -This is our code for our PC register, as well as the T and D registers. There are certain properties of these registers such as being 16-bit, that required us to make a separate register for them.
+  -This is our code for our PC register, as well as the T and D registers. There are certain properties of these registers, such as being 16-bit, that required us to make a separate register for them.
   
 control.v
-  -The heart of the project, this contains the output signals for the things in the project and our state machine.
+  -The heart of the project, this contains the output signals for the things in the project, as well as our state machine.
   
 dev_zero.v
   -When read, it returns 8 zeroes.
