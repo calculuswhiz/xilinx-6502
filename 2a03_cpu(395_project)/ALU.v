@@ -7,9 +7,9 @@ module ALU (
     input [3:0] operation,
 
     // Arithmetic flags:
-    // output negative,
+    output negative,
     output overflow,
-    // output zero,
+    output zero,
     output carry,
 
     // Output: (top bit will be carry bit)
@@ -85,6 +85,8 @@ begin
             carry=carry;
             overflow=overflowIn;
     endcase
+    negative = f[7];
+    zero = (f==0)?1:0;
 end
 
 endmodule

@@ -41,7 +41,7 @@ wire IRmux_sel;
 
 // Other ALU signals:
 wire [3:0] aluop;
-wire V_in, V_out, C_in, C_out;
+wire V_in, V_out, C_in, C_out, N_out, Z_out;
 
 // GP-Buses:
 reg [7:0] data_bus;
@@ -172,8 +172,10 @@ ALU ALU_6502(
     .carryIn(C_in),
     .overflowIn(V_in),
     .operation(aluop),
-    .carry(C_out),
+    .negative(N_out),
     .overflow(V_out),
+    .zero(Z_out),
+    .carry(C_out),
     .f(ALU_out) 
 );
 
@@ -443,6 +445,8 @@ control CTL(
     .clk(clk),
     .P_in(P_out),
     .IR_in(IR_out),
+    .alu_V(V_out), .alu_C(C_out), .alu_N(N_out), .alu_Z(Z_out),
+    .ctl_pvect(ctl_pvect), .ctl_irvect(ctl_irvect),
     .X_en(X_en), .Y_en(Y_en), .Sd_en(Sd_en), .Sm_en(Sm_en), .A_en(A_en),
     .PCLd_en(PCLd_en), .PCLm_en(PCLm_en), .PCHd_en(PCHd_en), .PCHm_en(PCHm_en),
     .DLd_en(DLd_en), .DLm_en(DLm_en), .DHd_en(DHd_en), .DHm_en(DHm_en),

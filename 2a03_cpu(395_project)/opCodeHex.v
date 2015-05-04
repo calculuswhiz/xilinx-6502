@@ -150,5 +150,9 @@ TXA_IMP = 12'h08A,
 TXS_IMP = 12'h09A,
 TYA_IMP = 12'h098;
 
-// Non-instructions are reserved at >0xff
+// Non-instruction states are reserved at >0xff
+// e.g. fetch, jmp_abs_1.
+// For sanity's sake, try to put them close to the original instruction as possible.
+// If more than 4 needed, feel free to use some of the unneeded ones form other instructions.
 parameter fetch = 12'h100;
+parameter jmp_abs_1 = 12'h14C;

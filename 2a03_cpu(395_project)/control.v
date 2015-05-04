@@ -5,6 +5,9 @@ module control
     
     input [7:0] P_in,
     input [7:0] IR_in,
+    input alu_V, alu_C, alu_N, alu_Z,
+    
+    output [7:0] ctl_pvect, ctl_irvect,
     
     // Control signals:
     // Enable:
@@ -117,20 +120,41 @@ begin : state_actions
         
     // Other ALU signals:
     aluop   = alu_nop;
-    V_ctl   = 0;
+    V_ctl   = 0;    // Need V_ctl?
     C_ctl   = 0;
          
     mem_rw  = 1;   // Default to read 
 
+    /* State actions: */
     case(state)
         fetch: 
         begin
             IR_ld = 1;
+            PCL_inc = 1;
         end
-        
+        ADC_IMM:
+        begin 
+            PCL_inc = 1;        // PC+=1
+            IR_ld = 1;          // Get next instruction
+            IR_en = 1;          // Get IR onto the bus.
+            xferd_en = 1;
+            ALU_Bmux_sel = 3'b100;  // A+M+C
+            C_ctl = P_in[0];
+            aluop = alu_adc;    
+            Amux_sel = 1;       // Store at A
+            A_ld = 1;
+            ctl_pvect[7]=alu_N; // Set flags
+            ctl_pvect[6]=alu_V;
+            ctl_pvect[1]=alu_Z;
+            ctl_pvect[0]=alu_C;
+            P_ld = 1;
+        end
+        JMP_ABS:
+        begin 
+            
+        end
         default: /* Do nothing */;
     endcase
-    /* Actions for each state */
 end
 
 always_comb
@@ -139,15 +163,14 @@ begin : next_state_logic
      * for transitioning between states */
     next_state = state;
     case(state)
-        fetch: 
+        fetch, ADC_IMM: 
         begin // See opCodeHex.v for all encodings.
             // Use commas to separate same next-states.
             case({4'h0, ir[7:0]})
-                ADC_IMM: ;
+                ADC_IMM: next_state = ADC_IMM;
                 default: /* Shippai :(. */;
             endcase
         end
-
         default: next_state = fetch;
     endcase
 end
