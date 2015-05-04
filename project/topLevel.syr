@@ -1,0 +1,944 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> 
+Reading design: topLevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "topLevel.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "topLevel"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : topLevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v" into library work
+Parsing module <tristate>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v" into library work
+Parsing module <sevenseg>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/pulser.v" into library work
+Parsing module <pulser>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v" into library work
+Parsing module <PC>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux8.v" into library work
+Parsing module <mux8>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v" into library work
+Parsing module <mux2>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v" into library work
+Parsing module <gpReg>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/dev_zero.v" into library work
+Parsing module <dev_zero>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" into library work
+Parsing module <control>.
+Parsing verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/opCodeHex.v" included at line 53.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" into library work
+Parsing module <topLevel>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <topLevel>.
+
+Elaborating module <gpReg>.
+
+Elaborating module <tristate>.
+
+Elaborating module <mux2>.
+
+Elaborating module <mux8>.
+
+Elaborating module <ALU>.
+WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 181: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
+
+Elaborating module <dev_zero>.
+
+Elaborating module <PC>.
+WARNING:HDLCompiler:1127 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 421: Assignment to Pbuf_out ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 449: Assignment to xferubuf_out ignored, since the identifier is never used
+
+Elaborating module <control>.
+WARNING:HDLCompiler:413 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 122: Result of 8-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 142: Signal <P_in> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 146: Signal <alu_N> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 147: Signal <alu_V> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 148: Signal <alu_Z> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 149: Signal <alu_C> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" Line 180: Signal <IR_in> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <sevenseg>.
+
+Elaborating module <pulser>.
+WARNING:HDLCompiler:634 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 81: Net <zeroin[7]> does not have a driver.
+WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 418. All outputs of instance <Pbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 446. All outputs of instance <xferubuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <topLevel>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v".
+INFO:Xst:3210 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 418: Output port <out> of the instance <Pbuf> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 446: Output port <out> of the instance <xferubuf> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <zeroin> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <topLevel> synthesized.
+
+Synthesizing Unit <gpReg>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v".
+        width = 8
+WARNING:Xst:647 - Input <load> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <data>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <gpReg> synthesized.
+
+Synthesizing Unit <tristate>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v".
+    Found 1-bit tristate buffer for signal <out<7>> created at line 7
+    Found 1-bit tristate buffer for signal <out<6>> created at line 7
+    Found 1-bit tristate buffer for signal <out<5>> created at line 7
+    Found 1-bit tristate buffer for signal <out<4>> created at line 7
+    Found 1-bit tristate buffer for signal <out<3>> created at line 7
+    Found 1-bit tristate buffer for signal <out<2>> created at line 7
+    Found 1-bit tristate buffer for signal <out<1>> created at line 7
+    Found 1-bit tristate buffer for signal <out<0>> created at line 7
+    Summary:
+	inferred   8 Tristate(s).
+Unit <tristate> synthesized.
+
+Synthesizing Unit <mux2>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux2> synthesized.
+
+Synthesizing Unit <mux8>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux8.v".
+    Found 8-bit 8-to-1 multiplexer for signal <f> created at line 8.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux8> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v".
+    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_3_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_5_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_10_OUT> created at line 77.
+    Found 9-bit adder for signal <n0064> created at line 41.
+    Found 9-bit adder for signal <BUS_0001_GND_14_o_add_1_OUT> created at line 41.
+    Found 9-bit adder for signal <n0059> created at line 71.
+    Found 9-bit 13-to-1 multiplexer for signal <f> created at line 38.
+WARNING:Xst:737 - Found 1-bit latch for signal <carry>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred   1 Latch(s).
+	inferred  28 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <dev_zero>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/dev_zero.v".
+WARNING:Xst:647 - Input <datain> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <dev_zero> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v".
+        width = 16
+    Found 16-bit register for signal <data>.
+    Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 28.
+    Found 8-bit adder for signal <data[15]_GND_17_o_add_2_OUT> created at line 31.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <PC> synthesized.
+
+Synthesizing Unit <control>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v".
+        SIZE = 12
+        alu_adc = 8'b00000000
+        alu_sbc = 8'b00000001
+        alu_eor = 8'b00000010
+        alu_ora = 8'b00000011
+        alu_and = 8'b00000100
+        alu_inc = 8'b00000101
+        alu_dec = 8'b00000110
+        alu_ror = 8'b00000111
+        alu_rol = 8'b00001000
+        alu_asl = 8'b00001001
+        alu_lsr = 8'b00001010
+        alu_nop = 8'b11111111
+        ADC_ABS = 12'b000001101101
+        ADC_ABX = 12'b000001111101
+        ADC_ABY = 12'b000001111001
+        ADC_IMM = 12'b000001101001
+        ADC_INX = 12'b000001100001
+        ADC_INY = 12'b000001110001
+        ADC_ZPG = 12'b000001100101
+        ADC_ZPX = 12'b000001110101
+        AND_ABS = 12'b000000101101
+        AND_ABX = 12'b000000111101
+        AND_ABY = 12'b000000111001
+        AND_IMM = 12'b000000101001
+        AND_INX = 12'b000000100001
+        AND_INY = 12'b000000110001
+        AND_ZPG = 12'b000000100101
+        AND_ZPX = 12'b000000110101
+        ASL_ABS = 12'b000000001110
+        ASL_ABX = 12'b000000011110
+        ASL_ACC = 12'b000000001010
+        ASL_ZPG = 12'b000000000110
+        ASL_ZPX = 12'b000000010110
+        BCC_REL = 12'b000010010000
+        BCS_REL = 12'b000010110000
+        BEQ_REL = 12'b000011110000
+        BIT_ABS = 12'b000000101100
+        BIT_ZPG = 12'b000000100100
+        BMI_REL = 12'b000000110000
+        BNE_REL = 12'b000011010000
+        BPL_REL = 12'b000000010000
+        BRK_IMP = 12'b000000000000
+        BVC_REL = 12'b000001010000
+        BVS_REL = 12'b000001110000
+        CLC_IMP = 12'b000000011000
+        CLD_IMP = 12'b000011011000
+        CLI_IMP = 12'b000001011000
+        CLV_IMP = 12'b000010111000
+        CMP_ABS = 12'b000011001101
+        CMP_ABX = 12'b000011011101
+        CMP_ABY = 12'b000011011001
+        CMP_IMM = 12'b000011001001
+        CMP_INX = 12'b000011000001
+        CMP_INY = 12'b000011010001
+        CMP_ZPG = 12'b000011000101
+        CMP_ZPX = 12'b000011010101
+        CPX_ABS = 12'b000011101100
+        CPX_IMM = 12'b000011100000
+        CPX_ZPG = 12'b000011100100
+        CPY_ABS = 12'b000011001100
+        CPY_IMM = 12'b000011000000
+        CPY_ZPG = 12'b000011000100
+        DEC_ABS = 12'b000011001110
+        DEC_ABX = 12'b000011011110
+        DEX_IMP = 12'b000011001010
+        DEY_IMP = 12'b000010001000
+        DEC_ZPG = 12'b000011000110
+        DEC_ZPX = 12'b000011010110
+        EOR_ABS = 12'b000001001101
+        EOR_ABX = 12'b000001011101
+        EOR_ABY = 12'b000001011001
+        EOR_IMM = 12'b000001001001
+        EOR_INX = 12'b000001000001
+        EOR_INY = 12'b000001010001
+        EOR_ZPG = 12'b000001000101
+        EOR_ZPX = 12'b000001010101
+        INC_ABS = 12'b000011101110
+        INC_ABX = 12'b000011111110
+        INC_ZPG = 12'b000011100110
+        INC_ZPX = 12'b000011110110
+        INX_IMP = 12'b000011101000
+        INY_IMP = 12'b000011001000
+        JMP_ABS = 12'b000001001100
+        JMP_IND = 12'b000001101100
+        JSR_ABS = 12'b000000100000
+        LDA_ABS = 12'b000010101101
+        LDA_ABX = 12'b000010111101
+        LDA_ABY = 12'b000010111001
+        LDA_IMM = 12'b000010101001
+        LDA_INX = 12'b000010100001
+        LDA_INY = 12'b000010110001
+        LDA_ZPG = 12'b000010100101
+        LDA_ZPX = 12'b000010110101
+        LDX_ABS = 12'b000010101110
+        LDX_ABY = 12'b000010111110
+        LDX_IMM = 12'b000010100010
+        LDX_ZPG = 12'b000010100110
+        LDX_ZPY = 12'b000010110110
+        LDY_ABS = 12'b000010101100
+        LDY_ABX = 12'b000010111100
+        LDY_IMM = 12'b000010100000
+        LDY_ZPG = 12'b000010100100
+        LDY_ZPX = 12'b000010110100
+        LSR_ABS = 12'b000001001110
+        LSR_ABX = 12'b000001011110
+        LSR_ACC = 12'b000001001010
+        LSR_ZPG = 12'b000001000110
+        LSR_ZPX = 12'b000001010110
+        NOP_IMP = 12'b000011101010
+        ORA_ABS = 12'b000000001101
+        ORA_ABX = 12'b000000011101
+        ORA_ABY = 12'b000000011001
+        ORA_IMM = 12'b000000001001
+        ORA_INX = 12'b000000000001
+        ORA_INY = 12'b000000010001
+        ORA_ZPG = 12'b000000000101
+        ORA_ZPX = 12'b000000010101
+        PHA_IMP = 12'b000001001000
+        PHP_IMP = 12'b000000001000
+        PLP_IMP = 12'b000000101000
+        PLA_IMP = 12'b000001101000
+        ROL_ABS = 12'b000000101110
+        ROL_ABX = 12'b000000111110
+        ROL_ACC = 12'b000000101010
+        ROL_ZPG = 12'b000000100110
+        ROL_ZPX = 12'b000000110110
+        ROR_ABS = 12'b000001101110
+        ROR_ABX = 12'b000001111110
+        ROR_ACC = 12'b000001101010
+        ROR_ZPG = 12'b000001100110
+        ROR_ZPX = 12'b000001110110
+        RTI_IMP = 12'b000001000000
+        RTS_IMP = 12'b000001100000
+        SBC_ABS = 12'b000011101101
+        SBC_ABX = 12'b000011111101
+        SBC_ABY = 12'b000011111001
+        SBC_IMM = 12'b000011101001
+        SBC_INX = 12'b000011100001
+        SBC_INY = 12'b000011110001
+        SBC_ZPG = 12'b000011100101
+        SBC_ZPX = 12'b000011110101
+        SEC_IMP = 12'b000000111000
+        SED_IMP = 12'b000011111000
+        SEI_IMP = 12'b000001111000
+        STA_ABS = 12'b000010001101
+        STA_ABX = 12'b000010011101
+        STA_ABY = 12'b000010011001
+        STA_INX = 12'b000010000001
+        STA_INY = 12'b000010010001
+        STA_ZPG = 12'b000010000101
+        STA_ZPX = 12'b000010010101
+        STX_ABS = 12'b000010001110
+        STX_ZPG = 12'b000010000110
+        STX_ZPY = 12'b000010010110
+        STY_ABS = 12'b000010001100
+        STY_ZPG = 12'b000010000100
+        STY_ZPX = 12'b000010010100
+        TAX_IMP = 12'b000010101010
+        TAY_IMP = 12'b000010101000
+        TSX_IMP = 12'b000010111010
+        TXA_IMP = 12'b000010001010
+        TXS_IMP = 12'b000010011010
+        TYA_IMP = 12'b000010011000
+        fetch = 12'b000100000000
+        JMP_ABS_1 = 12'b000101001100
+WARNING:Xst:647 - Input <P_in<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <ctl_pvect<5:2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <ctl_irvect> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 12-bit register for signal <state>.
+WARNING:Xst:737 - Found 1-bit latch for signal <ctl_pvect<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ctl_pvect<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ctl_pvect<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <ctl_pvect<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <state> would allow inference of a finite state machine and as consequence better performance and smaller area.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   4 Latch(s).
+	inferred   1 Multiplexer(s).
+Unit <control> synthesized.
+
+Synthesizing Unit <sevenseg>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   9 Latch(s).
+Unit <sevenseg> synthesized.
+
+Synthesizing Unit <pulser>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/pulser.v".
+    Found 12-bit register for signal <to_seven_seg>.
+    Found 1-bit register for signal <data>.
+    Summary:
+	inferred  13 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <pulser> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 11
+ 16-bit adder                                          : 3
+ 8-bit adder                                           : 3
+ 9-bit adder                                           : 2
+ 9-bit addsub                                          : 1
+ 9-bit subtractor                                      : 2
+# Registers                                            : 12
+ 1-bit register                                        : 1
+ 12-bit register                                       : 2
+ 16-bit register                                       : 3
+ 8-bit register                                        : 6
+# Latches                                              : 23
+ 1-bit latch                                           : 23
+# Multiplexers                                         : 54
+ 1-bit 2-to-1 multiplexer                              : 13
+ 12-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 16
+ 8-bit 8-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 16
+# Tristates                                            : 184
+ 1-bit tristate buffer                                 : 184
+# Xors                                                 : 5
+ 1-bit xor2                                            : 4
+ 9-bit xor2                                            : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <out_8> (without init value) has a constant value of 0 in block <HI_CTL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_8> (without init value) has a constant value of 0 in block <LO_CTL>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_15> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_14> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_13> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_12> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_11> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_10> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_9> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_8> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_7> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_6> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_5> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_4> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_3> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_2> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_1> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_0> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <data_1> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_2> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_3> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_4> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_5> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_6> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:2677 - Node <data_7> of sequential type is unconnected in block <P_reg>.
+WARNING:Xst:1290 - Hierarchical block <TLmux> is unconnected in block <topLevel>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <THmux> is unconnected in block <topLevel>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <PC>.
+The following registers are absorbed into counter <data>: 1 register on signal <data>.
+Unit <PC> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 7
+ 8-bit adder                                           : 3
+ 9-bit adder carry in                                  : 1
+ 9-bit addsub                                          : 1
+ 9-bit subtractor                                      : 2
+# Counters                                             : 3
+ 16-bit up counter                                     : 3
+# Registers                                            : 73
+ Flip-Flops                                            : 73
+# Multiplexers                                         : 50
+ 1-bit 2-to-1 multiplexer                              : 12
+ 12-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 8-bit 2-to-1 multiplexer                              : 16
+ 8-bit 8-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 16
+# Xors                                                 : 5
+ 1-bit xor2                                            : 4
+ 9-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <out_8> (without init value) has a constant value of 0 in block <sevenseg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_1> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_4> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_7> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_9> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_10> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <state_11> (without init value) has a constant value of 0 in block <control>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2042 - Unit tristate: 8 internal tristates are replaced by logic (pull-up yes): out<0>, out<1>, out<2>, out<3>, out<4>, out<5>, out<6>, out<7>.
+
+Optimizing unit <topLevel> ...
+
+Optimizing unit <gpReg> ...
+
+Optimizing unit <control> ...
+INFO:Xst:2261 - The FF/Latch <state_3> in Unit <control> is equivalent to the following FF/Latch, which will be removed : <state_6> 
+INFO:Xst:2261 - The FF/Latch <state_0> in Unit <control> is equivalent to the following FF/Latch, which will be removed : <state_5> 
+
+Optimizing unit <pulser> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <sevenseg> ...
+WARNING:Xst:1710 - FF/Latch <PULSER/to_seven_seg_8> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_11> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_15> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_14> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_13> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_12> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_11> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_10> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_9> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_8> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <P_reg/data_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_4> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <CTL/ctl_pvect_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <CTL/ctl_pvect_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <CTL/ctl_pvect_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_8> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_9> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_10> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_11> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_12> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_13> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_14> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_15> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:1293 - FF/Latch <D_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <PULSER/to_seven_seg_7> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_0> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_0> <Xreg/data_0> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_1> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_1> <Xreg/data_1> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_2> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_2> <Xreg/data_2> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_3> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_3> <Xreg/data_3> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_4> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_4> <Xreg/data_4> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_5> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_5> <Xreg/data_5> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_6> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_6> <Xreg/data_6> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_7> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <Yreg/data_7> <Xreg/data_7> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_0> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_0> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_1> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_1> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_2> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_2> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_3> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_3> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_4> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_4> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_5> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_5> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_6> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_6> 
+INFO:Xst:2261 - The FF/Latch <IR_reg/data_7> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <S/data_7> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block topLevel, actual ratio is 3.
+WARNING:Xst:2677 - Node <PC_reg/data_0> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_4> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_8> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_9> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_10> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_11> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_12> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_13> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_14> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_15> of sequential type is unconnected in block <topLevel>.
+FlipFlop CTL/state_0 has been replicated 2 time(s)
+FlipFlop CTL/state_2 has been replicated 2 time(s)
+FlipFlop CTL/state_3 has been replicated 2 time(s)
+FlipFlop CTL/state_8 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 39
+ Flip-Flops                                            : 39
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : topLevel.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 98
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 1
+#      LUT3                        : 14
+#      LUT4                        : 26
+#      LUT5                        : 14
+#      LUT6                        : 22
+#      MUXCY                       : 8
+#      VCC                         : 1
+#      XORCY                       : 8
+# FlipFlops/Latches                : 57
+#      FD                          : 22
+#      FDE                         : 17
+#      LD                          : 18
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 14
+#      IBUF                        : 1
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              57  out of  11440     0%  
+ Number of Slice LUTs:                   80  out of   5720     1%  
+    Number used as Logic:                80  out of   5720     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     89
+   Number with an unused Flip Flop:      32  out of     89    35%  
+   Number with an unused LUT:             9  out of     89    10%  
+   Number of fully used LUT-FF pairs:    48  out of     89    53%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          38
+ Number of bonded IOBs:                  14  out of    186     7%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)   | Load  |
+-----------------------------------+-------------------------+-------+
+clk                                | IBUF+BUFG               | 39    |
+ALU_Bmux_sel<2>(CTL/IR_en<11>1:O)  | NONE(*)(CTL/ctl_pvect_0)| 2     |
+Areg/data_3                        | NONE(HI_CTL/out_0)      | 8     |
+Areg/data_7                        | NONE(LO_CTL/out_0)      | 8     |
+-----------------------------------+-------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.367ns (Maximum Frequency: 135.736MHz)
+   Minimum input arrival time before clock: 2.838ns
+   Maximum output required time after clock: 4.475ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.367ns (frequency: 135.736MHz)
+  Total number of paths / destination ports: 2166 / 38
+-------------------------------------------------------------------------
+Delay:               7.367ns (Levels of Logic = 12)
+  Source:            CTL/state_0 (FF)
+  Destination:       Areg/data_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: CTL/state_0 to Areg/data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              21   0.525   1.310  CTL/state_0 (CTL/state_0)
+     LUT4:I3->O            8   0.254   1.172  ALUdbuf_out<0>LogicTrst11 (ALUdbuf_out<0>LogicTrst1)
+     LUT5:I2->O            5   0.235   0.841  ALUdbuf_out<0>LogicTrst1 (ALU_Bmux/Mmux_f_3)
+     LUT6:I5->O            1   0.254   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_lut<0> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<0> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<1> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<2> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<3> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<4> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<5> (ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_cy<5>)
+     XORCY:CI->O           3   0.206   0.766  ALU_6502/Madd_BUS_0001_GND_14_o_add_1_OUT_Madd_xor<6> (ALU_6502/BUS_0001_GND_14_o_add_1_OUT<6>)
+     LUT6:I5->O            1   0.254   0.910  ALU_6502/Mmux_f7_rs_lut<6>1 (ALU_6502/Mmux_f7_rs_lut<6>)
+     LUT6:I3->O            1   0.235   0.000  Amux/Mmux_f8 (Amux_out<7>)
+     FDE:D                     0.074          Areg/data_7
+    ----------------------------------------
+    Total                      7.367ns (2.368ns logic, 4.999ns route)
+                                       (32.1% logic, 67.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ALU_Bmux_sel<2>'
+  Clock period: 1.298ns (frequency: 770.416MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.298ns (Levels of Logic = 0)
+  Source:            ALU_6502/carry (LATCH)
+  Destination:       CTL/ctl_pvect_0 (LATCH)
+  Source Clock:      ALU_Bmux_sel<2> falling
+  Destination Clock: ALU_Bmux_sel<2> falling
+
+  Data Path: ALU_6502/carry to CTL/ctl_pvect_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.581   0.681  ALU_6502/carry (ALU_6502/carry)
+     LD:D                      0.036          CTL/ctl_pvect_0
+    ----------------------------------------
+    Total                      1.298ns (0.617ns logic, 0.681ns route)
+                                       (47.5% logic, 52.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Offset:              2.838ns (Levels of Logic = 1)
+  Source:            clk (PAD)
+  Destination:       IR_reg/data_7 (FF)
+  Destination Clock: clk rising
+
+  Data Path: clk to IR_reg/data_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            17   1.328   1.208  clk_IBUF (clk_IBUF)
+     FDE:CE                    0.302          IR_reg/data_7
+    ----------------------------------------
+    Total                      2.838ns (1.630ns logic, 1.208ns route)
+                                       (57.4% logic, 42.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              4.475ns (Levels of Logic = 1)
+  Source:            PULSER/to_seven_seg_7 (FF)
+  Destination:       sevenOut<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: PULSER/to_seven_seg_7 to sevenOut<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              11   0.525   1.038  PULSER/to_seven_seg_7 (PULSER/to_seven_seg_7)
+     OBUF:I->O                 2.912          sevenOut_7_OBUF (sevenOut<7>)
+    ----------------------------------------
+    Total                      4.475ns (3.437ns logic, 1.038ns route)
+                                       (76.8% logic, 23.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ALU_Bmux_sel<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ALU_Bmux_sel<2>|         |         |    1.298|         |
+clk            |         |         |    6.257|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Areg/data_3
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.099|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock Areg/data_7
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.130|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ALU_Bmux_sel<2>|         |    1.336|         |         |
+Areg/data_3    |    1.695|         |         |         |
+Areg/data_7    |    1.591|         |         |         |
+clk            |    7.367|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.54 secs
+ 
+--> 
+
+
+Total memory usage is 388060 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  128 (   0 filtered)
+Number of infos    :   23 (   0 filtered)
+

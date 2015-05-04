@@ -7,13 +7,13 @@ module ALU (
     input [3:0] operation,
 
     // Arithmetic flags:
-    output negative,
-    output overflow,
-    output zero,
-    output carry,
+    output reg negative,
+    output reg overflow,
+    output reg zero,
+    output reg carry,
 
     // Output: (top bit will be carry bit)
-    output [8:0] f 
+    output reg [8:0] f 
 );
 
 // wire [2:0] opSel;
@@ -37,56 +37,80 @@ always
 begin 
     casez (operation)
         4'h00: // add carry
+        begin
             f = a+b+carryIn;
             carry = f[8];
             overflow = (a[7]^f[7])&(b[7]^f[7]);
+        end
         4'h01: // subtract borrow
+        begin
             f = a-b-~carryIn;
             carry = ~f[8];
             overflow = (a[7]^f[7])&(b[7]^f[7]);
+        end
         4'h02: // exclusive or
+        begin
             f = a^b;
             carry = carryIn;
             overflow = overflowIn;
+        end
         4'h03: // bitwise or
+        begin
             f = a|b;
             carry = carryIn;
             overflow = overflowIn;
+        end
         4'h04: // bitwise and
+        begin
             f = a&b;
             carry = carryIn;
             overflow = overflowIn;
+        end
         4'h05: // increment
-            f = a+1;
+        begin
+            f = a+1'b1;
             carry = carryIn;
             overflow = overflowIn;
+        end
         4'h06: // decrement
-            f = a-1;
+        begin
+            f = a-1'b1;
             carry = carryIn;
             overflow = overflowIn;
+        end
         4'h07: // rotate right
+        begin
             f = {carryIn,b[7:1]};
             carry = b[0];
             overflow = overflowIn;
+        end
         4'h08: // rotate left
+        begin
             f = {b[6:0],carryIn};
             carry = b[7];
             overflow = overflowIn;
+        end
         4'h09: // Shift left
-            f = {b[6:0],0};
+        begin
+            f = {b[6:0],1'b0};
             carry = b[7];
             overflow = overflowIn;
+        end
         4'h0a: // Shift right
-            f = {0, b[7:1]};
+        begin
+            f = {1'b0, b[7:1]};
             carry = b[0];
             overflow = overflowIn;
+        end
         default:  // NOP (Actually pass input a)
+        begin
             f=a;
             carry=carry;
             overflow=overflowIn;
+        end
     endcase
     negative = f[7];
-    zero = (f==0)?1:0;
+    zero = (f==0)?1'b1:1'b0;
 end
 
 endmodule

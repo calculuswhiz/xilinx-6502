@@ -46,40 +46,40 @@ wire [3:0] aluop;
 wire V_in, V_out, C_in, C_out, N_out, Z_out;
 
 // GP-Buses:
-reg [7:0] data_bus;
-reg [7:0] memory_bus_h, memory_bus_l;
-reg [7:0] xfer_bus;
+wire [7:0] data_bus;
+wire [7:0] memory_bus_h, memory_bus_l;
+wire [7:0] xfer_bus;
 
 // Output data:
-reg [7:0] X_out, Y_out, S_out, A_out, ALU_out;
-reg [7:0] Xbuf_out, Ybuf_out, Smbuf_out, Sdbuf_out, Abuf_out;
-reg [7:0] ALUdbuf_out, ALUmbuf_out;
-reg [7:0] PCL_out, PCH_out;
-reg       PCL_carry;
-reg [7:0] PCLmbuf_out, PCLdbuf_out, PCHmbuf_out, PCHdbuf_out;
-reg [7:0] DL_out, DH_out;
-reg [7:0] DLmbuf_out, DLdbuf_out, DHmbuf_out, DHdbuf_out;
-reg [7:0] TL_out, TH_out;
-reg [7:0] TLmbuf_out, TLdbuf_out, THmbuf_out, THdbuf_out;
-reg [7:0] ctl_pvect;
-reg [7:0] P_out;
-reg [7:0] Pbuf_out;
-reg [7:0] ctl_irvect;
-reg [7:0] IR_out;
-reg [7:0] IRbuf_out;
-reg [7:0] xferubuf_out, xferdbuf_out;
+wire [7:0] X_out, Y_out, S_out, A_out, ALU_out;
+wire [7:0] Xbuf_out, Ybuf_out, Smbuf_out, Sdbuf_out, Abuf_out;
+wire [7:0] ALUdbuf_out, ALUmbuf_out;
+wire [7:0] PCL_out, PCH_out;
+wire       PCL_carry;
+wire [7:0] PCLmbuf_out, PCLdbuf_out, PCHmbuf_out, PCHdbuf_out;
+wire [7:0] DL_out, DH_out;
+wire [7:0] DLmbuf_out, DLdbuf_out, DHmbuf_out, DHdbuf_out;
+wire [7:0] TL_out, TH_out;
+wire [7:0] TLmbuf_out, TLdbuf_out, THmbuf_out, THdbuf_out;
+wire [7:0] ctl_pvect;
+wire [7:0] P_out;
+wire [7:0] Pbuf_out;
+wire [7:0] ctl_irvect;
+wire [7:0] IR_out;
+wire [7:0] IRbuf_out;
+wire [7:0] xferubuf_out, xferdbuf_out;
 
 // Mulitplexed data:
-reg [7:0] Smux_out, ALU_Amux_out, ALU_Bmux_out, Amux_out;
-reg [7:0] PCLmux_out, PCHmux_out;
-reg [7:0] DLmux_out, DHmux_out;
-reg [7:0] TLmux_out, THmux_out;
-reg [7:0] Pmux_out;
-reg [7:0] IRmux_out;
+wire [7:0] Smux_out, ALU_Amux_out, ALU_Bmux_out, Amux_out;
+wire [7:0] PCLmux_out, PCHmux_out;
+wire [7:0] DLmux_out, DHmux_out;
+wire [7:0] TLmux_out, THmux_out;
+wire [7:0] Pmux_out;
+wire [7:0] IRmux_out;
 
 // dev_zero
-reg [7:0] zeroin, zeroout;
-reg [7:0] ZLbuf_out, ZHbuf_out;
+wire [7:0] zeroin, zeroout;
+wire [7:0] ZLbuf_out, ZHbuf_out;
 
 
 // Put stuff down from left to right:
@@ -125,7 +125,7 @@ gpReg S(
     .load(S_ld),
     .rst_n(1'b1),
     .in(Smux_out),
-    .out(S_out),
+    .out(S_out)
 );
 
 tristate Sdbuf(
@@ -133,7 +133,7 @@ tristate Sdbuf(
     .enable(Sd_en),
     .out(Sdbuf_out)
 );
-assign data_bus = Xbuf_out;
+assign data_bus = Sdbuf_out;
 
 tristate Smbuf(
     .in(S_out),
@@ -178,22 +178,22 @@ ALU ALU_6502(
     .overflow(V_out),
     .zero(Z_out),
     .carry(C_out),
-    .f(ALU_out) 
+    .f(ALU_out[7:0])
 );
 
 tristate ALUd_buf(
     .in(ALU_out),
     .enable(ALUd_en),
-    .out(ALUd_buf_out)
+    .out(ALUdbuf_out)
 );
-assign data_bus = ALUd_buf_out;
+assign data_bus = ALUdbuf_out;
 
 tristate ALUm_buf(
     .in(ALU_out),
     .enable(ALUm_en),
-    .out(ALUm_buf_out)
+    .out(ALUmbuf_out)
 );
-assign memory_bus_l = ALUm_buf_out;
+assign memory_bus_l = ALUmbuf_out;
 
 mux2 Amux(
     .a(data_bus),
@@ -221,6 +221,20 @@ dev_zero zero_device(
     .datain(zeroin),
     .dataout(zeroout)
 );
+
+tristate ZLbuf(
+    .in(zeroout),
+    .enable(Zl_en),
+    .out(ZLbuf_out)
+);
+assign memory_bus_l = ZLbuf_out;
+
+tristate ZHbuf(
+    .in(zeroout),
+    .enable(Zh_en),
+    .out(ZHbuf_out)
+);
+assign memory_bus_h = ZHbuf_out;
 
 mux2 PCLmux(
     .a(data_bus),
@@ -472,7 +486,7 @@ control CTL(
     .IRmux_sel(IRmux_sel),
     .aluop(aluop),
     .V_ctl(V_in), .C_ctl(C_in),
-    .mem_rw (mem_rw),
+    .mem_rw (mem_rw)
 );
 
 wire [11:0] lo_ctl_out;

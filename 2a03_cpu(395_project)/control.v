@@ -7,56 +7,56 @@ module control
     input [7:0] IR_in,
     input alu_V, alu_C, alu_N, alu_Z,
     
-    output [7:0] ctl_pvect, ctl_irvect,
+    output reg [7:0] ctl_pvect, ctl_irvect,
     
     // Control signals:
     // Enable:
-    output X_en, Y_en, Sd_en, Sm_en, A_en,
-    output PCLd_en, PCLm_en, PCHd_en, PCHm_en,
-    output DLd_en, DLm_en, DHd_en, DHm_en,
-    output TLd_en, TLm_en, THd_en, THm_en,
-    output Pd_en, IR_en,
-    output ALUd_en, ALUm_en,
-    output xferu_en, xferd_en,
-    output Zl_en, Zh_en,
+    output reg X_en, Y_en, Sd_en, Sm_en, A_en,
+    output reg PCLd_en, PCLm_en, PCHd_en, PCHm_en,
+    output reg DLd_en, DLm_en, DHd_en, DHm_en,
+    output reg TLd_en, TLm_en, THd_en, THm_en,
+    output reg Pd_en, IR_en,
+    output reg ALUd_en, ALUm_en,
+    output reg xferu_en, xferd_en,
+    output reg Zl_en, Zh_en,
 
     // Load:
-    output X_ld, Y_ld, S_ld, A_ld,
-    output PCL_ld, PCH_ld,
-    output PCL_inc, PCH_inc,
-    output DL_ld, DH_ld,
-    output DH_inc,
-    output TL_ld, TH_ld,
-    output TH_inc,
-    output P_ld, IR_ld,
+    output reg X_ld, Y_ld, S_ld, A_ld,
+    output reg PCL_ld, PCH_ld,
+    output reg PCL_inc, PCH_inc,
+    output reg DL_ld, DH_ld,
+    output reg DH_inc,
+    output reg TL_ld, TH_ld,
+    output reg TH_inc,
+    output reg P_ld, IR_ld,
 
     // Selection:
-    output Smux_sel, Amux_sel,
+    output reg Smux_sel, Amux_sel,
     // output SID_sel,
-    output [2:0] ALU_Amux_sel, ALU_Bmux_sel,
-    output PCLmux_sel, PCHmux_sel,
-    output DLmux_sel, DHmux_sel,
-    output TLmux_sel, THmux_sel,
-    output Pmux_sel,
-    output IRmux_sel,
+    output reg [2:0] ALU_Amux_sel, ALU_Bmux_sel,
+    output reg PCLmux_sel, PCHmux_sel,
+    output reg DLmux_sel, DHmux_sel,
+    output reg TLmux_sel, THmux_sel,
+    output reg Pmux_sel,
+    output reg IRmux_sel,
 
     // Other ALU signals:
-    output [3:0] aluop,
-    output V_ctl, C_ctl,  // Selectively decide whether to send these flags to the ALU
+    output reg [3:0] aluop,
+    output reg V_ctl, C_ctl,  // Selectively decide whether to send these flags to the ALU
     
-    output mem_rw   // Default to read
+    output reg mem_rw   // Default to read
 );
 
 //States:
 parameter SIZE = 12;
-parameter alu_adc = 4'h00, alu_sbc = 4'h01, alu_eor = 4'h02, alu_ora = 4'h03, alu_and = 4'h04, alu_inc = 4'h05, alu_dec = 4'h06, alu_ror = 4'h07, alu_rol = 4'h08, alu_asl = 4'h09, alu_lsr = 4'h0a, alu_nop = 4'hff;
+parameter alu_adc = 8'h00, alu_sbc = 8'h01, alu_eor = 8'h02, alu_ora = 8'h03, alu_and = 8'h04, alu_inc = 8'h05, alu_dec = 8'h06, alu_ror = 8'h07, alu_rol = 8'h08, alu_asl = 8'h09, alu_lsr = 8'h0a, alu_nop = 8'hff;
 `include "opCodeHex.v" // Holds all the opcode values.
 
 reg [SIZE-1:0] state;
 reg [SIZE-1:0] next_state;
 
 
-always_comb
+always @ (state)
 begin : state_actions
     /* Default output assignments */
     // Enable:
@@ -157,7 +157,7 @@ begin : state_actions
         end
         JMP_ABS_1:
         begin 
-            xferd = 1;          // PCH = M
+            xferd_en = 1;          // PCH = M
             PCH_ld = 1;
             PCLm_en = 0;        // PCL = DL
             DLm_en = 1;
@@ -168,7 +168,7 @@ begin : state_actions
     endcase
 end
 
-always_comb
+always @ (state)
 begin : next_state_logic
     /* Next state information and conditions (if any)
      * for transitioning between states */
@@ -177,7 +177,7 @@ begin : next_state_logic
         fetch, ADC_IMM: 
         begin // See opCodeHex.v for all encodings.
             // Use commas to separate same next-states.
-            case({4'h0, ir[7:0]})
+            case({4'h0, IR_in[7:0]})
                 ADC_IMM: next_state = ADC_IMM;
                 JMP_ABS: next_state = JMP_ABS;
                 default: /* Shippai :(. */;
@@ -188,7 +188,7 @@ begin : next_state_logic
     endcase
 end
 
-always_ff @(posedge clk)
+always @(posedge clk)
 begin: next_state_assignment
     /* Assignment of next state on clock edge */
     state <= next_state;

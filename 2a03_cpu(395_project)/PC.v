@@ -25,10 +25,10 @@ end
 always @ (posedge clk)
 begin 
     if (L_inc)
-        data=data+1;
+        data=data+1'b1;
     else if (H_inc)
     begin
-        data[15:8]=data[15:8]+1;
+        data[15:8]=data[15:8]+1'b1;
         data[7:0] =data[7:0];
     end
     else if (load_pc_h|load_pc_l)
@@ -41,4 +41,4 @@ end
 assign PCL_out = data [7:0];
 assign PCH_out = data [15:8];
 
-endmodule : gpReg
+endmodule : PC
