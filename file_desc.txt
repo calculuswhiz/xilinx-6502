@@ -1,4 +1,4 @@
-This is a file for describing what the files that are (currently) in the project do. Not all files are incomplete.
+This is a file for describing what the files that are (currently) in the project do. Not all files are complete.
 
 Note that everything is in Verilog, not SystemVerilog. If you came from SystemVerilog as your background, be aware that Verilog is more difficult (e.g. limited) by a significant margin.
 
