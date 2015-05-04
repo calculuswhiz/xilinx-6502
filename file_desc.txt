@@ -1,0 +1,36 @@
+This is a file for describing what the files that are (currently) in the project do. Not all files are incomplete.
+
+Note that everything is in Verilog, not SystemVerilog. If you came from SystemVerilog as your background, be aware that Verilog is more difficult (e.g. limited) by a significant margin.
+
+ALU.v
+  -This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self-incrementors here and there.
+
+PC.v
+  -This is our code for our PC register, as well as the T and D registers. There are certain properties of these registers (such) as being 16-bit, that required us to make a separate register for them.
+  
+control.v
+  -The heart of the project, this contains the output signals for the things in the project and our state machine.
+  
+dev_zero.v
+  -When read, it returns 8 zeroes.
+  
+gpReg.v
+  -General purpose register. Basically, not a weirdo unlike those PC reg guys.
+  
+mux*.v
+  -Muxes, muxes everywhere! (They're of different sizes, * is the wildcard). Muxes, of course, are multiplexers.
+
+opCodeHex.v
+  -Opcodes. For sanity's sake, so we can use English instead of Hex. If you don't want to use this, go ahead, but it's probably easier to read and remember English than Hex.
+
+pulser.v
+  -For our specific seven segment display, we could only push signals onto one of the arrays at once, so this is used to be able to affect both at once. This is probably not required for any projects in the future.
+
+sevenseg.v
+  -Code to use with our seven segment display.
+
+topLevel.v
+  -Top level design for the project, this is where all the components are connected.
+  
+tristate.v
+  -Tristate buffer.
