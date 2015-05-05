@@ -1,7 +1,7 @@
 #  net <in/out> loc=<Pin name>;
 #  Load a bitstream:
-# python2.7 /usr/bin/xsload.py --fpga topLevel.bit
-net clk             loc=T7;
+# python2.7 xsload.py --fpga ~/Documents/395ECE/xilinx-6502/project/topLevel.bit
+net clk             loc=A9;
 
 # Forgetting this for now. Using test memory instead. Sorry :(
 # net mem_data [0]    loc=P6;
@@ -47,16 +47,10 @@ net sevenOut[3]     loc=R1;
 net sevenOut[4]     loc=R2;
 net sevenOut[5]     loc=T4;
 # 0-5
-# net sevenOut[6]     loc=R7;
-# net sevenOut[7]     loc=R15;
-# net sevenOut[8]     loc=R16;
-# net sevenOut[9]     loc=M15;
-# net sevenOut[10]    loc=M16;
-# net sevenOut[11]    loc=K15;
+net sevenOut[6]     loc=R7;
+net sevenOut[7]     loc=R15;
+net sevenOut[8]     loc=R16;
+net sevenOut[9]     loc=M15;
+net sevenOut[10]    loc=M16;
+net sevenOut[11]    loc=K15;
 # Maybe it's this one?
-net sevenOut[6]     loc=K15;
-net sevenOut[7]     loc=M16;
-net sevenOut[8]     loc=M15;
-net sevenOut[9]     loc=R16;
-net sevenOut[10]    loc=R15;
-net sevenOut[11]    loc=R7;

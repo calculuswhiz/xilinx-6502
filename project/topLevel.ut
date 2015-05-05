@@ -5,11 +5,11 @@
 -g Reset_on_err:No
 -g ConfigRate:2
 -g ProgPin:PullUp
--g TckPin:PullUp
+-g TckPin:PullNone
 -g TdiPin:PullUp
 -g TdoPin:PullUp
 -g TmsPin:PullUp
--g UnusedPin:PullDown
+-g UnusedPin:PullNone
 -g UserID:0xFFFFFFFF
 -g ExtMasterCclk_en:No
 -g SPI_buswidth:1

@@ -512,22 +512,28 @@ control CTL(
 wire [11:0] lo_ctl_out;
 wire [11:0] hi_ctl_out;
 
+// Seven-segment control stuff:
 sevenseg LO_CTL(
-    .in(A_out[7:4]),
+    // .in(A_out[7:4]),
+    .in(4'h7),
     .out(lo_ctl_out)
 );
 
 sevenseg HI_CTL(
-    .in(A_out[3:0]),
+    // .in(A_out[3:0]),
+    .in(4'hF),
     .out(hi_ctl_out)
 );
 
-// Seven-segment control stuff:
+wire [11:0] dumbsignal;
 pulser PULSER(
     .clk(clk),
     .low(lo_ctl_out),
     .high(hi_ctl_out),
     .to_seven_seg(sevenOut)
+    // .to_seven_seg(dumbsignal)
 );
+
+// assign sevenOut = 12'h65f;
 
 endmodule

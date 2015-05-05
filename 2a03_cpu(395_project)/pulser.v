@@ -7,7 +7,7 @@ module pulser
 	output reg [11:0] to_seven_seg
 );
 
-reg data;
+reg [3:0] data;
 
 initial
 begin
@@ -16,15 +16,15 @@ end
 
 always @ (posedge clk)
 begin
-	if(data == 1) //Low
+	if(data[3] == 1) //Low
 		begin
-			data = 0;
-			to_seven_seg = low |12'b000000100000;
+			data = data+1'b1;
+			to_seven_seg = low &  ~12'b000010000000;
 		end
 	else //High
 		begin
-			data = 1;
-			to_seven_seg = high|12'b000010000000;
+			data = data+1'b1;
+			to_seven_seg = high & ~12'b000100000000;
 		end
 end
 

@@ -5,9 +5,9 @@ Loading device for application Rf_Device from file '6slx9.nph' in environment
    "topLevel" is an NCD, version 3.2, device xc6slx9, package ftg256, speed -2
 Opened constraints file topLevel.pcf.
 
-Mon May  4 21:15:26 2015
+Mon May  4 23:58:14 2015
 
-/home/zach/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 topLevel.ncd 
+/home/zach/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/bitgen -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g Reset_on_err:No -g ConfigRate:2 -g ProgPin:PullUp -g TckPin:PullNone -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullNone -g UserID:0xFFFFFFFF -g ExtMasterCclk_en:No -g SPI_buswidth:1 -g TIMER_CFG:0xFFFF -g multipin_wakeup:No -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:Yes -g DriveDone:No -g en_sw_gsr:No -g drive_awake:No -g sw_clk:Startupclk -g sw_gwe_cycle:5 -g sw_gts_cycle:4 topLevel.ncd 
 
 Summary of Bitgen Options:
 +----------------------+----------------------+
@@ -29,7 +29,7 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | ProgPin              | Pullup**             |
 +----------------------+----------------------+
-| TckPin               | Pullup**             |
+| TckPin               | Pullnone             |
 +----------------------+----------------------+
 | TdiPin               | Pullup**             |
 +----------------------+----------------------+
@@ -37,7 +37,7 @@ Summary of Bitgen Options:
 +----------------------+----------------------+
 | TmsPin               | Pullup**             |
 +----------------------+----------------------+
-| UnusedPin            | Pulldown**           |
+| UnusedPin            | Pullnone             |
 +----------------------+----------------------+
 | GWE_cycle            | 6**                  |
 +----------------------+----------------------+

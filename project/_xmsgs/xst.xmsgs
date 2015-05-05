@@ -8,513 +8,184 @@
 <msg type="warning" file="HDLCompiler" num="189" delta="old" >"/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 199: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">f</arg>&gt;. Formal port size is <arg fmt="%d" index="2">9</arg>-bit while actual signal size is <arg fmt="%d" index="1">8</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">tm_address&lt;15:3&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">90</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">MEM</arg>&gt; of block &lt;<arg fmt="%s" index="4">testmemory</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2999" delta="new" >Signal &apos;<arg fmt="%s" index="1">TM_DATA</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">testmemory</arg>&apos;, is tied to its initial value.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">96</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">membuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">P_in&lt;7:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">104</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">X_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">112</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Xbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">119</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">127</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Ybuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">134</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Smux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">141</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">S_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">149</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Sdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">156</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Smbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">163</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALU_Amux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux8</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">176</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALU_Bmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux8</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">189</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALU_6502</arg>&gt; of block &lt;<arg fmt="%s" index="4">ALU</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">202</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALUd_buf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">209</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALUm_buf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">216</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Amux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">223</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">A_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">231</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Abuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">239</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">zero_device</arg>&gt; of block &lt;<arg fmt="%s" index="4">dev_zero</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">244</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ZLbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">251</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ZHbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">258</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCLmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">265</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCHmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">T_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">272</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PC_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">PC</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">284</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCLdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">291</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCLmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">298</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCHdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">305</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCHmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">313</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DLmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">320</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DHmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">327</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">D_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">PC</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">X_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">339</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DLdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">346</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DLmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">353</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DHdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">360</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">DHmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">368</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">TLmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">375</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">THmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">382</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">T_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">PC</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">394</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">TLdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Y_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">401</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">TLmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">408</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">THdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">415</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">THmbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">422</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Pmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S_reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">429</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">P_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">Smux</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-It will be removed from the design.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">437</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Pbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">TLmux</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-It will be removed from the design.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">444</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">IRmux</arg>&gt; of block &lt;<arg fmt="%s" index="4">mux2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1290" delta="new" >Hierarchical block &lt;<arg fmt="%s" index="1">THmux</arg>&gt; is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-It will be removed from the design.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">451</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">IR_reg</arg>&gt; of block &lt;<arg fmt="%s" index="4">gpReg</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_out</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">459</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">IRbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3231" delta="new" >The small RAM &lt;<arg fmt="%s" index="1">Mram_TM_DATA</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">466</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">xferubuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">tm_data_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">testmemory</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">473</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">xferdbuf</arg>&gt; of block &lt;<arg fmt="%s" index="4">tristate</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tm_data_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">testmemory</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v</arg>&quot; line <arg fmt="%d" index="2">480</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">CTL</arg>&gt; of block &lt;<arg fmt="%s" index="4">control</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">topLevel</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">tm_data_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">testmemory</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_out</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">tm_data_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">testmemory</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;tm_data_6&gt; </arg>
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2042" delta="new" >Unit <arg fmt="%s" index="1">tristate</arg>: <arg fmt="%d" index="2">8</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">Y_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">X_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_reg/data_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">P_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">P_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">P_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">P_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">S_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">D_reg/data_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MEM/tm_data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MEM/tm_data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MEM/tm_data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">MEM/tm_data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">P_reg/data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">P_reg/data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">P_reg/data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_2</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">CTL/state_FSM_FFd4</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">CTL/state_FSM_FFd3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">CTL/state_FSM_FFd2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">CTL/state_FSM_FFd1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">A_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">P_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">D_reg/data_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">PC_reg/data_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_11</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">topLevel</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">IR_reg/data_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">topLevel</arg>&gt;.
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">topLevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PULSER/to_seven_seg_4&gt; &lt;PULSER/to_seven_seg_0&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">PULSER/data</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">topLevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PULSER/to_seven_seg_7&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">PULSER/to_seven_seg_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">topLevel</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PULSER/to_seven_seg_6&gt; &lt;PULSER/to_seven_seg_3&gt; </arg>
 </msg>
 
 </messages>
