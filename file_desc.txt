@@ -32,5 +32,8 @@ sevenseg.v
 topLevel.v
   -Top level design for the project, this is where all the components are connected.
   
+topLevel.ucf
+  -Pin assignments for outputs.
+  
 tristate.v
   -Tristate buffer.

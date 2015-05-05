@@ -12,6 +12,6 @@ Some quick things:
 
 4. file_desc.txt has information about what each file in the project does.
 
-5. fpgaloading.md has some information about how to load onto the FPGA.
+5. fpgaloading.md has some information about how to load onto the FPGA, as well how to open in the simulator.
 
 6. This is a WIP.
