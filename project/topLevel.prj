@@ -1,4 +1,5 @@
 verilog work "../2a03_cpu(395_project)/tristate.v"
+verilog work "../2a03_cpu(395_project)/testmemory.v"
 verilog work "../2a03_cpu(395_project)/sevenseg.v"
 verilog work "../2a03_cpu(395_project)/pulser.v"
 verilog work "../2a03_cpu(395_project)/PC.v"

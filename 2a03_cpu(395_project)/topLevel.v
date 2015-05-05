@@ -2,10 +2,10 @@ module topLevel (
     input clk,    // Clock
     
     // Memory:
-    inout [7:0] mem_data,
-    output mem_rw,
-    output [7:0] mem_addr_l,
-    output [7:0] mem_addr_h,
+    // inout [7:0] mem_data,
+    // output mem_rw,
+    // output [7:0] mem_addr_l,
+    // output [7:0] mem_addr_h,
     
     output [11:0] sevenOut
 );
@@ -81,6 +81,24 @@ wire [7:0] IRmux_out;
 wire [7:0] zeroin, zeroout;
 wire [7:0] ZLbuf_out, ZHbuf_out;
 
+// Test-memory signals:
+wire [15:0] address_bus;
+wire [7:0]  mem_data;
+wire        mem_rw;
+wire [7:0]  membuf_out;
+
+testmemory MEM(
+    .clk(clk),
+    .tm_address({memory_bus_h, memory_bus_l}),
+    .tm_data(mem_data)
+);
+
+tristate membuf(
+    .in(mem_data),
+    .enable(~mem_rw),
+    .out(membuf_out)
+);
+assign xfer_bus = membuf_out;
 
 // Put stuff down from left to right:
 gpReg X_reg(

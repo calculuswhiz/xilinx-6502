@@ -110,6 +110,8 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v" into library work
 Parsing module <tristate>.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/testmemory.v" into library work
+Parsing module <testmemory>.
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v" into library work
 Parsing module <sevenseg>.
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/pulser.v" into library work
@@ -138,16 +140,18 @@ Parsing module <topLevel>.
 
 Elaborating module <topLevel>.
 
-Elaborating module <gpReg>.
+Elaborating module <testmemory>.
 
 Elaborating module <tristate>.
+
+Elaborating module <gpReg>.
 
 Elaborating module <mux2>.
 
 Elaborating module <mux8>.
 
 Elaborating module <ALU>.
-WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 181: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 199: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
 
 Elaborating module <dev_zero>.
 
@@ -169,13 +173,16 @@ Synthesizing Unit <topLevel>.
 	no macro.
 Unit <topLevel> synthesized.
 
-Synthesizing Unit <gpReg>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v".
-        width = 8
-    Found 8-bit register for signal <data>.
+Synthesizing Unit <testmemory>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/testmemory.v".
+WARNING:Xst:647 - Input <tm_address<15:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2999 - Signal 'TM_DATA', unconnected in block 'testmemory', is tied to its initial value.
+    Found 8x8-bit single-port Read Only RAM <Mram_TM_DATA> for signal <TM_DATA>.
+    Found 8-bit register for signal <tm_data>.
     Summary:
+	inferred   1 RAM(s).
 	inferred   8 D-type flip-flop(s).
-Unit <gpReg> synthesized.
+Unit <testmemory> synthesized.
 
 Synthesizing Unit <tristate>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v".
@@ -190,6 +197,14 @@ Synthesizing Unit <tristate>.
     Summary:
 	inferred   8 Tristate(s).
 Unit <tristate> synthesized.
+
+Synthesizing Unit <gpReg>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v".
+        width = 8
+    Found 8-bit register for signal <data>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <gpReg> synthesized.
 
 Synthesizing Unit <mux2>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v".
@@ -206,11 +221,11 @@ Unit <mux8> synthesized.
 
 Synthesizing Unit <ALU>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v".
-    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_3_OUT> created at line 47.
-    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_5_OUT> created at line 47.
-    Found 9-bit subtractor for signal <GND_14_o_GND_14_o_sub_10_OUT> created at line 77.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_10_OUT> created at line 77.
     Found 9-bit adder for signal <n0062> created at line 41.
-    Found 9-bit adder for signal <BUS_0001_GND_14_o_add_1_OUT> created at line 41.
+    Found 9-bit adder for signal <BUS_0001_GND_15_o_add_1_OUT> created at line 41.
     Found 9-bit adder for signal <n0057> created at line 71.
     Found 9-bit 13-to-1 multiplexer for signal <f> created at line 38.
     Summary:
@@ -228,8 +243,8 @@ Synthesizing Unit <PC>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v".
         width = 16
     Found 16-bit register for signal <data>.
-    Found 16-bit adder for signal <data[15]_GND_16_o_add_1_OUT> created at line 28.
-    Found 8-bit adder for signal <data[15]_GND_16_o_add_2_OUT> created at line 31.
+    Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 28.
+    Found 8-bit adder for signal <data[15]_GND_17_o_add_2_OUT> created at line 31.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  16 D-type flip-flop(s).
@@ -442,19 +457,20 @@ Unit <pulser> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 3
  16x12-bit single-port Read Only RAM                   : 2
+ 8x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 11
  16-bit adder                                          : 3
  8-bit adder                                           : 3
  9-bit adder                                           : 2
  9-bit addsub                                          : 1
  9-bit subtractor                                      : 2
-# Registers                                            : 11
+# Registers                                            : 12
  1-bit register                                        : 1
  12-bit register                                       : 1
  16-bit register                                       : 3
- 8-bit register                                        : 6
+ 8-bit register                                        : 7
 # Multiplexers                                         : 58
  1-bit 2-to-1 multiplexer                              : 17
  12-bit 2-to-1 multiplexer                             : 1
@@ -462,8 +478,8 @@ Macro Statistics
  8-bit 2-to-1 multiplexer                              : 16
  8-bit 8-to-1 multiplexer                              : 2
  9-bit 2-to-1 multiplexer                              : 16
-# Tristates                                            : 200
- 1-bit tristate buffer                                 : 200
+# Tristates                                            : 208
+ 1-bit tristate buffer                                 : 208
 # FSMs                                                 : 1
 # Xors                                                 : 5
  1-bit xor2                                            : 4
@@ -541,12 +557,27 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_out> will be implemented on LUTs eit
     -----------------------------------------------------------------------
 Unit <sevenseg> synthesized (advanced).
 
+Synthesizing (advanced) Unit <testmemory>.
+INFO:Xst:3231 - The small RAM <Mram_TM_DATA> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <tm_address>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <testmemory> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 3
  16x12-bit single-port distributed Read Only RAM       : 2
+ 8x8-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 7
  8-bit adder                                           : 3
  9-bit adder carry in                                  : 1
@@ -554,8 +585,8 @@ Macro Statistics
  9-bit subtractor                                      : 2
 # Counters                                             : 3
  16-bit up counter                                     : 3
-# Registers                                            : 61
- Flip-Flops                                            : 61
+# Registers                                            : 69
+ Flip-Flops                                            : 69
 # Multiplexers                                         : 55
  1-bit 2-to-1 multiplexer                              : 17
  12-bit 2-to-1 multiplexer                             : 1
@@ -583,9 +614,15 @@ Optimizing FSM <CTL/FSM_0> on signal <state[1:4]> with one-hot encoding.
  000001001100 | 0100
  000101001100 | 1000
 --------------------------
+WARNING:Xst:1710 - FF/Latch <tm_data_1> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tm_data_4> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tm_data_7> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <tm_data_3> in Unit <testmemory> is equivalent to the following FF/Latch, which will be removed : <tm_data_6> 
 WARNING:Xst:2042 - Unit tristate: 8 internal tristates are replaced by logic (pull-up yes): out<0>, out<1>, out<2>, out<3>, out<4>, out<5>, out<6>, out<7>.
 
 Optimizing unit <topLevel> ...
+
+Optimizing unit <testmemory> ...
 
 Optimizing unit <gpReg> ...
 
@@ -648,6 +685,10 @@ WARNING:Xst:2677 - Node <D_reg/data_12> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <D_reg/data_13> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <D_reg/data_14> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <D_reg/data_15> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_0> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <P_reg/data_7> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <P_reg/data_6> of sequential type is unconnected in block <topLevel>.
 WARNING:Xst:2677 - Node <P_reg/data_1> of sequential type is unconnected in block <topLevel>.
@@ -748,8 +789,8 @@ Primitive and Black Box Usage:
 #      FD                          : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 13
-#      OBUF                        : 13
+# IO Buffers                       : 12
+#      OBUF                        : 12
 
 Device utilization summary:
 ---------------------------
@@ -770,8 +811,8 @@ Slice Logic Distribution:
    Number of unique control sets:         1
 
 IO Utilization: 
- Number of IOs:                          38
- Number of bonded IOBs:                  14  out of    186     7%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    186     6%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -875,14 +916,14 @@ clk            |    2.300|         |         |         |
 
 
 Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.19 secs
+Total CPU time to Xst completion: 17.49 secs
  
 --> 
 
 
-Total memory usage is 387924 kilobytes
+Total memory usage is 387916 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  156 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :  165 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

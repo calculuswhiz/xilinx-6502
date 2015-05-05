@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-yamato::  Mon May 04 18:34:06 2015
+yamato::  Mon May 04 21:15:02 2015
 
 par -w -intstyle ise -ol high -mt off topLevel_map.ncd topLevel.ncd
 topLevel.pcf 
@@ -57,7 +57,8 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                        14 out of     186    7%
+  Number of bonded IOBs:                        13 out of     186    6%
+    Number of LOCed IOBs:                       13 out of      13  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -94,9 +95,9 @@ Finished initial Timing Analysis.  REAL time: 6 secs
 Starting Router
 
 
-Phase  1  : 17 unrouted;      REAL time: 6 secs 
+Phase  1  : 16 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 14 unrouted;      REAL time: 7 secs 
+Phase  2  : 13 unrouted;      REAL time: 6 secs 
 
 Phase  3  : 0 unrouted;      REAL time: 7 secs 
 
@@ -136,8 +137,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.285ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.563ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     1.289ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.547ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 

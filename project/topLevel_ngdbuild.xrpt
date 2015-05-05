@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Mon May  4 18:33:47 2015">
+  <application stringID="NgdBuild" timeStamp="Mon May  4 21:14:44 2015">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -37,7 +37,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Pentium(R) Dual-Core CPU       T4400  @ 2.20GHz"/>
-          <item stringID="speed" value="1600.000 MHz"/>
+          <item stringID="speed" value="1200.000 MHz"/>
         </row>
       </table>
     </section>
@@ -46,6 +46,7 @@
         <item DEFAULT="None" label="-intstyle" stringID="NGDBUILD_intstyle" value="ise"/>
         <item DEFAULT="None" label="-dd" stringID="NGDBUILD_output_dir" value="_ngo"/>
         <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc6slx9-ftg256-2"/>
+        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.ucf"/>
       </section>
     </task>
     <task stringID="NGDBUILD_REPORT">
@@ -61,7 +62,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_FD" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_INV" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="13"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="12"/>
         <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="1"/>
       </section>
       <section stringID="NGDBUILD_POST_UNISIM_SUMMARY">
@@ -70,7 +71,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFG" value="1"/>
         <item dataType="int" stringID="NGDBUILD_NUM_INV" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="13"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="12"/>
         <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="1"/>
       </section>
       <section stringID="NGDBUILD_CORE_GENERATION_SUMMARY">
