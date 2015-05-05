@@ -83,7 +83,7 @@ wire [7:0] ZLbuf_out, ZHbuf_out;
 
 
 // Put stuff down from left to right:
-gpReg Xreg(
+gpReg X_reg(
     .clk(clk),
     .load(X_ld),
     .rst_n(1'b1),
@@ -98,7 +98,7 @@ tristate Xbuf(
 );
 assign data_bus = Xbuf_out;
 
-gpReg Yreg(
+gpReg Y_reg(
     .clk(clk),
     .load(Y_ld),
     .rst_n(1'b1),
@@ -120,7 +120,7 @@ mux2 Smux(
     .f(Smux_out)
 );
 
-gpReg S(
+gpReg S_reg(
     .clk(clk),    // Clock
     .load(S_ld),
     .rst_n(1'b1),
@@ -202,7 +202,7 @@ mux2 Amux(
     .f(Amux_out)
 );
 
-gpReg Areg(
+gpReg A_reg(
     .clk(clk),
     .load(A_ld),
     .rst_n(1'b1),
@@ -217,6 +217,7 @@ tristate Abuf(
 );
 assign data_bus = Abuf_out;
 
+assign zeroin=8'h00;
 dev_zero zero_device(
     .datain(zeroin),
     .dataout(zeroout)
@@ -420,6 +421,7 @@ tristate Pbuf(
     .enable(Pd_en),
     .out(Pbuf_out)
 );
+assign data_bus = Pbuf_out;
 
 mux2 IRmux(
     .a(xfer_bus),
@@ -448,7 +450,7 @@ tristate xferubuf(
     .enable(xferu_en),
     .out(xferubuf_out)
 );
-assign xfer_bus = xferdbuf_out;
+assign xfer_bus = xferubuf_out;
 
 tristate xferdbuf(
     .in(xfer_bus),

@@ -37,16 +37,8 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-sevenOut<0> |         9.047(R)|      SLOW  |         3.693(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<1> |         9.277(R)|      SLOW  |         3.815(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<2> |         9.390(R)|      SLOW  |         3.887(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<3> |         9.534(R)|      SLOW  |         3.988(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<4> |         8.670(R)|      SLOW  |         3.489(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<5> |         8.996(R)|      SLOW  |         3.664(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<6> |         8.812(R)|      SLOW  |         3.566(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<7> |         9.056(R)|      SLOW  |         3.702(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<9> |         9.036(R)|      SLOW  |         3.683(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
-sevenOut<10>|         8.875(R)|      SLOW  |         3.618(R)|      FAST  |clk_IBUF_BUFG     |   0.000|
+sevenOut<5> |         8.920(R)|      SLOW  |         3.712(R)|      FAST  |clk_BUFGP         |   0.000|
+sevenOut<7> |         8.842(R)|      SLOW  |         3.665(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -54,11 +46,11 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.381|    2.558|         |         |
+clk            |    1.285|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon May  4 17:03:15 2015 
+Analysis completed Mon May  4 18:34:24 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:

@@ -3,6 +3,6 @@ module dev_zero (
     output  [7:0] dataout
 );
 
-assign dataout = 8'h00;
+assign dataout = 8'h00 & datain;
 
 endmodule

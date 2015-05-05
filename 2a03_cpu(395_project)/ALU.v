@@ -33,7 +33,7 @@ module ALU (
         78.   rotate:             ROR, ROL
         910.  Shift:              ASL, LSR
 */
-always
+always @ (a, b, carryIn, overflowIn, operation)
 begin 
     casez (operation)
         4'h00: // add carry
@@ -105,7 +105,7 @@ begin
         default:  // NOP (Actually pass input a)
         begin
             f=a;
-            carry=carry;
+            carry=1'b0;
             overflow=overflowIn;
         end
     endcase

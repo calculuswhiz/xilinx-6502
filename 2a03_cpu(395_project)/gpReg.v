@@ -29,7 +29,7 @@ always @ (posedge clk or negedge rst_n)
 begin 
     if(~rst_n)
         data=0;
-    else if(clk)
+    else if(load)
         data=in;
 end
 

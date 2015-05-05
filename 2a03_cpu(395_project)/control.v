@@ -49,16 +49,24 @@ module control
 
 //States:
 parameter SIZE = 12;
-parameter alu_adc = 8'h00, alu_sbc = 8'h01, alu_eor = 8'h02, alu_ora = 8'h03, alu_and = 8'h04, alu_inc = 8'h05, alu_dec = 8'h06, alu_ror = 8'h07, alu_rol = 8'h08, alu_asl = 8'h09, alu_lsr = 8'h0a, alu_nop = 8'hff;
+parameter alu_adc = 4'h0, alu_sbc = 4'h1, alu_eor = 4'h2, alu_ora = 4'h3, alu_and = 4'h4, alu_inc = 4'h5, alu_dec = 4'h6, alu_ror = 4'h7, alu_rol = 4'h8, alu_asl = 4'h9, alu_lsr = 4'ha, alu_nop = 4'hf;
 `include "opCodeHex.v" // Holds all the opcode values.
 
 reg [SIZE-1:0] state;
 reg [SIZE-1:0] next_state;
 
+initial
+begin 
+    state = fetch;
+end
 
-always @ (state)
+
+always @ (state, P_in, alu_N, alu_V, alu_Z, alu_C)
 begin : state_actions
     /* Default output assignments */
+    ctl_pvect = 8'h00;
+    ctl_irvect = 8'h00;
+    
     // Enable:
     X_en        = 0;
     Y_en        = 0;
@@ -168,7 +176,7 @@ begin : state_actions
     endcase
 end
 
-always @ (state)
+always @ (state, IR_in)
 begin : next_state_logic
     /* Next state information and conditions (if any)
      * for transitioning between states */
