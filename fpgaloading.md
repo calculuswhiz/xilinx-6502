@@ -1,4 +1,4 @@
-There is actually simultaneously a lot of documentation and very little documentation on this process with this particular ISE. A lot of it is quite confusing, so here's a short summary of what we did and how we did it to load onto the FPGA, for the sake of our sanity, and anyone else who wants to work on this project.
+There is actually simultaneously a lot of documentation and very little documentation on this process with this particular ISE. A lot of the documentation is quite confusing, so here's a short summary of what we did and how we loaded programs onto the FPGA, for the sake of our sanity, and anyone else who wants to work on this project.
 
 
 To load onto the FPGA:
