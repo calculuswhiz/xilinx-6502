@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : ftg256
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Mon May  4 23:57:36 2015
+Mapped Date    : Tue May  5 00:39:23 2015
 
 Mapping design into LUTs...
 Running directed packing...
@@ -49,21 +49,21 @@ Phase 8.5  Local Placement Optimization
 Phase 8.5  Local Placement Optimization (Checksum:9e4a13c) REAL time: 9 secs 
 
 Phase 9.8  Global Placement
-..........
-..........
-Phase 9.8  Global Placement (Checksum:e806463) REAL time: 9 secs 
+..
+..
+Phase 9.8  Global Placement (Checksum:cc45f5a3) REAL time: 9 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:e806463) REAL time: 9 secs 
+Phase 10.5  Local Placement Optimization (Checksum:cc45f5a3) REAL time: 9 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:1a8687e3) REAL time: 9 secs 
+Phase 11.18  Placement Optimization (Checksum:b4eab) REAL time: 9 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:1a8687e3) REAL time: 9 secs 
+Phase 12.5  Local Placement Optimization (Checksum:b4eab) REAL time: 9 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:1a8687e3) REAL time: 9 secs 
+Phase 13.34  Placement Validation (Checksum:b4eab) REAL time: 9 secs 
 
 Total REAL time to Placer completion: 9 secs 
 Total CPU  time to Placer completion: 9 secs 
@@ -136,7 +136,7 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                2.71
+Average Fanout of Non-Clock Nets:                2.14
 
 Peak Memory Usage:  652 MB
 Total REAL time to MAP completion:  10 secs 

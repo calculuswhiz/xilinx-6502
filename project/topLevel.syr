@@ -162,57 +162,6 @@ Elaborating module <control>.
 Elaborating module <sevenseg>.
 
 Elaborating module <pulser>.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 90. All outputs of instance <MEM> of block <testmemory> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 96. All outputs of instance <membuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 104. All outputs of instance <X_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 112. All outputs of instance <Xbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 119. All outputs of instance <Y_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 127. All outputs of instance <Ybuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 134. All outputs of instance <Smux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 141. All outputs of instance <S_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 149. All outputs of instance <Sdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 156. All outputs of instance <Smbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 163. All outputs of instance <ALU_Amux> of block <mux8> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 176. All outputs of instance <ALU_Bmux> of block <mux8> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 189. All outputs of instance <ALU_6502> of block <ALU> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 202. All outputs of instance <ALUd_buf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 209. All outputs of instance <ALUm_buf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 216. All outputs of instance <Amux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 223. All outputs of instance <A_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 231. All outputs of instance <Abuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 239. All outputs of instance <zero_device> of block <dev_zero> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 244. All outputs of instance <ZLbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 251. All outputs of instance <ZHbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 258. All outputs of instance <PCLmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 265. All outputs of instance <PCHmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 272. All outputs of instance <PC_reg> of block <PC> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 284. All outputs of instance <PCLdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 291. All outputs of instance <PCLmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 298. All outputs of instance <PCHdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 305. All outputs of instance <PCHmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 313. All outputs of instance <DLmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 320. All outputs of instance <DHmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 327. All outputs of instance <D_reg> of block <PC> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 339. All outputs of instance <DLdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 346. All outputs of instance <DLmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 353. All outputs of instance <DHdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 360. All outputs of instance <DHmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 368. All outputs of instance <TLmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 375. All outputs of instance <THmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 382. All outputs of instance <T_reg> of block <PC> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 394. All outputs of instance <TLdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 401. All outputs of instance <TLmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 408. All outputs of instance <THdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 415. All outputs of instance <THmbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 422. All outputs of instance <Pmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 429. All outputs of instance <P_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 437. All outputs of instance <Pbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 444. All outputs of instance <IRmux> of block <mux2> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 451. All outputs of instance <IR_reg> of block <gpReg> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 459. All outputs of instance <IRbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 466. All outputs of instance <xferubuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 473. All outputs of instance <xferdbuf> of block <tristate> are unconnected in block <topLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" line 480. All outputs of instance <CTL> of block <control> are unconnected in block <topLevel>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -223,6 +172,270 @@ Synthesizing Unit <topLevel>.
     Summary:
 	no macro.
 Unit <topLevel> synthesized.
+
+Synthesizing Unit <testmemory>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/testmemory.v".
+WARNING:Xst:647 - Input <tm_address<15:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:2999 - Signal 'TM_DATA', unconnected in block 'testmemory', is tied to its initial value.
+    Found 8x8-bit single-port Read Only RAM <Mram_TM_DATA> for signal <TM_DATA>.
+    Found 8-bit register for signal <tm_data>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <testmemory> synthesized.
+
+Synthesizing Unit <tristate>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v".
+    Found 1-bit tristate buffer for signal <out<7>> created at line 7
+    Found 1-bit tristate buffer for signal <out<6>> created at line 7
+    Found 1-bit tristate buffer for signal <out<5>> created at line 7
+    Found 1-bit tristate buffer for signal <out<4>> created at line 7
+    Found 1-bit tristate buffer for signal <out<3>> created at line 7
+    Found 1-bit tristate buffer for signal <out<2>> created at line 7
+    Found 1-bit tristate buffer for signal <out<1>> created at line 7
+    Found 1-bit tristate buffer for signal <out<0>> created at line 7
+    Summary:
+	inferred   8 Tristate(s).
+Unit <tristate> synthesized.
+
+Synthesizing Unit <gpReg>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v".
+        width = 8
+    Found 8-bit register for signal <data>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <gpReg> synthesized.
+
+Synthesizing Unit <mux2>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux2> synthesized.
+
+Synthesizing Unit <mux8>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux8.v".
+    Found 8-bit 8-to-1 multiplexer for signal <f> created at line 8.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux8> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v".
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT> created at line 47.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_10_OUT> created at line 77.
+    Found 9-bit adder for signal <n0062> created at line 41.
+    Found 9-bit adder for signal <BUS_0001_GND_15_o_add_1_OUT> created at line 41.
+    Found 9-bit adder for signal <n0057> created at line 71.
+    Found 9-bit 13-to-1 multiplexer for signal <f> created at line 38.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  28 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <dev_zero>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/dev_zero.v".
+    Summary:
+	no macro.
+Unit <dev_zero> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v".
+        width = 16
+    Found 16-bit register for signal <data>.
+    Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 28.
+    Found 8-bit adder for signal <data[15]_GND_17_o_add_2_OUT> created at line 31.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <PC> synthesized.
+
+Synthesizing Unit <control>.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v".
+        SIZE = 12
+        alu_adc = 4'b0000
+        alu_sbc = 4'b0001
+        alu_eor = 4'b0010
+        alu_ora = 4'b0011
+        alu_and = 4'b0100
+        alu_inc = 4'b0101
+        alu_dec = 4'b0110
+        alu_ror = 4'b0111
+        alu_rol = 4'b1000
+        alu_asl = 4'b1001
+        alu_lsr = 4'b1010
+        alu_nop = 4'b1111
+        ADC_ABS = 12'b000001101101
+        ADC_ABX = 12'b000001111101
+        ADC_ABY = 12'b000001111001
+        ADC_IMM = 12'b000001101001
+        ADC_INX = 12'b000001100001
+        ADC_INY = 12'b000001110001
+        ADC_ZPG = 12'b000001100101
+        ADC_ZPX = 12'b000001110101
+        AND_ABS = 12'b000000101101
+        AND_ABX = 12'b000000111101
+        AND_ABY = 12'b000000111001
+        AND_IMM = 12'b000000101001
+        AND_INX = 12'b000000100001
+        AND_INY = 12'b000000110001
+        AND_ZPG = 12'b000000100101
+        AND_ZPX = 12'b000000110101
+        ASL_ABS = 12'b000000001110
+        ASL_ABX = 12'b000000011110
+        ASL_ACC = 12'b000000001010
+        ASL_ZPG = 12'b000000000110
+        ASL_ZPX = 12'b000000010110
+        BCC_REL = 12'b000010010000
+        BCS_REL = 12'b000010110000
+        BEQ_REL = 12'b000011110000
+        BIT_ABS = 12'b000000101100
+        BIT_ZPG = 12'b000000100100
+        BMI_REL = 12'b000000110000
+        BNE_REL = 12'b000011010000
+        BPL_REL = 12'b000000010000
+        BRK_IMP = 12'b000000000000
+        BVC_REL = 12'b000001010000
+        BVS_REL = 12'b000001110000
+        CLC_IMP = 12'b000000011000
+        CLD_IMP = 12'b000011011000
+        CLI_IMP = 12'b000001011000
+        CLV_IMP = 12'b000010111000
+        CMP_ABS = 12'b000011001101
+        CMP_ABX = 12'b000011011101
+        CMP_ABY = 12'b000011011001
+        CMP_IMM = 12'b000011001001
+        CMP_INX = 12'b000011000001
+        CMP_INY = 12'b000011010001
+        CMP_ZPG = 12'b000011000101
+        CMP_ZPX = 12'b000011010101
+        CPX_ABS = 12'b000011101100
+        CPX_IMM = 12'b000011100000
+        CPX_ZPG = 12'b000011100100
+        CPY_ABS = 12'b000011001100
+        CPY_IMM = 12'b000011000000
+        CPY_ZPG = 12'b000011000100
+        DEC_ABS = 12'b000011001110
+        DEC_ABX = 12'b000011011110
+        DEX_IMP = 12'b000011001010
+        DEY_IMP = 12'b000010001000
+        DEC_ZPG = 12'b000011000110
+        DEC_ZPX = 12'b000011010110
+        EOR_ABS = 12'b000001001101
+        EOR_ABX = 12'b000001011101
+        EOR_ABY = 12'b000001011001
+        EOR_IMM = 12'b000001001001
+        EOR_INX = 12'b000001000001
+        EOR_INY = 12'b000001010001
+        EOR_ZPG = 12'b000001000101
+        EOR_ZPX = 12'b000001010101
+        INC_ABS = 12'b000011101110
+        INC_ABX = 12'b000011111110
+        INC_ZPG = 12'b000011100110
+        INC_ZPX = 12'b000011110110
+        INX_IMP = 12'b000011101000
+        INY_IMP = 12'b000011001000
+        JMP_ABS = 12'b000001001100
+        JMP_IND = 12'b000001101100
+        JSR_ABS = 12'b000000100000
+        LDA_ABS = 12'b000010101101
+        LDA_ABX = 12'b000010111101
+        LDA_ABY = 12'b000010111001
+        LDA_IMM = 12'b000010101001
+        LDA_INX = 12'b000010100001
+        LDA_INY = 12'b000010110001
+        LDA_ZPG = 12'b000010100101
+        LDA_ZPX = 12'b000010110101
+        LDX_ABS = 12'b000010101110
+        LDX_ABY = 12'b000010111110
+        LDX_IMM = 12'b000010100010
+        LDX_ZPG = 12'b000010100110
+        LDX_ZPY = 12'b000010110110
+        LDY_ABS = 12'b000010101100
+        LDY_ABX = 12'b000010111100
+        LDY_IMM = 12'b000010100000
+        LDY_ZPG = 12'b000010100100
+        LDY_ZPX = 12'b000010110100
+        LSR_ABS = 12'b000001001110
+        LSR_ABX = 12'b000001011110
+        LSR_ACC = 12'b000001001010
+        LSR_ZPG = 12'b000001000110
+        LSR_ZPX = 12'b000001010110
+        NOP_IMP = 12'b000011101010
+        ORA_ABS = 12'b000000001101
+        ORA_ABX = 12'b000000011101
+        ORA_ABY = 12'b000000011001
+        ORA_IMM = 12'b000000001001
+        ORA_INX = 12'b000000000001
+        ORA_INY = 12'b000000010001
+        ORA_ZPG = 12'b000000000101
+        ORA_ZPX = 12'b000000010101
+        PHA_IMP = 12'b000001001000
+        PHP_IMP = 12'b000000001000
+        PLP_IMP = 12'b000000101000
+        PLA_IMP = 12'b000001101000
+        ROL_ABS = 12'b000000101110
+        ROL_ABX = 12'b000000111110
+        ROL_ACC = 12'b000000101010
+        ROL_ZPG = 12'b000000100110
+        ROL_ZPX = 12'b000000110110
+        ROR_ABS = 12'b000001101110
+        ROR_ABX = 12'b000001111110
+        ROR_ACC = 12'b000001101010
+        ROR_ZPG = 12'b000001100110
+        ROR_ZPX = 12'b000001110110
+        RTI_IMP = 12'b000001000000
+        RTS_IMP = 12'b000001100000
+        SBC_ABS = 12'b000011101101
+        SBC_ABX = 12'b000011111101
+        SBC_ABY = 12'b000011111001
+        SBC_IMM = 12'b000011101001
+        SBC_INX = 12'b000011100001
+        SBC_INY = 12'b000011110001
+        SBC_ZPG = 12'b000011100101
+        SBC_ZPX = 12'b000011110101
+        SEC_IMP = 12'b000000111000
+        SED_IMP = 12'b000011111000
+        SEI_IMP = 12'b000001111000
+        STA_ABS = 12'b000010001101
+        STA_ABX = 12'b000010011101
+        STA_ABY = 12'b000010011001
+        STA_INX = 12'b000010000001
+        STA_INY = 12'b000010010001
+        STA_ZPG = 12'b000010000101
+        STA_ZPX = 12'b000010010101
+        STX_ABS = 12'b000010001110
+        STX_ZPG = 12'b000010000110
+        STX_ZPY = 12'b000010010110
+        STY_ABS = 12'b000010001100
+        STY_ZPG = 12'b000010000100
+        STY_ZPX = 12'b000010010100
+        TAX_IMP = 12'b000010101010
+        TAY_IMP = 12'b000010101000
+        TSX_IMP = 12'b000010111010
+        TXA_IMP = 12'b000010001010
+        TXS_IMP = 12'b000010011010
+        TYA_IMP = 12'b000010011000
+        fetch = 12'b000100000000
+        JMP_ABS_1 = 12'b000101001100
+WARNING:Xst:647 - Input <P_in<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 000100000000                                   |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control> synthesized.
 
 Synthesizing Unit <sevenseg>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v".
@@ -246,22 +459,92 @@ Unit <pulser> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 3
  16x12-bit single-port Read Only RAM                   : 2
-# Adders/Subtractors                                   : 1
+ 8x8-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 12
+ 16-bit adder                                          : 3
  4-bit adder                                           : 1
-# Registers                                            : 2
+ 8-bit adder                                           : 3
+ 9-bit adder                                           : 2
+ 9-bit addsub                                          : 1
+ 9-bit subtractor                                      : 2
+# Registers                                            : 12
  12-bit register                                       : 1
+ 16-bit register                                       : 3
  4-bit register                                        : 1
-# Multiplexers                                         : 1
+ 8-bit register                                        : 7
+# Multiplexers                                         : 58
+ 1-bit 2-to-1 multiplexer                              : 17
  12-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 16
+ 8-bit 8-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 16
+# Tristates                                            : 208
+ 1-bit tristate buffer                                 : 208
+# FSMs                                                 : 1
+# Xors                                                 : 5
+ 1-bit xor2                                            : 4
+ 9-bit xor2                                            : 1
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1293 - FF/Latch <data_4> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_5> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_6> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_7> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_0> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_1> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_2> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_3> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_4> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_5> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_6> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_7> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_8> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_9> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_10> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_11> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_12> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_13> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_14> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_15> has a constant value of 0 in block <T_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_0> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_1> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_2> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_3> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_4> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_5> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_6> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_7> has a constant value of 0 in block <X_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_0> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_1> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_2> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_3> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_4> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_5> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_6> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_7> has a constant value of 0 in block <Y_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_0> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_1> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_2> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_3> has a constant value of 0 in block <S_reg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1290 - Hierarchical block <Smux> is unconnected in block <topLevel>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <TLmux> is unconnected in block <topLevel>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <THmux> is unconnected in block <topLevel>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <PC>.
+The following registers are absorbed into counter <data>: 1 register on signal <data>.
+Unit <PC> synthesized (advanced).
 
 Synthesizing (advanced) Unit <pulser>.
 The following registers are absorbed into counter <data>: 1 register on signal <data>.
@@ -281,36 +564,195 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_out> will be implemented on LUTs eit
     -----------------------------------------------------------------------
 Unit <sevenseg> synthesized (advanced).
 
+Synthesizing (advanced) Unit <testmemory>.
+INFO:Xst:3231 - The small RAM <Mram_TM_DATA> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <tm_address>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <testmemory> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 3
  16x12-bit single-port distributed Read Only RAM       : 2
-# Counters                                             : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 7
+ 8-bit adder                                           : 3
+ 9-bit adder carry in                                  : 1
+ 9-bit addsub                                          : 1
+ 9-bit subtractor                                      : 2
+# Counters                                             : 4
+ 16-bit up counter                                     : 3
  4-bit up counter                                      : 1
-# Registers                                            : 12
- Flip-Flops                                            : 12
-# Multiplexers                                         : 1
+# Registers                                            : 68
+ Flip-Flops                                            : 68
+# Multiplexers                                         : 55
+ 1-bit 2-to-1 multiplexer                              : 17
  12-bit 2-to-1 multiplexer                             : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 8-bit 2-to-1 multiplexer                              : 16
+ 8-bit 8-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 16
+# FSMs                                                 : 1
+# Xors                                                 : 5
+ 1-bit xor2                                            : 4
+ 9-bit xor2                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <CTL/FSM_0> on signal <state[1:4]> with one-hot encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ 000100000000 | 0001
+ 000001101001 | 0010
+ 000001001100 | 0100
+ 000101001100 | 1000
+--------------------------
+WARNING:Xst:1710 - FF/Latch <tm_data_1> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tm_data_4> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <tm_data_7> (without init value) has a constant value of 0 in block <testmemory>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <tm_data_3> in Unit <testmemory> is equivalent to the following FF/Latch, which will be removed : <tm_data_6> 
+WARNING:Xst:2042 - Unit tristate: 8 internal tristates are replaced by logic (pull-up yes): out<0>, out<1>, out<2>, out<3>, out<4>, out<5>, out<6>, out<7>.
 
 Optimizing unit <topLevel> ...
 
+Optimizing unit <testmemory> ...
+
+Optimizing unit <gpReg> ...
+
+Optimizing unit <control> ...
+
 Optimizing unit <pulser> ...
-WARNING:Xst:1710 - FF/Latch <PULSER/to_seven_seg_2> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_1> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <ALU> ...
+WARNING:Xst:1293 - FF/Latch <S_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Y_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <X_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_2> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_8> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_9> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_10> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_11> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_12> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_13> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_14> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <T_reg/data_15> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <P_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <P_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <P_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <P_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <S_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <PULSER/to_seven_seg_11> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_10> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_9> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_5> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <PULSER/to_seven_seg_7> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <PULSER/to_seven_seg_4> <PULSER/to_seven_seg_0> 
-INFO:Xst:2261 - The FF/Latch <PULSER/to_seven_seg_8> in Unit <topLevel> is equivalent to the following 2 FFs/Latches, which will be removed : <PULSER/to_seven_seg_6> <PULSER/to_seven_seg_3> 
+WARNING:Xst:2677 - Node <D_reg/data_8> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_9> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_10> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_11> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_12> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_13> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_14> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <D_reg/data_15> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <MEM/tm_data_0> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <P_reg/data_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:1710 - FF/Latch <PULSER/to_seven_seg_4> (without init value) has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <CTL/state_FSM_FFd4> has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <CTL/state_FSM_FFd3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <CTL/state_FSM_FFd2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <CTL/state_FSM_FFd1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <A_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <P_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_7> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_6> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_5> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_4> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_3> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_2> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_1> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <D_reg/data_0> has a constant value of 0 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <PULSER/to_seven_seg_10> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_9> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_6> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_3> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_1> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PULSER/to_seven_seg_0> (without init value) has a constant value of 1 in block <topLevel>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <PC_reg/data_0> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_4> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_8> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_9> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_10> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_11> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_12> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_13> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_14> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <PC_reg/data_15> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_7> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_6> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_5> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_4> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_3> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_2> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_1> of sequential type is unconnected in block <topLevel>.
+WARNING:Xst:2677 - Node <IR_reg/data_0> of sequential type is unconnected in block <topLevel>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -419,7 +861,7 @@ Speed Grade: -2
 
    Minimum period: 2.338ns (Maximum Frequency: 427.716MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 4.202ns
+   Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -450,9 +892,9 @@ Delay:               2.338ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 6 / 6
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              4.202ns (Levels of Logic = 1)
+Offset:              4.118ns (Levels of Logic = 1)
   Source:            PULSER/to_seven_seg_8 (FF)
   Destination:       sevenOut<8> (PAD)
   Source Clock:      clk rising
@@ -461,11 +903,11 @@ Offset:              4.202ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.525   0.765  PULSER/to_seven_seg_8 (PULSER/to_seven_seg_8)
+     FD:C->Q               1   0.525   0.681  PULSER/to_seven_seg_8 (PULSER/to_seven_seg_8)
      OBUF:I->O                 2.912          sevenOut_8_OBUF (sevenOut<8>)
     ----------------------------------------
-    Total                      4.202ns (3.437ns logic, 0.765ns route)
-                                       (81.8% logic, 18.2% route)
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
 
 =========================================================================
 
@@ -483,15 +925,15 @@ clk            |    2.338|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 14.93 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 17.60 secs
  
 --> 
 
 
-Total memory usage is 386836 kilobytes
+Total memory usage is 388036 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   58 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :  165 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

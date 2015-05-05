@@ -514,18 +514,18 @@ wire [11:0] hi_ctl_out;
 
 // Seven-segment control stuff:
 sevenseg LO_CTL(
-    // .in(A_out[7:4]),
-    .in(4'h7),
+    .in(A_out[7:4]),
+    // .in(4'h7),
     .out(lo_ctl_out)
 );
 
 sevenseg HI_CTL(
-    // .in(A_out[3:0]),
-    .in(4'hF),
+    .in(A_out[3:0]),
+    // .in(4'hF),
     .out(hi_ctl_out)
 );
 
-wire [11:0] dumbsignal;
+// wire [11:0] dumbsignal;
 pulser PULSER(
     .clk(clk),
     .low(lo_ctl_out),
