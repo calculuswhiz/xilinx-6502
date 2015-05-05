@@ -10,4 +10,6 @@ Some quick things:
 
 3. Check links.md for a list of sources we used for research and reference.
 
-4. This is a WIP.
+4. file_desc.txt has information about what each file in the project does.
+
+5. This is a WIP.
