@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/zach/Documents/395ECE/xilinx-6502/project/topLevel_isim_beh.exe" -prj "/home/zach/Documents/395ECE/xilinx-6502/project/topLevel_beh.prj" "work.topLevel" "work.glbl" 

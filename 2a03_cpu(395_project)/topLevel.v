@@ -6,9 +6,21 @@ module topLevel (
     // output mem_rw,
     // output [7:0] mem_addr_l,
     // output [7:0] mem_addr_h,
-    
+    output DEBUGLED,
     output [11:0] sevenOut
 );
+
+// Clock divider:
+reg [19:0] clkdiv;
+initial
+begin 
+    clkdiv = 0;
+end
+
+always @ (posedge clk)
+begin
+    clkdiv = clkdiv+1'b1;
+end
 
 // Internal signals:
 // Enable:
@@ -88,21 +100,21 @@ wire        mem_rw;
 wire [7:0]  membuf_out;
 
 testmemory MEM(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .tm_address({memory_bus_h, memory_bus_l}),
     .tm_data(mem_data)
 );
 
 tristate membuf(
     .in(mem_data),
-    .enable(~mem_rw),
+    .enable(mem_rw),
     .out(membuf_out)
 );
 assign xfer_bus = membuf_out;
 
 // Put stuff down from left to right:
 gpReg X_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load(X_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -117,7 +129,7 @@ tristate Xbuf(
 assign data_bus = Xbuf_out;
 
 gpReg Y_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load(Y_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -139,7 +151,7 @@ mux2 Smux(
 );
 
 gpReg S_reg(
-    .clk(clk),    // Clock
+    .clk(clkdiv[19]),    // Clock
     .load(S_ld),
     .rst_n(1'b1),
     .in(Smux_out),
@@ -221,7 +233,7 @@ mux2 Amux(
 );
 
 gpReg A_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load(A_ld),
     .rst_n(1'b1),
     .in(Amux_out),
@@ -270,7 +282,7 @@ mux2 PCHmux(
 );
 
 PC PC_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load_pc_h(PCL_ld),
     .load_pc_l(PCH_ld),
     .L_inc(PCL_inc),
@@ -325,7 +337,7 @@ mux2 DHmux(
 );
 
 PC D_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load_pc_h(DL_ld),
     .load_pc_l(DH_ld),
     .L_inc(1'b0),
@@ -380,7 +392,7 @@ mux2 THmux(
 );
 
 PC T_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load_pc_h(TL_ld),
     .load_pc_l(TH_ld),
     .L_inc(1'b0),
@@ -427,7 +439,7 @@ mux2 Pmux(
 );
 
 gpReg P_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load(P_ld),
     .rst_n(1'b1),
     .in(Pmux_out),
@@ -449,7 +461,7 @@ mux2 IRmux(
 );
 
 gpReg IR_reg(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .load(IR_ld),
     .rst_n(1'b1),
     .in(IRmux_out),
@@ -477,8 +489,9 @@ tristate xferdbuf(
 );
 assign data_bus = xferdbuf_out;
 
+wire [11:0] state_out;
 control CTL(
-    .clk(clk),
+    .clk(clkdiv[19]),
     .P_in(P_out),
     .IR_in(IR_out),
     .alu_V(V_out), .alu_C(C_out), .alu_N(N_out), .alu_Z(Z_out),
@@ -506,7 +519,8 @@ control CTL(
     .IRmux_sel(IRmux_sel),
     .aluop(aluop),
     .V_ctl(V_in), .C_ctl(C_in),
-    .mem_rw (mem_rw)
+    .mem_rw (mem_rw),
+    .state_out(state_out)
 );
 
 wire [11:0] lo_ctl_out;
@@ -514,25 +528,31 @@ wire [11:0] hi_ctl_out;
 
 // Seven-segment control stuff:
 sevenseg LO_CTL(
-    .in(A_out[7:4]),
-    // .in(4'h7),
+    .in(A_out[3:0]),
+    // .in(IR_out[3:0]),
     .out(lo_ctl_out)
 );
 
 sevenseg HI_CTL(
-    .in(A_out[3:0]),
-    // .in(4'hF),
+    .in(A_out[7:4]),
+    // .in(IR_out[7:4]),
     .out(hi_ctl_out)
 );
 
-// wire [11:0] dumbsignal;
 pulser PULSER(
     .clk(clk),
     .low(lo_ctl_out),
     .high(hi_ctl_out),
     .to_seven_seg(sevenOut)
-    // .to_seven_seg(dumbsignal)
 );
+
+// wire [7:0] dumbsignal;
+// tristate testTristate(
+//     .in(8'hff),
+//     .enable(clkdiv[19]&clkdiv[18]),
+//     .out(dumbsignal)
+// );
+assign DEBUGLED = state_out[8];
 
 // assign sevenOut = 12'h65f;
 

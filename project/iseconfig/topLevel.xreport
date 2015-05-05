@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-05T00:38:27</DateModified>
+  <DateModified>2015-05-05T14:43:14</DateModified>
   <ModuleName>topLevel</ModuleName>
-  <SummaryTimeStamp>2015-05-04T21:29:41</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-05-05T14:35:35</SummaryTimeStamp>
   <SavedFilePath>/home/zach/Documents/395ECE/xilinx-6502/project/iseconfig/topLevel.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/zach/Documents/395ECE/xilinx-6502/project/</ImplementationReportsDirectory>
   <DateInitialized>2015-05-04T18:21:10</DateInitialized>

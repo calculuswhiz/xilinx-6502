@@ -1,0 +1,42 @@
+Running: /home/zach/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/zach/Documents/395ECE/xilinx-6502/project/topLevel_isim_beh.exe" -prj "/home/zach/Documents/395ECE/xilinx-6502/project/topLevel_beh.prj" "work.topLevel" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/tristate.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/testmemory.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/sevenseg.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/pulser.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/PC.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/mux8.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/mux2.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/gpReg.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/dev_zero.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/control.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/ALU.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/topLevel.v" into library work
+Analyzing Verilog file "/home/zach/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/project/../2a03_cpu(395_project)/topLevel.v" Line 211: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
+Completed static elaboration
+Fuse Memory Usage: 94832 KB
+Fuse CPU Usage: 1730 ms
+Compiling module testmemory
+Compiling module tristate
+Compiling module gpReg
+Compiling module mux2
+Compiling module mux8
+Compiling module ALU
+Compiling module dev_zero
+Compiling module PC
+Compiling module control
+Compiling module sevenseg
+Compiling module pulser
+Compiling module topLevel
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 13 Verilog Units
+Built simulation executable /home/zach/Documents/395ECE/xilinx-6502/project/topLevel_isim_beh.exe
+Fuse Memory Usage: 393068 KB
+Fuse CPU Usage: 1780 ms
+GCC CPU Usage: 240 ms

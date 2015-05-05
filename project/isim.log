@@ -1,0 +1,30 @@
+ISim log file
+Running: /home/zach/Documents/395ECE/xilinx-6502/project/topLevel_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/zach/Documents/395ECE/xilinx-6502/project/topLevel_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: For instance topLevel/ALU_6502/, width 9 of formal port f is not equal to width 8 of actual.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# restart
+# run all
+Simulator is doing circuit initialization process.
+The simulator has terminated in an unexpected manner.  Please review the ISim log (isim.log) for details.
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: For instance topLevel/ALU_6502/, width 9 of formal port f is not equal to width 8 of actual.
+# run all
+Simulator is doing circuit initialization process.
+The simulator has terminated in an unexpected manner.  Please review the ISim log (isim.log) for details.
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: For instance topLevel/ALU_6502/, width 9 of formal port f is not equal to width 8 of actual.

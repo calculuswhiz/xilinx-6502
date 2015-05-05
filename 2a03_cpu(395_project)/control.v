@@ -44,7 +44,9 @@ module control
     output reg [3:0] aluop,
     output reg V_ctl, C_ctl,  // Selectively decide whether to send these flags to the ALU
     
-    output reg mem_rw   // Default to read
+    output reg mem_rw,   // Default to read
+    
+    output [11:0] state_out
 );
 
 //States:
@@ -145,6 +147,7 @@ begin : state_actions
             PCL_inc = 1;        // PC+=1
             IR_ld = 1;          // Get next instruction
             IR_en = 1;          // Get IR onto the bus.
+            mem_rw = 0;
             xferd_en = 1;
             ALU_Bmux_sel = 3'b100;  // A+M+C
             C_ctl = P_in[0];
@@ -182,13 +185,13 @@ begin : next_state_logic
      * for transitioning between states */
     next_state = state;
     case(state)
-        fetch, ADC_IMM: 
+        fetch, ADC_IMM, JMP_ABS_1: 
         begin // See opCodeHex.v for all encodings.
             // Use commas to separate same next-states.
             case({4'h0, IR_in[7:0]})
                 ADC_IMM: next_state = ADC_IMM;
                 JMP_ABS: next_state = JMP_ABS;
-                default: /* Shippai :(. */;
+                default: next_state = fetch;
             endcase
         end
         JMP_ABS: next_state = JMP_ABS_1;
@@ -201,5 +204,7 @@ begin: next_state_assignment
     /* Assignment of next state on clock edge */
     state <= next_state;
 end
+
+assign state_out = state;
 
 endmodule : control

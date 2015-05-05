@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 05 00:39:32 2015
+// Written by: Map P.20131013 on Tue May 05 15:55:13 2015
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -16,5 +16,6 @@ COMP "sevenOut<6>" LOCATE = SITE "R7" LEVEL 1;
 COMP "sevenOut<7>" LOCATE = SITE "R15" LEVEL 1;
 COMP "sevenOut<8>" LOCATE = SITE "R16" LEVEL 1;
 COMP "sevenOut<9>" LOCATE = SITE "M15" LEVEL 1;
+COMP "DEBUGLED" LOCATE = SITE "B15" LEVEL 1;
 SCHEMATIC END;
 

@@ -39,18 +39,20 @@ net clk             loc=A9;
 # net mem_addr_h[6]    loc=;
 # net mem_addr_h[7]    loc=;
 
-# 20-15
+# Chan 20-15
 net sevenOut[0]     loc=K3;
 net sevenOut[1]     loc=M1;
 net sevenOut[2]     loc=M2;
 net sevenOut[3]     loc=R1;
 net sevenOut[4]     loc=R2;
 net sevenOut[5]     loc=T4;
-# 0-5
+# Chan 0-5
 net sevenOut[6]     loc=R7;
 net sevenOut[7]     loc=R15;
 net sevenOut[8]     loc=R16;
 net sevenOut[9]     loc=M15;
 net sevenOut[10]    loc=M16;
 net sevenOut[11]    loc=K15;
-# Maybe it's this one?
+
+# Debug LED:
+net DEBUGLED        loc=B15;    # (Chan14)
