@@ -23,6 +23,8 @@
         - https://github.com/xesscorp/XuLA/blob/master/FPGA/XuLA_lib/SDCard.vhd 
     - Product page (for the FPGA we're using) 
         - http://www.xess.com/shop/product/xula2-lx9/
+    - XStools info 
+        - http://www.xess.com/blog/a-python-package-for-xess-fpga-boards/
 
 
 - Reference: Other projects:
