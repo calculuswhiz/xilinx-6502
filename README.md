@@ -28,3 +28,19 @@ Got the stuff? Next up:
 - Warning: this file is **huge** (6 GiB-ish). But that's not the worst part. The actual install size is over **20 GiB**! This means that it may not fit inside your root directory (I gave mine only 20 GiB). I installed it to my home directory. (I have not experimented with deleting unneeded devices to save space. Do so at your own risk.)
 - The installer might not modify your path variable. Most notably, you want to make sure that `Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise` is accessible by your launchers. I made a symbolic link in my `~/bin` directory.
 - After this, you're pretty much ready to get started, I think. The `.xise` file is what you want to open with the ISE. The `.bit` file is the bitstream file you load through the USB port. See `fpgaloading.md` for more information.
+
+# Current state of project:
+We've written a quick demo program for the two instructions we implemented (`testMemory.v`):
+```
+ADC #$01
+JMP $0000
+```
+The seven-segment display outputs the value inside the Accumulator. Thus, this value will keep incrementing. Expected output:
+```
+00
+01
+...
+FF
+00
+02  <- Note that this is because the carry flag got set with the previous operation.
+```
