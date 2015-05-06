@@ -19,8 +19,9 @@ Some quick things:
 # Getting started:
 So you've decided to try it out. Here's the stuff we used:
 - FPGA: We used Xess' [XuLA2-LX9](http://www.xess.com/shop/product/xula2-lx9/) board for development.
-- 7-segment display: Standard 4 digits, each with decimal point (dp). 12 pins. Enable (active low, 1-indexed) being pins 12, 9, 8, and 6. See `2a03_cpu(395_project)/sevenseg.v` for more information.
+- 7-segment display: Standard 4 digits, each with decimal point (dp). Ours in particular was called `UM5624-11`. See `2a03_cpu(395_project)/sevenseg.v` for more information.
 - Some LED. Ours was green.
+- We mostly just used whatever we found in the lab ///
 - USB to micro USB cable.
 
 Got the stuff? Next up:

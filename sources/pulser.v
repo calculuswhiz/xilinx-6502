@@ -7,7 +7,8 @@ module pulser
 	output reg [11:0] to_seven_seg
 );
 
-reg [3:0] data;
+// Clock divider: (from 12 MHz/2^5 = 384 kHz)
+reg [5:0] data;
 
 initial
 begin
@@ -16,7 +17,7 @@ end
 
 always @ (posedge clk)
 begin
-	if(data[3] == 1) //Low
+	if(data[5] == 1) //Low
 		begin
 			data = data+1'b1;
 			to_seven_seg = low &  ~12'b000010000000;

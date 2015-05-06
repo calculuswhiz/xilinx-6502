@@ -11,7 +11,10 @@ module topLevel (
 );
 
 // Clock divider:
-reg [19:0] clkdiv;
+// 12MHz/2^17 = 96Hz
+// Higher divfactor = slower processor.
+parameter divfactor = 16;
+reg [divfactor:0] clkdiv;
 initial
 begin 
     clkdiv = 0;
@@ -100,7 +103,7 @@ wire        mem_rw;
 wire [7:0]  membuf_out;
 
 testmemory MEM(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .tm_address({memory_bus_h, memory_bus_l}),
     .tm_data(mem_data)
 );
@@ -114,7 +117,7 @@ assign xfer_bus = membuf_out;
 
 // Put stuff down from left to right:
 gpReg X_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load(X_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -129,7 +132,7 @@ tristate Xbuf(
 assign data_bus = Xbuf_out;
 
 gpReg Y_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load(Y_ld),
     .rst_n(1'b1),
     .in(data_bus),
@@ -151,7 +154,7 @@ mux2 Smux(
 );
 
 gpReg S_reg(
-    .clk(clkdiv[19]),    // Clock
+    .clk(clkdiv[divfactor]),    // Clock
     .load(S_ld),
     .rst_n(1'b1),
     .in(Smux_out),
@@ -233,7 +236,7 @@ mux2 Amux(
 );
 
 gpReg A_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load(A_ld),
     .rst_n(1'b1),
     .in(Amux_out),
@@ -282,7 +285,7 @@ mux2 PCHmux(
 );
 
 PC PC_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load_pc_h(PCL_ld),
     .load_pc_l(PCH_ld),
     .L_inc(PCL_inc),
@@ -337,7 +340,7 @@ mux2 DHmux(
 );
 
 PC D_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load_pc_h(DL_ld),
     .load_pc_l(DH_ld),
     .L_inc(1'b0),
@@ -392,7 +395,7 @@ mux2 THmux(
 );
 
 PC T_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load_pc_h(TL_ld),
     .load_pc_l(TH_ld),
     .L_inc(1'b0),
@@ -439,7 +442,7 @@ mux2 Pmux(
 );
 
 gpReg P_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load(P_ld),
     .rst_n(1'b1),
     .in(Pmux_out),
@@ -461,7 +464,7 @@ mux2 IRmux(
 );
 
 gpReg IR_reg(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .load(IR_ld),
     .rst_n(1'b1),
     .in(IRmux_out),
@@ -491,7 +494,7 @@ assign data_bus = xferdbuf_out;
 
 wire [11:0] state_out;
 control CTL(
-    .clk(clkdiv[19]),
+    .clk(clkdiv[divfactor]),
     .P_in(P_out),
     .IR_in(IR_out),
     .alu_V(V_out), .alu_C(C_out), .alu_N(N_out), .alu_Z(Z_out),
@@ -549,7 +552,7 @@ pulser PULSER(
 // wire [7:0] dumbsignal;
 // tristate testTristate(
 //     .in(8'hff),
-//     .enable(clkdiv[19]&clkdiv[18]),
+//     .enable(clkdiv[divfactor]&clkdiv[18]),
 //     .out(dumbsignal)
 // );
 assign DEBUGLED = state_out[8];

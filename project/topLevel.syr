@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: topLevel.prj
@@ -108,30 +108,30 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/tristate.v" into library work
 Parsing module <tristate>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/testmemory.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/testmemory.v" into library work
 Parsing module <testmemory>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/sevenseg.v" into library work
 Parsing module <sevenseg>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/pulser.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/pulser.v" into library work
 Parsing module <pulser>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/PC.v" into library work
 Parsing module <PC>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux8.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/mux8.v" into library work
 Parsing module <mux8>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/mux2.v" into library work
 Parsing module <mux2>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/gpReg.v" into library work
 Parsing module <gpReg>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/dev_zero.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/dev_zero.v" into library work
 Parsing module <dev_zero>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/control.v" into library work
 Parsing module <control>.
-Parsing verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/opCodeHex.v" included at line 55.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v" into library work
+Parsing verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/opCodeHex.v" included at line 55.
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/ALU.v" into library work
 Parsing module <ALU>.
-Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" into library work
+Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/topLevel.v" into library work
 Parsing module <topLevel>.
 
 =========================================================================
@@ -151,7 +151,7 @@ Elaborating module <mux2>.
 Elaborating module <mux8>.
 
 Elaborating module <ALU>.
-WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v" Line 211: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:189 - "/home/zach/Documents/395ECE/xilinx-6502/sources/topLevel.v" Line 214: Size mismatch in connection of port <f>. Formal port size is 9-bit while actual signal size is 8-bit.
 
 Elaborating module <dev_zero>.
 
@@ -168,16 +168,17 @@ Elaborating module <pulser>.
 =========================================================================
 
 Synthesizing Unit <topLevel>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/topLevel.v".
-    Found 20-bit register for signal <clkdiv>.
-    Found 20-bit adder for signal <clkdiv[19]_GND_1_o_add_1_OUT> created at line 22.
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/topLevel.v".
+        divfactor = 16
+    Found 17-bit register for signal <clkdiv>.
+    Found 17-bit adder for signal <clkdiv[16]_GND_1_o_add_1_OUT> created at line 25.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  20 D-type flip-flop(s).
+	inferred  17 D-type flip-flop(s).
 Unit <topLevel> synthesized.
 
 Synthesizing Unit <testmemory>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/testmemory.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/testmemory.v".
 WARNING:Xst:647 - Input <tm_address<15:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2999 - Signal 'TM_DATA', unconnected in block 'testmemory', is tied to its initial value.
     Found 8x8-bit single-port Read Only RAM <Mram_TM_DATA> for signal <TM_DATA>.
@@ -188,7 +189,7 @@ WARNING:Xst:2999 - Signal 'TM_DATA', unconnected in block 'testmemory', is tied 
 Unit <testmemory> synthesized.
 
 Synthesizing Unit <tristate>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/tristate.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/tristate.v".
     Found 1-bit tristate buffer for signal <out<7>> created at line 7
     Found 1-bit tristate buffer for signal <out<6>> created at line 7
     Found 1-bit tristate buffer for signal <out<5>> created at line 7
@@ -202,7 +203,7 @@ Synthesizing Unit <tristate>.
 Unit <tristate> synthesized.
 
 Synthesizing Unit <gpReg>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/gpReg.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/gpReg.v".
         width = 8
     Found 8-bit register for signal <data>.
     Summary:
@@ -210,20 +211,20 @@ Synthesizing Unit <gpReg>.
 Unit <gpReg> synthesized.
 
 Synthesizing Unit <mux2>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux2.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/mux2.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux2> synthesized.
 
 Synthesizing Unit <mux8>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/mux8.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/mux8.v".
     Found 8-bit 8-to-1 multiplexer for signal <f> created at line 8.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux8> synthesized.
 
 Synthesizing Unit <ALU>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/ALU.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/ALU.v".
     Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 47.
     Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT> created at line 47.
     Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_10_OUT> created at line 77.
@@ -237,13 +238,13 @@ Synthesizing Unit <ALU>.
 Unit <ALU> synthesized.
 
 Synthesizing Unit <dev_zero>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/dev_zero.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/dev_zero.v".
     Summary:
 	no macro.
 Unit <dev_zero> synthesized.
 
 Synthesizing Unit <PC>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/PC.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/PC.v".
         width = 16
     Found 16-bit register for signal <data>.
     Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 28.
@@ -255,7 +256,7 @@ Synthesizing Unit <PC>.
 Unit <PC> synthesized.
 
 Synthesizing Unit <control>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/control.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/control.v".
         SIZE = 12
         alu_adc = 4'b0000
         alu_sbc = 4'b0001
@@ -441,20 +442,20 @@ WARNING:Xst:647 - Input <P_in<7:1>> is never used. This port will be preserved a
 Unit <control> synthesized.
 
 Synthesizing Unit <sevenseg>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/sevenseg.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/sevenseg.v".
     Found 16x12-bit Read Only RAM for signal <out>
     Summary:
 	inferred   1 RAM(s).
 Unit <sevenseg> synthesized.
 
 Synthesizing Unit <pulser>.
-    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/2a03_cpu(395_project)/pulser.v".
+    Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/pulser.v".
     Found 12-bit register for signal <to_seven_seg>.
-    Found 4-bit register for signal <data>.
-    Found 4-bit adder for signal <data[3]_GND_20_o_add_4_OUT> created at line 26.
+    Found 6-bit register for signal <data>.
+    Found 6-bit adder for signal <data[5]_GND_20_o_add_4_OUT> created at line 27.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  16 D-type flip-flop(s).
+	inferred  18 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <pulser> synthesized.
 
@@ -467,8 +468,8 @@ Macro Statistics
  8x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 13
  16-bit adder                                          : 3
- 20-bit adder                                          : 1
- 4-bit adder                                           : 1
+ 17-bit adder                                          : 1
+ 6-bit adder                                           : 1
  8-bit adder                                           : 3
  9-bit adder                                           : 2
  9-bit addsub                                          : 1
@@ -476,8 +477,8 @@ Macro Statistics
 # Registers                                            : 13
  12-bit register                                       : 1
  16-bit register                                       : 3
- 20-bit register                                       : 1
- 4-bit register                                        : 1
+ 17-bit register                                       : 1
+ 6-bit register                                        : 1
  8-bit register                                        : 7
 # Multiplexers                                         : 58
  1-bit 2-to-1 multiplexer                              : 17
@@ -601,8 +602,8 @@ Macro Statistics
  9-bit subtractor                                      : 2
 # Counters                                             : 5
  16-bit up counter                                     : 3
- 20-bit up counter                                     : 1
- 4-bit up counter                                      : 1
+ 17-bit up counter                                     : 1
+ 6-bit up counter                                      : 1
 # Registers                                            : 68
  Flip-Flops                                            : 68
 # Multiplexers                                         : 55
@@ -723,6 +724,8 @@ INFO:Xst:2261 - The FF/Latch <clkdiv_0> in Unit <topLevel> is equivalent to the 
 INFO:Xst:2261 - The FF/Latch <clkdiv_1> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data_1> 
 INFO:Xst:2261 - The FF/Latch <clkdiv_2> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data_2> 
 INFO:Xst:2261 - The FF/Latch <clkdiv_3> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data_3> 
+INFO:Xst:2261 - The FF/Latch <clkdiv_4> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data_4> 
+INFO:Xst:2261 - The FF/Latch <clkdiv_5> in Unit <topLevel> is equivalent to the following FF/Latch, which will be removed : <PULSER/data_5> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -748,8 +751,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 55
- Flip-Flops                                            : 55
+# Registers                                            : 52
+ Flip-Flops                                            : 52
 
 =========================================================================
 
@@ -772,20 +775,20 @@ Top Level Output File Name         : topLevel.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 134
+# BELS                             : 125
 #      GND                         : 1
 #      INV                         : 2
-#      LUT1                        : 20
+#      LUT1                        : 17
 #      LUT2                        : 6
 #      LUT3                        : 12
 #      LUT4                        : 13
 #      LUT5                        : 11
 #      LUT6                        : 7
-#      MUXCY                       : 30
+#      MUXCY                       : 27
 #      VCC                         : 1
-#      XORCY                       : 31
-# FlipFlops/Latches                : 55
-#      FD                          : 39
+#      XORCY                       : 28
+# FlipFlops/Latches                : 52
+#      FD                          : 36
 #      FDE                         : 16
 # Clock Buffers                    : 2
 #      BUFG                        : 1
@@ -800,15 +803,15 @@ Selected Device : 6slx9ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              55  out of  11440     0%  
- Number of Slice LUTs:                   71  out of   5720     1%  
-    Number used as Logic:                71  out of   5720     1%  
+ Number of Slice Registers:              52  out of  11440     0%  
+ Number of Slice LUTs:                   68  out of   5720     1%  
+    Number used as Logic:                68  out of   5720     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     74
-   Number with an unused Flip Flop:      19  out of     74    25%  
-   Number with an unused LUT:             3  out of     74     4%  
-   Number of fully used LUT-FF pairs:    52  out of     74    70%  
+ Number of LUT Flip Flop pairs used:     71
+   Number with an unused Flip Flop:      19  out of     71    26%  
+   Number with an unused LUT:             3  out of     71     4%  
+   Number of fully used LUT-FF pairs:    49  out of     71    69%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -839,8 +842,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 29    |
-clkdiv_19                          | BUFG                   | 26    |
+clk                                | BUFGP                  | 26    |
+clkdiv_16                          | BUFG                   | 26    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -862,53 +865,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.631ns (frequency: 380.120MHz)
-  Total number of paths / destination ports: 219 / 29
+  Clock period: 2.542ns (frequency: 393.391MHz)
+  Total number of paths / destination ports: 162 / 26
 -------------------------------------------------------------------------
-Delay:               2.631ns (Levels of Logic = 18)
-  Source:            clkdiv_3 (FF)
-  Destination:       clkdiv_19 (FF)
+Delay:               2.542ns (Levels of Logic = 1)
+  Source:            clkdiv_5 (FF)
+  Destination:       PULSER/to_seven_seg_7 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: clkdiv_3 to clkdiv_19
+  Data Path: clkdiv_5 to PULSER/to_seven_seg_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              10   0.525   1.008  clkdiv_3 (clkdiv_3)
-     LUT1:I0->O            1   0.254   0.000  Mcount_clkdiv_cy<3>_rt (Mcount_clkdiv_cy<3>_rt)
-     MUXCY:S->O            1   0.215   0.000  Mcount_clkdiv_cy<3> (Mcount_clkdiv_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<4> (Mcount_clkdiv_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<5> (Mcount_clkdiv_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<6> (Mcount_clkdiv_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<7> (Mcount_clkdiv_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<8> (Mcount_clkdiv_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<9> (Mcount_clkdiv_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<10> (Mcount_clkdiv_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<11> (Mcount_clkdiv_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<12> (Mcount_clkdiv_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<13> (Mcount_clkdiv_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<14> (Mcount_clkdiv_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<15> (Mcount_clkdiv_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<16> (Mcount_clkdiv_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  Mcount_clkdiv_cy<17> (Mcount_clkdiv_cy<17>)
-     MUXCY:CI->O           0   0.023   0.000  Mcount_clkdiv_cy<18> (Mcount_clkdiv_cy<18>)
-     XORCY:CI->O           1   0.206   0.000  Mcount_clkdiv_xor<19> (Result<19>)
-     FD:D                      0.074          clkdiv_19
+     FD:C->Q              10   0.525   1.007  clkdiv_5 (clkdiv_5)
+     INV:I->O              1   0.255   0.681  PULSER/Mmux_high[11]_low[11]_mux_7_OUT101_INV_0 (PULSER/high[11]_low[11]_mux_7_OUT<7>)
+     FD:D                      0.074          PULSER/to_seven_seg_7
     ----------------------------------------
-    Total                      2.631ns (1.623ns logic, 1.008ns route)
-                                       (61.7% logic, 38.3% route)
+    Total                      2.542ns (0.854ns logic, 1.688ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clkdiv_19'
+Timing constraint: Default period analysis for Clock 'clkdiv_16'
   Clock period: 3.625ns (frequency: 275.881MHz)
   Total number of paths / destination ports: 321 / 42
 -------------------------------------------------------------------------
 Delay:               3.625ns (Levels of Logic = 10)
   Source:            P_reg/data_0 (FF)
   Destination:       A_reg/data_7 (FF)
-  Source Clock:      clkdiv_19 rising
-  Destination Clock: clkdiv_19 rising
+  Source Clock:      clkdiv_16 rising
+  Destination Clock: clkdiv_16 rising
 
   Data Path: P_reg/data_0 to A_reg/data_7
                                 Gate     Net
@@ -950,13 +936,13 @@ Offset:              4.118ns (Levels of Logic = 1)
                                        (83.5% logic, 16.5% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clkdiv_19'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clkdiv_16'
   Total number of paths / destination ports: 2 / 1
 -------------------------------------------------------------------------
 Offset:              5.685ns (Levels of Logic = 2)
   Source:            CTL/state_FSM_FFd2 (FF)
   Destination:       DEBUGLED (PAD)
-  Source Clock:      clkdiv_19 rising
+  Source Clock:      clkdiv_16 rising
 
   Data Path: CTL/state_FSM_FFd2 to DEBUGLED
                                 Gate     Net
@@ -979,23 +965,23 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    2.631|         |         |         |
-clkdiv_19      |    3.009|         |         |         |
+clk            |    2.542|         |         |         |
+clkdiv_16      |    3.009|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock clkdiv_19
+Clock to Setup on destination clock clkdiv_16
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clkdiv_19      |    3.625|         |         |         |
+clkdiv_16      |    3.625|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.50 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.46 secs
  
 --> 
 
@@ -1004,5 +990,5 @@ Total memory usage is 388088 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  133 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 
