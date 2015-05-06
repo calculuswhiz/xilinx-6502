@@ -1,3 +1,4 @@
+// This is what issues the control signals necessary for the processor to run.
 module control
 (
     /* Input and output port declarations */

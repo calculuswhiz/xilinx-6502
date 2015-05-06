@@ -1,12 +1,17 @@
-module PC #(parameter width=16)
+// This is used for the program counter, but it is also used for the D
+// and T registers. Sorry for the misnomer.
+// It is useful because it is 16 bits and can correct invalidation 
+// (i.e. page crossings), if necessary.
+module PC
 (
 	input clk,
     
 	input load_pc_h,
 	input load_pc_l,
     
+    // These both override the load signals, so there's no need to set them.
     input L_inc,
-    input H_inc,
+    input H_inc,    // Set this value high to correct invalidation.
     
 	input [7:0]    PCL_in,
 	input [7:0]    PCH_in,
@@ -15,7 +20,7 @@ module PC #(parameter width=16)
 	output [7:0]   PCH_out
 );
 
-reg [width-1:0] data;
+reg [15:0] data;
 
 initial
 begin

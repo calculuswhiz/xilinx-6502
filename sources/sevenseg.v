@@ -1,3 +1,5 @@
+// This takes a 4-bit number and converts it into seven-segment
+// display encoding. Output into PULSER unit.
 module sevenseg
 (
     input [3:0] in,

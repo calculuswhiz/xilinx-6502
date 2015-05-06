@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Reading design: topLevel.prj
@@ -128,7 +128,7 @@ Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/dev_zero
 Parsing module <dev_zero>.
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/control.v" into library work
 Parsing module <control>.
-Parsing verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/opCodeHex.v" included at line 55.
+Parsing verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/opCodeHex.v" included at line 56.
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/ALU.v" into library work
 Parsing module <ALU>.
 Analyzing Verilog file "/home/zach/Documents/395ECE/xilinx-6502/sources/topLevel.v" into library work
@@ -190,14 +190,14 @@ Unit <testmemory> synthesized.
 
 Synthesizing Unit <tristate>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/tristate.v".
-    Found 1-bit tristate buffer for signal <out<7>> created at line 7
-    Found 1-bit tristate buffer for signal <out<6>> created at line 7
-    Found 1-bit tristate buffer for signal <out<5>> created at line 7
-    Found 1-bit tristate buffer for signal <out<4>> created at line 7
-    Found 1-bit tristate buffer for signal <out<3>> created at line 7
-    Found 1-bit tristate buffer for signal <out<2>> created at line 7
-    Found 1-bit tristate buffer for signal <out<1>> created at line 7
-    Found 1-bit tristate buffer for signal <out<0>> created at line 7
+    Found 1-bit tristate buffer for signal <out<7>> created at line 8
+    Found 1-bit tristate buffer for signal <out<6>> created at line 8
+    Found 1-bit tristate buffer for signal <out<5>> created at line 8
+    Found 1-bit tristate buffer for signal <out<4>> created at line 8
+    Found 1-bit tristate buffer for signal <out<3>> created at line 8
+    Found 1-bit tristate buffer for signal <out<2>> created at line 8
+    Found 1-bit tristate buffer for signal <out<1>> created at line 8
+    Found 1-bit tristate buffer for signal <out<0>> created at line 8
     Summary:
 	inferred   8 Tristate(s).
 Unit <tristate> synthesized.
@@ -218,20 +218,20 @@ Unit <mux2> synthesized.
 
 Synthesizing Unit <mux8>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/mux8.v".
-    Found 8-bit 8-to-1 multiplexer for signal <f> created at line 8.
+    Found 8-bit 8-to-1 multiplexer for signal <f> created at line 9.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux8> synthesized.
 
 Synthesizing Unit <ALU>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/ALU.v".
-    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 47.
-    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT> created at line 47.
-    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_10_OUT> created at line 77.
-    Found 9-bit adder for signal <n0062> created at line 41.
-    Found 9-bit adder for signal <BUS_0001_GND_15_o_add_1_OUT> created at line 41.
-    Found 9-bit adder for signal <n0057> created at line 71.
-    Found 9-bit 13-to-1 multiplexer for signal <f> created at line 38.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_3_OUT> created at line 45.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_5_OUT> created at line 45.
+    Found 9-bit subtractor for signal <GND_15_o_GND_15_o_sub_10_OUT> created at line 75.
+    Found 9-bit adder for signal <n0062> created at line 39.
+    Found 9-bit adder for signal <BUS_0001_GND_15_o_add_1_OUT> created at line 39.
+    Found 9-bit adder for signal <n0057> created at line 69.
+    Found 9-bit 13-to-1 multiplexer for signal <f> created at line 36.
     Summary:
 	inferred   5 Adder/Subtractor(s).
 	inferred  28 Multiplexer(s).
@@ -245,10 +245,9 @@ Unit <dev_zero> synthesized.
 
 Synthesizing Unit <PC>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/PC.v".
-        width = 16
     Found 16-bit register for signal <data>.
-    Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 28.
-    Found 8-bit adder for signal <data[15]_GND_17_o_add_2_OUT> created at line 31.
+    Found 16-bit adder for signal <data[15]_GND_17_o_add_1_OUT> created at line 33.
+    Found 8-bit adder for signal <data[15]_GND_17_o_add_2_OUT> created at line 36.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  16 D-type flip-flop(s).
@@ -452,7 +451,7 @@ Synthesizing Unit <pulser>.
     Related source file is "/home/zach/Documents/395ECE/xilinx-6502/sources/pulser.v".
     Found 12-bit register for signal <to_seven_seg>.
     Found 6-bit register for signal <data>.
-    Found 6-bit adder for signal <data[5]_GND_20_o_add_4_OUT> created at line 27.
+    Found 6-bit adder for signal <data[5]_GND_20_o_add_4_OUT> created at line 29.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  18 D-type flip-flop(s).
@@ -980,8 +979,8 @@ clkdiv_16      |    3.625|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 18.46 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.52 secs
  
 --> 
 

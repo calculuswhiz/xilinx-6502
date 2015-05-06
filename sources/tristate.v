@@ -1,3 +1,4 @@
+// A simple tristate-buffer
 module tristate (
     input   [7:0] in,
     input   enable,

@@ -1,3 +1,4 @@
+// Simple ALU. Doesn't do a whole lot. Doesn't really have to.
 module ALU (
     input [7:0] a,
     input [7:0] b,
@@ -15,9 +16,6 @@ module ALU (
     // Output: (top bit will be carry bit)
     output reg [8:0] f 
 );
-
-// wire [2:0] opSel;
-// assign opsel = operation[7:5];
 
 // Determine operation:
 /*

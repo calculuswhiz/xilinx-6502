@@ -1,3 +1,4 @@
+// Parametrizes opcodes so they're easier to read in code (control.v).
 parameter ADC_ABS = 12'h06D,
 ADC_ABX = 12'h07D,
 ADC_ABY = 12'h079,

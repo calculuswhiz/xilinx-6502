@@ -1,3 +1,4 @@
+// 8-to-1 multiplexer
 module mux8 (
     input   [7:0] in0, in1, in2, in3, in4, in5, in6, in7,
     input   [2:0] sel,

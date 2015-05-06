@@ -1,3 +1,4 @@
+// 2-to-1 multiplexer
 module mux2 (
     input [7:0] a, b,
     input sel,

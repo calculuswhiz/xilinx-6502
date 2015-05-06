@@ -1,6 +1,4 @@
 /*
-    With the parameter width thing, we can now simulate any of the cpu registers.
-    = PC is 2 bytes
     These are all the byte registers:
     - S, Stack pointer ~ %spl
     - X and Y, Index registers ~ %sil, %dil

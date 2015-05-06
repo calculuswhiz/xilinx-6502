@@ -115,7 +115,7 @@ tristate membuf(
 );
 assign xfer_bus = membuf_out;
 
-// Put stuff down from left to right:
+// Put stuff down from left to right (See the datapath diagram for more info.):
 gpReg X_reg(
     .clk(clkdiv[divfactor]),
     .load(X_ld),

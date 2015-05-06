@@ -1,4 +1,6 @@
-//The seven segment display we're using only allows one of the seven segment displays to be set at once, so we use this to set both every other clock cycle.
+// The seven segment display we're using only allows one of the seven
+// segment digits to be set at once, so we use this to alternate between
+// the two digits every other clock cycle.
 module pulser
 (
 	input clk,
