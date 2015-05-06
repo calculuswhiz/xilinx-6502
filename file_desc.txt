@@ -1,7 +1,12 @@
 This is a file for describing what the files that are (currently) in the project do. Not all files are complete.
 
-Note that everything is in Verilog, not SystemVerilog. If you came from SystemVerilog as your background, be aware that Verilog is more difficult (e.g. limited) by a significant margin.
+Note that everything is in Verilog, not SystemVerilog. If you came from SystemVerilog as your background, be aware that Verilog has certain limitations:
+  - You no longer have access to the `logic' data type. This means you have to specify either `wire' or `reg'.
+  - Enumerated types are not available. This means that you need to use parameters. Not a big difference, except in using the simulator (we didn't).
+  - No typedefs. This means a lot of typing of `wire [7:0]'. Though with Sublime Text, this isn't really a big deal. Especially if you make a snippet.
+  - No special `always_xx' clauses.
 
+Under directory `2a03_cpu(395_project)':
 ALU.v
   -This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self-incrementors here and there.
 
@@ -12,7 +17,7 @@ control.v
   -The heart of the project, this contains the output signals for the things in the project, as well as our state machine.
   
 dev_zero.v
-  -When read, it returns 8 zeroes.
+  -When read, it returns 8 zeros.
   
 gpReg.v
   -General purpose register. Basically, not a weirdo unlike those PC reg guys.
@@ -37,3 +42,10 @@ topLevel.ucf
   
 tristate.v
   -Tristate buffer.
+
+Under directory `project' (The important ones):
+toplevel.bit
+  - The bitstream file to be loaded onto the fpga.
+  
+project.xise
+  - The project file that is opened by the ISE.

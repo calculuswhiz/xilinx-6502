@@ -14,4 +14,17 @@ Some quick things:
 
 5. fpgaloading.md has some information about how to load onto the FPGA, as well how to open in the simulator.
 
-6. This is a WIP.
+6. This is a WIP. Current status: ADC #imm and JMP $ABS  have been implemented. Future work may continue this, and we reserve the right to modify this repository at any time. Contributions are welcome, but for school, we recommend forking.
+
+# Getting started:
+So you've decided to try it out. Here's the stuff we used:
+- FPGA: We used Xess' [XuLA2-LX9](http://www.xess.com/shop/product/xula2-lx9/) board for development.
+- 7-segment display: Standard 4 digits, each with decimal point (dp). 12 pins. Enable (active low, 1-indexed) being pins 12, 9, 8, and 6. See `2a03_cpu(395_project)/sevenseg.v` for more information.
+- Some LED. Ours was green.
+- USB to micro USB cable.
+
+Got the stuff? Next up:
+- First you want to get the Xilinx ISE installer and install the ISE. Do *not* get the Vivado ISE. It does not support devices older than series-7. Directions can be found online. There is documentation on the Arch Linux wiki for those of us who use it.
+- Warning: this file is **huge** (6 GiB-ish). But that's not the worst part. The actual install size is over **20 GiB**! This means that it may not fit inside your root directory (I gave mine only 20 GiB). I installed it to my home directory. (I have not experimented with deleting unneeded devices to save space. Do so at your own risk.)
+- The installer might not modify your path variable. Most notably, you want to make sure that `Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise` is accessible by your launchers. I made a symbolic link in my `~/bin` directory.
+- After this, you're pretty much ready to get started, I think. The `.xise` file is what you want to open with the ISE. The `.bit` file is the bitstream file you load through the USB port. See `fpgaloading.md` for more information.

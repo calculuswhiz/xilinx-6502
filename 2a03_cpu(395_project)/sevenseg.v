@@ -28,6 +28,17 @@ end
 endmodule
 
 /*
+         a
+      _______
+     |       |
+   f |       | b
+     |   g   |
+     |_______|
+     |       |
+     |       |
+   e |       | c
+     |_______|    o dp
+         d
 
 Digit   gfedcba     abcdefg     a(11)   b(7)    c(4)    d(2)    e(1)    f(10)   g(5)
 0       0×3F        0×7E        1       1       1       1       1       1       0

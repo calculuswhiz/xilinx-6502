@@ -1,3 +1,4 @@
+We didn't exactly use all of these, but here's some useful information:
 - Block Diagram:
     - http://www.witwright.com/DonPub/6502-Block-Diagram.pdf
 - Fetch-execute:
