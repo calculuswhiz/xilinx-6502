@@ -74,5 +74,5 @@ datapathHD.png
 Datapath_03MAY15.jpg
   - The almost-complete datapath.
   
-Datapath_05MAY15.jpg
+Datapath_05MAY15.svg/png
   - The datapath used in our final design for class.
