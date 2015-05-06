@@ -6,7 +6,21 @@ Note that everything is in Verilog, not SystemVerilog. If you came from SystemVe
   - No typedefs. This means a lot of typing of `wire [7:0]'. Though with Sublime Text, this isn't really a big deal. Especially if you make a snippet.
   - No special `always_xx' clauses.
 
-Under directory `2a03_cpu(395_project)':
+Top directory:
+Instruction_Timing.txt
+  - Reference used in constructing datapath for cycle-accuracy.
+  
+controlPlanning.txt
+  - Now obsolete, but helped with our construction of the datapath. Namely, which control signals get issued when.
+  
+fpgaloading.md:
+  - Instructions on loading bitstream file onto the FPGA.
+  - Instructions on how to find the Lsim simulator in the ISE.
+
+links.md:
+  - Useful resources.  
+
+`2a03_cpu(395_project)/':
 ALU.v
   -This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self-incrementors here and there.
 
@@ -43,9 +57,22 @@ topLevel.ucf
 tristate.v
   -Tristate buffer.
 
-Under directory `project' (The important ones):
+`project/' (The important ones):
 toplevel.bit
   - The bitstream file to be loaded onto the fpga.
   
 project.xise
   - The project file that is opened by the ISE.
+
+`pictures/':
+6502dp.jpg
+  - The earliest incarnation of the datapath. Keeping for posterity.
+
+datapathHD.png
+  - The second incarnation of the datapath. As you can tell, it evolved a little bit.
+  
+Datapath_03MAY15.jpg
+  - The almost-complete datapath.
+  
+Datapath_05MAY15.jpg
+  - The datapath used in our final design for class.

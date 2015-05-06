@@ -1,4 +1,4 @@
-6510 Instruction Timing
+6510 Instruction Timing (excerpt modified from http://nesdev.com/6502_cpu.txt)
 
   The NMOS 6500 series processors always perform at least two reads
 for each instruction. In addition to the operation code (opcode), they
