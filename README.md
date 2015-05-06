@@ -46,3 +46,7 @@ FF
 00
 02  <- Note that this is because the carry flag got set with the previous operation.
 ```
+
+We have a video:
+https://youtu.be/b58XqSxVEMs
+![And a picture](pictures/finalResult.jpg)
