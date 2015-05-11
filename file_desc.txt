@@ -8,7 +8,7 @@ Note that everything is in Verilog, not SystemVerilog. If you came from SystemVe
 
 Top directory:
 Instruction_Timing.txt
-  - Reference used in constructing datapath for cycle- accuracy.
+  - Reference used in constructing datapath for cycle-accuracy.
   
 controlPlanning.txt
   - Now obsolete, but helped with our construction of the datapath. Namely, which control signals get issued when.
