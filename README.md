@@ -33,6 +33,12 @@ Got the stuff? Next up:
 
 # Current state of project:
 We've written a quick demo program for the two instructions we implemented (`program.list`):
+
+We have a video:
+https://youtu.be/b58XqSxVEMs
+![And a picture](pictures/finalResult.jpg)
+
+The output shows the run of this program:
 ```
 ADC #$01
 JMP $0000
@@ -46,7 +52,3 @@ FF
 00
 02  <- Note that this is because the carry flag got set with the previous operation.
 ```
-
-We have a video:
-https://youtu.be/b58XqSxVEMs
-![And a picture](pictures/finalResult.jpg)
