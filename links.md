@@ -7,7 +7,7 @@ High-level overview:
     
 Low-level details:
 - [Detailed Instruction Listing](http://homepage.ntlworld.com/cyborgsystems/CS_Main/6502/6502.htm#ADC). Our primary reference for instruction listings.
-- [Timing Behavior](http://nesdev.com/6502_cpu.txt). Our primary reference for cycle-by-cycle behavior. However, we adapted a section of the document, and tailored it to our needs for the project. See `Instruction_Timing.txt` for more information.
+- [Timing Behavior](http://nesdev.com/6502_cpu.txt). Our primary reference for cycle-by-cycle behavior. However, we adapted a section of the document and tailored it to our needs for the project. See `Instruction_Timing.txt` for more information.
 - [Proto-datapath](http://www.mdawson.net/vic20chrome/cpu/mos_6500_mpu_preliminary_may_1976.pdf). Page 2. We based most of our datapath on this design.
 
 Not used, but may be useful for later versions:
