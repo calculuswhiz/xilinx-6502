@@ -13,7 +13,7 @@ module topLevel (
 // Clock divider:
 // 12MHz/2^17 = 96Hz
 // Higher divfactor = slower processor.
-parameter divfactor = 16;
+parameter divfactor = 18;
 reg [divfactor:0] clkdiv;
 initial
 begin 
@@ -103,7 +103,7 @@ wire        mem_rw;
 wire [7:0]  membuf_out;
 
 testmemory MEM(
-    .clk(clkdiv[divfactor]),
+    // .clk(clkdiv[divfactor]),
     .tm_address({memory_bus_h, memory_bus_l}),
     .tm_data(mem_data)
 );
@@ -286,8 +286,8 @@ mux2 PCHmux(
 
 PC PC_reg(
     .clk(clkdiv[divfactor]),
-    .load_pc_h(PCL_ld),
-    .load_pc_l(PCH_ld),
+    .load_pc_h(PCH_ld),
+    .load_pc_l(PCL_ld),
     .L_inc(PCL_inc),
     .H_inc(PCH_inc),
     .PCL_in(PCLmux_out),
@@ -341,8 +341,8 @@ mux2 DHmux(
 
 PC D_reg(
     .clk(clkdiv[divfactor]),
-    .load_pc_h(DL_ld),
-    .load_pc_l(DH_ld),
+    .load_pc_h(DH_ld),
+    .load_pc_l(DL_ld),
     .L_inc(1'b0),
     .H_inc(DH_inc),
     .PCL_in(DLmux_out),
@@ -396,8 +396,8 @@ mux2 THmux(
 
 PC T_reg(
     .clk(clkdiv[divfactor]),
-    .load_pc_h(TL_ld),
-    .load_pc_l(TH_ld),
+    .load_pc_h(TH_ld),
+    .load_pc_l(TL_ld),
     .L_inc(1'b0),
     .H_inc(TH_inc),
     .PCL_in(TLmux_out),
@@ -464,8 +464,10 @@ mux2 IRmux(
 );
 
 gpReg IR_reg(
-    .clk(clkdiv[divfactor]),
-    .load(IR_ld),
+    // .clk(clkdiv[divfactor]),
+    // .load(IR_ld),
+    .clk(IR_ld),
+    .load(1'b1),
     .rst_n(1'b1),
     .in(IRmux_out),
     .out(IR_out)
@@ -533,12 +535,18 @@ wire [11:0] hi_ctl_out;
 sevenseg LO_CTL(
     .in(A_out[3:0]),
     // .in(IR_out[3:0]),
+    // .in(xfer_bus[3:0]),
+    // .in(PCL_out),
+    // .in(state_out[3:0]),
     .out(lo_ctl_out)
 );
 
 sevenseg HI_CTL(
     .in(A_out[7:4]),
     // .in(IR_out[7:4]),
+    // .in(xfer_bus[7:4]),
+    // .in(PCH_out),
+    // .in(state_out[7:4]),
     .out(hi_ctl_out)
 );
 

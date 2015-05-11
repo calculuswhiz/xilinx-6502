@@ -66,6 +66,7 @@
     <file xil_pn:name="../sources/topLevel.ucf" xil_pn:type="FILE_UCF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
+    <file xil_pn:name="../sources/program.list" xil_pn:type="FILE_USERDOC"/>
   </files>
 
   <properties>

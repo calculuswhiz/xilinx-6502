@@ -174,7 +174,7 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  read next instruction byte (and throw it away)
-                        IR=M[PC]
+                        Use M[PC]
 
   Immediate addressing
 
@@ -183,7 +183,7 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch value, increment PC
-                        DL=M[PC], PC+=1
+                        DL=M[PC], PC+=1   (state = IMMEDIATE)
 
   Absolute addressing
 
@@ -194,10 +194,10 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch low address byte, increment PC
-                        DL=M[PC], PC+=1
+                        DL=M[PC], PC+=1     (state = JMP_ABS_1, same as IMMEDIATE except next state)
         3    PC     R  copy low address byte to PCL, fetch high address
                        byte to PCH
-                        PCL=DL, PCH=M[PC]
+                        PCL=DL, PCH=M[PC]   (state = JMP_ABS_2)
 
      Read instructions (LDA, LDX, LDY, EOR, AND, ORA, ADC, SBC, CMP, BIT,
                         LAX, NOP)

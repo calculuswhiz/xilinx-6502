@@ -26,7 +26,8 @@ We didn't exactly use all of these, but here's some useful information:
         - http://www.xess.com/shop/product/xula2-lx9/
     - XStools info 
         - http://www.xess.com/blog/a-python-package-for-xess-fpga-boards/
-
+- 6502 assembler (for test programs):
+    - http://e-tradition.net/bytes/6502/assembler.html
 
 - Reference: Other projects:
     - http://ladybug.xs4all.nl/arlet/fpga/6502/

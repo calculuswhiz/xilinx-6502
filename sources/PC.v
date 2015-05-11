@@ -24,7 +24,7 @@ reg [15:0] data;
 
 initial
 begin
-	data = 0;
+	data = 16'h0;
 end
 
 always @ (posedge clk)

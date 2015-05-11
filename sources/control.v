@@ -60,7 +60,7 @@ reg [SIZE-1:0] next_state;
 
 initial
 begin 
-    state = fetch;
+    state = fetch1;
 end
 
 
@@ -138,21 +138,26 @@ begin : state_actions
 
     /* State actions: */
     case(state)
-        fetch: 
-        begin
-            IR_ld = 1;
+        fetch1: /* Ready memory */;
+        fetch2:
+        begin // Give IR the first instruction, increment PC.
             PCL_inc = 1;
+            IR_ld = 1;
+        end
+        JMP_ABS_1, IMMEDIATE:
+        begin 
+            PCL_inc  = 1;       // PC+=1
+            xferd_en = 1;       // DL=M
+            DL_ld    = 1;
         end
         ADC_IMM:
-        begin 
+        begin
             PCL_inc = 1;        // PC+=1
-            IR_ld = 1;          // Get next instruction
-            IR_en = 1;          // Get IR onto the bus.
-            mem_rw = 0;
-            xferd_en = 1;
+            IR_ld = 1;          // Get next instruction (pipeline)
+            DLd_en = 1;         // DL holds operand, move to data_bus
             ALU_Bmux_sel = 3'b100;  // A+M+C
             C_ctl = P_in[0];
-            aluop = alu_adc;    
+            aluop = alu_adc;   
             Amux_sel = 1;       // Store at A
             A_ld = 1;
             ctl_pvect[7]=alu_N; // Set flags
@@ -161,13 +166,25 @@ begin : state_actions
             ctl_pvect[0]=alu_C;
             P_ld = 1;
         end
-        JMP_ABS:
+        AND_IMM:
         begin 
-            PCL_inc = 1;        // PC += 1
-            xferd_en = 1;       // DL = M
-            DL_ld = 1;
+            PCL_inc = 1;        // PC+=1
+            IR_ld = 1;          // Get next instruction
+            DLd_en = 1;         // DL holds operand
+            ALU_Bmux_sel = 3'b100;  // A&M
+            aluop = alu_and;    
+            Amux_sel = 1;       // Store at A
+            A_ld = 1;
+            ctl_pvect[7]=alu_N; // Set flags
+            ctl_pvect[1]=alu_Z;
+            P_ld = 1;
         end
-        JMP_ABS_1:
+        NOP_IMP:
+        begin 
+            PCL_inc = 1;
+            IR_ld = 1;          // Get next instruction.
+        end
+        JMP_ABS:
         begin 
             xferd_en = 1;          // PCH = M
             PCH_ld = 1;
@@ -186,17 +203,27 @@ begin : next_state_logic
      * for transitioning between states */
     next_state = state;
     case(state)
-        fetch, ADC_IMM, JMP_ABS_1: 
+        fetch1, JMP_ABS:
+            next_state = fetch2;
+        fetch2, ADC_IMM, AND_IMM, NOP_IMP:
         begin // See opCodeHex.v for all encodings.
             // Use commas to separate same next-states.
             case({4'h0, IR_in[7:0]})
-                ADC_IMM: next_state = ADC_IMM;
-                JMP_ABS: next_state = JMP_ABS;
-                default: next_state = fetch;
+                ADC_IMM, AND_IMM:
+                    next_state = IMMEDIATE;
+                NOP_IMP:
+                    next_state = IMPLIED_ACCUMULATOR;
+                JMP_ABS: // 1, "", fetch2
+                    next_state = JMP_ABS_1;
+                default: next_state = ERROR;
             endcase
         end
-        JMP_ABS: next_state = JMP_ABS_1;
-        default: next_state = fetch;
+        IMMEDIATE, IMPLIED_ACCUMULATOR:
+            next_state = {4'h0, IR_in[7:0]};
+        JMP_ABS_1:
+            next_state = JMP_ABS;
+        ERROR: next_state = ERROR;
+        default: next_state = ERROR;
     endcase
 end
 

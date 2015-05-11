@@ -152,8 +152,12 @@ TXS_IMP = 12'h09A,
 TYA_IMP = 12'h098;
 
 // Non-instruction states are reserved at >0xff
-// e.g. fetch, jmp_abs_1.
+// e.g. fetch1, fetch2, jmp_abs_1.
 // For sanity's sake, try to put them close to the original instruction as possible.
 // If more than 4 needed, feel free to use some of the unneeded ones form other instructions.
-parameter fetch = 12'h100;
+parameter fetch1 = 12'h200;     // Wasteful... 
+parameter fetch2 = 12'h100;
 parameter JMP_ABS_1 = 12'h14C;
+parameter IMMEDIATE = 12'h169;  // Since ADC won't require more.
+parameter IMPLIED_ACCUMULATOR = 12'h269;
+parameter ERROR = 12'hfff;
