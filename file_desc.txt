@@ -8,7 +8,7 @@ Note that everything is in Verilog, not SystemVerilog. If you came from SystemVe
 
 Top directory:
 Instruction_Timing.txt
-  - Reference used in constructing datapath for cycle-accuracy.
+  - Reference used in constructing datapath for cycle- accuracy.
   
 controlPlanning.txt
   - Now obsolete, but helped with our construction of the datapath. Namely, which control signals get issued when.
@@ -22,40 +22,43 @@ links.md:
 
 `2a03_cpu(395_project)/':
 ALU.v
-  -This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self-incrementors here and there.
+  - This file is the ALU. It's what does (most) the arithmetic operations in the CPU, though we have a few self- incrementors here and there.
 
 PC.v
-  -This is our code for our PC register, as well as the T and D registers. There are certain properties of these registers, such as being 16-bit, that required us to make a separate register for them.
+  - This is our code for our PC register, as well as the T and D registers. There are certain properties of these registers, such as being 16- bit, that required us to make a separate register for them.
   
 control.v
-  -The heart of the project, this contains the output signals for the things in the project, as well as our state machine.
+  - The heart of the project, this contains the output signals for the things in the project, as well as our state machine.
   
 dev_zero.v
-  -When read, it returns 8 zeros.
+  - When read, it returns 8 zeros.
   
 gpReg.v
-  -General purpose register. Basically, not a weirdo unlike those PC reg guys.
+  - General purpose register. Basically, not a weirdo unlike those PC reg guys.
   
 mux*.v
-  -Muxes, muxes everywhere! (They're of different sizes, * is the wildcard). Muxes, of course, are multiplexers.
+  - Muxes, muxes everywhere! (They're of different sizes, * is the wildcard). Muxes, of course, are multiplexers.
 
 opCodeHex.v
-  -Opcodes. For sanity's sake, so we can use English instead of Hex. If you don't want to use this, go ahead, but it's probably easier to read and remember English than Hex.
+  - Opcodes. For sanity's sake, so we can use English instead of Hex. If you don't want to use this, go ahead, but it's probably easier to read and remember English than Hex.
 
 pulser.v
-  -For our specific seven segment display, we could only push signals onto one of the arrays at once, so this is used to be able to affect both at once. This is probably not required for any projects in the future.
+  - For our specific seven segment display, we could only push signals onto one of the arrays at once, so this is used to be able to affect both at once. This is probably not required for any projects in the future.
 
 sevenseg.v
-  -Code to use with our seven segment display.
+  - Code to use with our seven segment display.
 
 topLevel.v
-  -Top level design for the project, this is where all the components are connected.
+  - Top level design for the project, this is where all the components are connected.
   
 topLevel.ucf
-  -Pin assignments for outputs.
+  - Pin assignments for outputs.
+  
+program.list
+  - The list that gets loaded into testmemory.v when it is compiled. Note that a change to program.list necessitates a recompile.
   
 tristate.v
-  -Tristate buffer.
+  - Tristate buffer.
 
 `project/' (The important ones):
 toplevel.bit
@@ -72,7 +75,7 @@ datapathHD.png
   - The second incarnation of the datapath. As you can tell, it evolved a little bit.
   
 Datapath_03MAY15.jpg
-  - The almost-complete datapath.
+  - The almost- complete datapath.
   
 Datapath_05MAY15.svg/png
   - The datapath used in our final design for class.
