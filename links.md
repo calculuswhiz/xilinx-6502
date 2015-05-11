@@ -31,5 +31,5 @@ Tools and manuals:
     - http://e-tradition.net/bytes/6502/assembler.html
     
 Reference: Other projects:
-    - http://ladybug.xs4all.nl/arlet/fpga/6502/
-    - http://graphics.stanford.edu/~ianbuck/proj/Nintendo/Nintendo.html
+- http://ladybug.xs4all.nl/arlet/fpga/6502/
+- http://graphics.stanford.edu/~ianbuck/proj/Nintendo/Nintendo.html
