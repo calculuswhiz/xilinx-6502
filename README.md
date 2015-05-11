@@ -14,12 +14,12 @@ Some quick things:
 
 5. fpgaloading.md has some information about how to load onto the FPGA, as well how to open the simulator.
 
-6. This is a WIP. Current status: ADC #imm and JMP $ABS  have been implemented. Future work may continue this, and we reserve the right to modify this repository at any time. Contributions are welcome, but for school, we recommend forking.
+6. This is a WIP. Current status: ADC #imm, JMP $ABS, NOP, and AND #imm  have been implemented. Future work may continue this, and we reserve the right to modify this repository at any time. Contributions are welcome of course, but for school project, we recommend forking.
 
 # Getting started:
 So you've decided to try it out. Here's the stuff we used:
 - FPGA: We used Xess' [XuLA2-LX9](http://www.xess.com/shop/product/xula2-lx9/) board for development.
-- 7-segment display: Standard 4 digits, each with decimal point (dp). Ours in particular was called `UM5624-11`. See `2a03_cpu(395_project)/sevenseg.v` for more information.
+- 7-segment display: Standard 4 digits, each with decimal point (dp). Ours in particular was called [UM5624-11 (PDF)](http://datasheet.octopart.com/UM5624-11-EWRS-R-Ledtech-Electronics-datasheet-7274414.pdf). See `2a03_cpu(395_project)/sevenseg.v` for more information.
 - Some LED. Ours was green.
 - We mostly just used whatever we found in the lab ///
 - USB to micro USB cable.
@@ -32,7 +32,7 @@ Got the stuff? Next up:
 - After this, you're pretty much ready to get started, I think. The `.xise` file is what you want to open with the ISE. The `.bit` file is the bitstream file you load through the USB port. See `fpgaloading.md` for more information.
 
 # Current state of project:
-We've written a quick demo program for the two instructions we implemented (`testMemory.v`):
+We've written a quick demo program for the two instructions we implemented (`program.list`):
 ```
 ADC #$01
 JMP $0000

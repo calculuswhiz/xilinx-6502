@@ -1,11 +1,4 @@
 // This is only a ROM right now.
-// Our simple program does this:
-// ADC #$01
-// ADC #$01
-// JMP $0000
-// Infinite loop. Note that this is add with carry, so
-// it will skip 01 once the counter reaches 00 again.
-
 module testmemory (
     // input clk,    // Clock
     input [15:0] tm_address,
