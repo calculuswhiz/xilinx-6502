@@ -3,7 +3,7 @@ This is a file for describing what the files that are (currently) in the project
 Note that everything is in Verilog, not SystemVerilog. If you came from SystemVerilog as your background, be aware that Verilog has certain limitations:
   - You no longer have access to the `logic' data type. This means you have to specify either `wire' or `reg'.
   - Enumerated types are not available. This means that you need to use parameters. Not a big difference, except in using the simulator (we didn't).
-  - No typedefs. This means a lot of typing of `wire [7:0]'. Though with Sublime Text, this isn't really a big deal. Especially if you make a snippet.
+  - No typedefs. This means a lot of typing of `wire [7:0]'. Though with Sublime Text, this isn't really a big deal, especially if you make a snippet.
   - No special `always_xx' clauses.
 
 Top directory:
