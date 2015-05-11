@@ -25,7 +25,7 @@ So you've decided to try it out. Here's the stuff we used:
 - USB to mini USB cable.
 
 Got the stuff? Next up:
-- First you want to get the Xilinx ISE installer and install the ISE. Do *not* get the Vivado ISE. It does not support devices older than series-7. Directions can be found online. There is documentation on the Arch Linux wiki for those of us who use it.
+- First you want to get the Xilinx ISE installer and install the ISE. Do *not* get the [Vivado ISE](http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html). It does not support devices older than series-7. Directions can be found online. There is documentation on the Arch Linux wiki for those of us who use it.
 - Warning: this file is **huge** (6 GiB-ish). But that's not the worst part. The actual install size is over **20 GiB**! This means that it may not fit inside your root directory (I gave mine only 20 GiB). I installed it to my home directory. (I have not experimented with deleting unneeded devices to save space. Do so at your own risk.)
 - The installer might not modify your path variable. Most notably, you want to make sure that `Xilinx/14.7/ISE_DS/ISE/bin/lin64/ise` is accessible by your launchers. I made a symbolic link in my `~/bin` directory.
 - Clone this repository. Note that you want to keep your path name short (less than 48 characters). Thanks, Xilinx.
