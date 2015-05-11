@@ -22,7 +22,7 @@ So you've decided to try it out. Here's the stuff we used:
 - 7-segment display: Standard 4 digits, each with decimal point (dp). Ours in particular was called [UM5624-11 (PDF)](http://datasheet.octopart.com/UM5624-11-EWRS-R-Ledtech-Electronics-datasheet-7274414.pdf). See `2a03_cpu(395_project)/sevenseg.v` for more information.
 - Some LED. Ours was green.
 - We mostly just used whatever we found in the lab ///
-- USB to micro USB cable.
+- USB to mini USB cable.
 
 Got the stuff? Next up:
 - First you want to get the Xilinx ISE installer and install the ISE. Do *not* get the Vivado ISE. It does not support devices older than series-7. Directions can be found online. There is documentation on the Arch Linux wiki for those of us who use it.
