@@ -38,7 +38,7 @@ We have a video:
 https://youtu.be/b58XqSxVEMs
 ![And a picture](pictures/finalResult.jpg)
 
-The output shows the run of this program:
+The output shows the (slightly incorrect) run of this program:
 ```
 ADC #$01
 JMP $0000
