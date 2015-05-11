@@ -1,5 +1,5 @@
 We didn't exactly use all of these, but here's some useful information:
-Things we used:
+
 High-level overview:
 - [Block Diagram](http://www.witwright.com/DonPub/6502-Block-Diagram.pdf): Was mostly just useful in getting some basic datapath ideas on paper. A Verilog programmer doesn't need to deal with MOSFETs.
 - [CPU](http://wiki.nesdev.com/w/index.php/CPU). A good place to start reading.
