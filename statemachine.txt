@@ -1,0 +1,22 @@
+StateMachine:
+D = decode state
+{"instruction"} = unofficial
+
+<Start>
+fetch1
+fetch2, D
+
+<D>: May resolve to any of these:
+IMMEDIATE: next state may be any one of these fetch-execute states:
+    [ORA_IMM, AND_IMM, EOR_IMM, ADC_IMM, NOP_IMM, LDA_IMM, CMP_IMM, SBC_IMM
+    NOP_IMM, LDY_IMM, CPY_IMM, CPX_IMM
+    LDX,
+    {ANC_IMM, ANC_IMM, ALR_IMM, ARR_IMM, XAA_IMM, LAX_IMM, AXS_IMM, SBC_IMM}], D
+IMPLIED_ACCUMULATOR:
+    [BRK_IMP, RTI_IMP, RTS_IMP, PHA_IMP, PHP_IMP, PLA_IMP, PLP_IMP, DEY_IMP, TAY_IMP, INX_IMP, INY_IMP, CLC_IMP, SEC_IMP, CLI_IMP, SEI_IMP, TYA_IMP, CLV_IMP, CLD_IMP, SED_IMP
+    STP_IMP, ASL_IMP, ROL_IMP, LSR_IMP, ROR_IMP, TXA_IMP, TXS_IMP, NOP_IMP, TAX_IMP, DEX_IMP, TSX_IMP], D
+JMP_ABS_1:
+    JMP_ABS:
+        fetch2, D
+ZEROPAGE:
+    
