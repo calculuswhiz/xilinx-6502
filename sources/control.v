@@ -47,11 +47,11 @@ module control
     
     output reg mem_rw,   // Default to read
     
-    output [11:0] state_out
+    output [8:0] state_out
 );
 
 //States:
-parameter SIZE = 12;
+parameter SIZE = 9;
 parameter alu_adc = 4'h0, alu_sbc = 4'h1, alu_eor = 4'h2, alu_ora = 4'h3, alu_and = 4'h4, alu_inc = 4'h5, alu_dec = 4'h6, alu_ror = 4'h7, alu_rol = 4'h8, alu_asl = 4'h9, alu_lsr = 4'ha, alu_nop = 4'hf;
 `include "opCodeHex.v" // Holds all the opcode values.
 

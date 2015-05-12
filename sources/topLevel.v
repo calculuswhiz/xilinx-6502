@@ -495,7 +495,7 @@ tristate xferdbuf(
 );
 assign data_bus = xferdbuf_out;
 
-wire [11:0] state_out;
+wire [8:0] state_out;
 control CTL(
     .clk(clkdiv[divfactor]),
     .P_in(P_out),
