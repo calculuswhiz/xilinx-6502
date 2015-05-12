@@ -27,10 +27,13 @@ parameter LDX_ZPY = 12'h0B6, STX_ZPY = 12'h096;
 
 // Non-instruction states are reserved at >0xff
 // e.g. fetch1, fetch2, jmp_abs_1.
-parameter fetch1 = 12'h100, fetch2 = 12'h200;
-parameter JMP_ABS_1 = 12'h14C;
-// Since ADC won't require more:
-parameter IMMEDIATE = 12'h169;
-parameter IMPLIED_ACCUMULATOR = 12'h269;
-parameter ZEROPAGE = 12'h369, ZEROPAGE_R = 12'h469, ZEROPAGE_MW = 12'h569;
-parameter ERROR = 12'hfff;
+// Note:  Planning to cull this down to only 9 bits. I thought I needed a lot more.
+parameter fetch1 =              12'h100
+parameter fetch2 =              12'h101;
+parameter IMMEDIATE =           12'h102;
+parameter JMP_ABS_1 =           12'h103;
+parameter IMPLIED_ACCUMULATOR = 12'h104;
+parameter ZEROPAGE =            12'h105;
+parameter ZEROPAGE_MW =         12'h106;
+parameter ZEROPAGE_R =          12'h107;
+parameter ERROR =               12'h1ff;
