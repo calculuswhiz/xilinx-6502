@@ -1,5 +1,6 @@
 StateMachine:
 D = decode state
+X = fetch/execute
 {"instruction"} = unofficial
 
 <Start>
@@ -11,12 +12,19 @@ IMMEDIATE: next state may be any one of these fetch-execute states:
     [ORA_IMM, AND_IMM, EOR_IMM, ADC_IMM, NOP_IMM, LDA_IMM, CMP_IMM, SBC_IMM
     NOP_IMM, LDY_IMM, CPY_IMM, CPX_IMM
     LDX,
-    {ANC_IMM, ANC_IMM, ALR_IMM, ARR_IMM, XAA_IMM, LAX_IMM, AXS_IMM, SBC_IMM}], D
+    {ANC_IMM, ANC_IMM, ALR_IMM, ARR_IMM, XAA_IMM, LAX_IMM, AXS_IMM, SBC_IMM}], DX
 IMPLIED_ACCUMULATOR:
     [BRK_IMP, RTI_IMP, RTS_IMP, PHA_IMP, PHP_IMP, PLA_IMP, PLP_IMP, DEY_IMP, TAY_IMP, INX_IMP, INY_IMP, CLC_IMP, SEC_IMP, CLI_IMP, SEI_IMP, TYA_IMP, CLV_IMP, CLD_IMP, SED_IMP
-    STP_IMP, ASL_IMP, ROL_IMP, LSR_IMP, ROR_IMP, TXA_IMP, TXS_IMP, NOP_IMP, TAX_IMP, DEX_IMP, TSX_IMP], D
+    STP_IMP, ASL_IMP, ROL_IMP, LSR_IMP, ROR_IMP, TXA_IMP, TXS_IMP, NOP_IMP, TAX_IMP, DEX_IMP, TSX_IMP], DX
 JMP_ABS_1:
     JMP_ABS:
         fetch2, D
 ZEROPAGE:
-    <up next>
+    ZEROPAGE_R
+        LDA_ZPG, LDX_ZPG, LDY_ZPG, EOR_ZPG, AND_ZPG, ORA_ZPG, ADC_ZPG, SBC_ZPG, CMP_ZPG, BIT_ZPG, {LAX_ZPG, NOP_ZPG}
+            fetch2, D
+        ASL_ZPG, LSR_ZPG, ROL_ZPG, ROR_ZPG, INC_ZPG, DEC_ZPG, {SLO_ZPG, SRE_ZPG, RLA_ZPG, RRA_ZPG, ISB_ZPG, DCP_ZPG}
+            ZEROPAGE_MW
+                fetch2, D
+    STA, STX, STY, SAX
+        fetch2, D

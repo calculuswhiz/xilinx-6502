@@ -334,7 +334,7 @@ mux2 DLmux(
 
 mux2 DHmux(
     .a(data_bus),
-    .b(memory_bus_h),
+    .b(zeroout),    // Changed
     .sel(DHmux_sel),
     .f(DHmux_out)
 );
@@ -387,16 +387,17 @@ mux2 TLmux(
     .f(TLmux_out)
 );
 
-mux2 THmux(
+// Removed:
+/*mux2 THmux( 
     .a(data_bus),
     .b(memory_bus_h),
     .sel(THmux_sel),
     .f(THmux_out)
-);
+);*/
 
 PC T_reg(
     .clk(clkdiv[divfactor]),
-    .load_pc_h(TH_ld),
+    .load_pc_h(data_bus),  // Changed
     .load_pc_l(TL_ld),
     .L_inc(1'b0),
     .H_inc(TH_inc),

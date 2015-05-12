@@ -174,7 +174,7 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  read next instruction byte (and throw it away)
-                        Use M[PC]
+                        Use M[PC]       (IMPLIED_ACCUMULATOR)
 
   Immediate addressing
 
@@ -194,10 +194,10 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch low address byte, increment PC
-                        DL=M[PC], PC+=1     (state = JMP_ABS_1, same as IMMEDIATE except next state)
+                        DL=M[PC], PC+=1     (JMP_ABS_1)
         3    PC     R  copy low address byte to PCL, fetch high address
                        byte to PCH
-                        PCL=DL, PCH=M[PC]   (state = JMP_ABS_2)
+                        PCL=DL, PCH=M[PC]   (JMP_ABS)
 
      Read instructions (LDA, LDX, LDY, EOR, AND, ORA, ADC, SBC, CMP, BIT,
                         LAX, NOP)
@@ -255,9 +255,9 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch address, increment PC
-                        D=00,M[PC], PC+=1
+                        D=00,M[PC], PC+=1   (ZEROPAGE)
         3  address  R  read from effective address
-                        A/X/Y=ALU.op(M[D])
+                        TL=M[D]             (ZEROPAGE_R)
 
      Read-Modify-Write instructions (ASL, LSR, ROL, ROR, INC, DEC,
                                      SLO, SRE, RLA, RRA, ISB, DCP)
@@ -267,14 +267,14 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch address, increment PC
-                        D=00,M[PC], PC+=1
+                        D=00,M[PC], PC+=1   (ZEROPAGE)
         3  address  R  read from effective address
-                        TL=M[D]
+                        TL=M[D]             (ZEROPAGE_R)
         4  address  W  write the value back to effective address,
                        and do the operation on it
-                        TL=op(TL)
+                        TL=op(TL)           (depends)
         5  address  W  write the new value to effective address
-                        M[D]=TL
+                        M[D]=TL             (ZEROPAGE_MW)
 
 
      Write instructions (STA, STX, STY, SAX)
@@ -284,9 +284,9 @@ different kinds of instructions.
         1    PC     R  fetch opcode, increment PC
                         IR=M[PC], PC+=1
         2    PC     R  fetch address, increment PC
-                        D=00,M[PC], PC+=1
+                        D=00,M[PC], PC+=1   (ZEROPAGE)
         3  address  W  write register to effective address
-                        M[D]=A/X/Y/AX
+                        M[D]=A/X/Y/AX       (depends)
 
   Zero page indexed addressing
 

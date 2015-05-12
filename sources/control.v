@@ -203,13 +203,17 @@ begin : next_state_logic
      * for transitioning between states */
     next_state = state;
     case(state)
-        fetch1, JMP_ABS:
+        fetch1,
+        JMP_ABS,
+        STA_ZPG, STX_ZPG, STY_ZPG, SAX_ZPG, ZEROPAGE_MW:
             next_state = fetch2;
-        fetch2, ADC_IMM, AND_IMM, NOP_IMP:
+        fetch2,
+        ADC_IMM, AND_IMM, CMP_IMM, CPX_IMM, CPY_IMM, EOR_IMM, LDA_IMM, LDX_IMM, LDY_IMM, ORA_IMM, SBC_IMM, 
+        NOP_IMP:
         begin // See opCodeHex.v for all encodings.
             // Use commas to separate same next-states.
             case({4'h0, IR_in[7:0]})
-                ADC_IMM, AND_IMM:
+                ADC_IMM, AND_IMM, CMP_IMM, CPX_IMM, CPY_IMM, EOR_IMM, LDA_IMM, LDX_IMM, LDY_IMM, ORA_IMM, SBC_IMM:
                     next_state = IMMEDIATE;
                 NOP_IMP:
                     next_state = IMPLIED_ACCUMULATOR;
@@ -222,6 +226,28 @@ begin : next_state_logic
             next_state = {4'h0, IR_in[7:0]};
         JMP_ABS_1:
             next_state = JMP_ABS;
+        ZEROPAGE:
+        begin
+            case({4'h0, IR_in[7:0]})
+                LDA_ZPG, LDX_ZPG, LDY_ZPG, EOR_ZPG, AND_ZPG, ORA_ZPG, ADC_ZPG, SBC_ZPG, CMP_ZPG, BIT_ZPG,
+                ASL_ZPG, LSR_ZPG, ROL_ZPG, ROR_ZPG, INC_ZPG, DEC_ZPG:
+                    next_state = ZEROPAGE_R;
+                STA_ZPG, STX_ZPG, STY_ZPG, SAX_ZPG:
+                    next_state = {4'h0, IR_in[7:0]};
+                default: next_state = ERROR;
+            endcase
+        end
+        ZEROPAGE_R:
+        begin
+            case({4'h0, IR_in[7:0]})
+                LDA_ZPG, LDX_ZPG, LDY_ZPG, EOR_ZPG, AND_ZPG, ORA_ZPG, ADC_ZPG, SBC_ZPG, CMP_ZPG, BIT_ZPG,
+                ASL_ZPG, LSR_ZPG, ROL_ZPG, ROR_ZPG, INC_ZPG, DEC_ZPG:
+                    next_state = {4'h0, IR_in[7:0]};
+                default: next_state = ERROR;
+            endcase
+        end
+        ASL_ZPG, LSR_ZPG, ROL_ZPG, ROR_ZPG, INC_ZPG, DEC_ZPG:
+            next_state = ZEROPAGE_MW;
         ERROR: next_state = ERROR;
         default: next_state = ERROR;
     endcase
