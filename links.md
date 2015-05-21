@@ -11,6 +11,7 @@ Low-level details:
 - [Proto-datapath](http://www.mdawson.net/vic20chrome/cpu/mos_6500_mpu_preliminary_may_1976.pdf). Page 2. We based most of our datapath on this design.
 
 Not used, but may be useful for later versions:
+- [Gritty details of 65xx processors](http://www.romhacking.net/documents/318/)
 - [Unofficial opcodes grouped](http://wiki.nesdev.com/w/index.php/CPU_unofficial_opcodes)
 - [UO details](http://wiki.nesdev.com/w/index.php/Programming_with_unofficial_opcodes)
 - Xilinx:
