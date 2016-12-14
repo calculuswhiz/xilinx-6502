@@ -1,4 +1,8 @@
 # xilinx-6502
+#THIS PROJECT HAS BEEN MOVED!!!.
+
+I'm continuing this project [here](https://github.com/calculuswhiz/verilator-6502). Verilator just seemed like a better option.
+
 Experimental gate-level processor design for 6502
 
 Hello, welcome to our documentation and source code for the 6502.
